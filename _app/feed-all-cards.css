@@ -1,0 +1,44 @@
+/* Apply the mobile editorial hierarchy/actions to all feed resource types. */
+.feed-unified-card .editor-feature-copy,.feed-podcast-heading,.feed-podcast-progress{display:contents}
+.feed-unified-card .editor-feature-copy>p{font-size:16px;line-height:28px;color:#606266;white-space:pre-line}
+.feed-unified-card.v3-recommendation-article .editor-feature-copy>p{color:#909399}
+.feed-unified-card .editor-share-button,.editor-reading-icon,.feed-podcast-footer{display:none}
+@media(max-width:760px){
+ .personal-feed-page #personal-feed .feed-unified-card .editor-feature-copy{display:flex;flex-direction:column;gap:0;width:100%;min-width:0;order:0}
+ .personal-feed-page #personal-feed .feed-unified-card .editor-feature-copy>h2{width:100%;margin:0;align-self:stretch;font-size:20px;line-height:32px;font-weight:700}
+ .personal-feed-page #personal-feed .feed-unified-card .editor-feature-copy>p{width:100%;margin:0;font-size:14px;line-height:24px;color:#606266;white-space:normal}
+ body.home-v3.personal-feed-page #personal-feed .feed-unified-card .v3-recommendation-footer{padding:0;gap:12px;flex-wrap:nowrap;justify-content:space-between}
+ .personal-feed-page .editor-share-button{flex:none;display:flex;align-items:center;justify-content:center;padding:13px 20px;border:0;border-radius:100px;background:#131921;color:#fff;font:500 14px/20px Figtree,"PingFang SC",sans-serif;box-shadow:0 2px 3px #0000001a}
+ .personal-feed-page .editor-share-button:disabled{opacity:.65;cursor:default}
+ body.home-v3.personal-feed-page #personal-feed .feed-unified-card .v3-recommendation-footer .v3-recommendation-read{flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;min-height:48px;min-width:48px;padding:11px;border:1px solid #131921;border-radius:100px;background:transparent;color:#131921;box-shadow:none}
+ .personal-feed-page .feed-reading-label{display:none}
+ .personal-feed-page .editor-reading-icon{display:block;width:24px;height:24px;flex:none;background-image:url('assets/home-v3/42c74.svg');background-repeat:no-repeat;background-position:6px 7px;background-size:10.5px 9.99983px}
+ /* Article 555:2772 keeps its own cover/title/reason composition. */
+ .personal-feed-page #personal-feed .feed-unified-card.v3-recommendation-article{display:grid;grid-template-columns:88px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:10px;row-gap:20px;padding:24px 16px 16px}
+ .personal-feed-page #personal-feed .feed-unified-card.v3-recommendation-article .editor-feature-copy{display:contents}
+ .personal-feed-page #personal-feed .feed-unified-card.v3-recommendation-article .editor-feature-copy>h2{grid-column:2;grid-row:1;align-self:end;font-size:18px;line-height:26px;font-weight:600;margin:0}
+ .personal-feed-page #personal-feed .feed-unified-card.v3-recommendation-article .editor-feature-copy>p{grid-column:1/-1;grid-row:3;align-self:stretch;font-size:14px;line-height:24px;color:#909399;-webkit-line-clamp:4;margin:0}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-image{grid-column:1;grid-row:1/span 2;align-self:center;width:88px;height:132px}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-article-reason{grid-column:2;grid-row:2;align-self:start}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-footer{grid-column:1/-1;grid-row:4}
+ /* Figma 560:3221: top identity, glass playback row, share/read row. */
+ .personal-feed-page #personal-feed .feed-podcast-card{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:12px;width:100%;height:auto;min-height:0;padding:16px;border-radius:20px}
+ .feed-podcast-heading{display:flex;align-items:center;gap:12px;min-width:0;width:100%}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-square{display:block;flex:none;width:80px;height:80px;min-width:80px;border-radius:12px;overflow:hidden;box-shadow:0 4px 10px #0003}
+ .feed-podcast-heading .v3-podcast-square>img{display:block;width:80px;height:80px;object-fit:cover}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-copy h3{font-size:16px;line-height:28px;font-weight:700;color:white;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-copy p{margin:0;max-height:32px;font-size:12px;line-height:16px;color:#e4e7ed;overflow:hidden}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-audio{display:flex;align-items:center;flex:none;gap:8px;width:100%;padding:4px;border:1px solid #ffffff80;border-radius:100px;background:#ffffff80;backdrop-filter:blur(32px);box-shadow:0 12px 42px #22263212}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-audio>button{display:flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;min-width:44px;padding:9px;border:1px solid #131921;border-radius:100px;background:#131921}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-audio>button>img{width:24px;height:24px;flex:none}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-audio>button.is-playing>img{display:none}
+ .feed-podcast-progress{display:flex;flex:1;align-items:center;gap:4px;min-width:0;padding:10px 0}
+ .personal-feed-page #personal-feed .feed-podcast-card .feed-podcast-progress>span{flex:none;width:40px;font-size:12px;line-height:16px;color:white;text-align:center;font-variant-numeric:tabular-nums}
+ .personal-feed-page #personal-feed .feed-podcast-card .feed-podcast-progress>input{display:block;flex:1;min-width:20px;height:10px;margin:0;padding:0;cursor:pointer;opacity:1}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-audio>select{flex:none;width:48px;height:48px;min-width:48px;padding:0;border:0;border-radius:100px;background:#ffffff33;color:#131921;font-family:inherit;font-size:12px;font-weight:700;line-height:24px;text-align:center}
+ .feed-podcast-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%}
+ .feed-podcast-footer .editor-share-button{padding:14px 20px}
+ .feed-podcast-read{display:flex;align-items:center;justify-content:center;flex:none;width:48px;height:48px;padding:12px;border:0;border-radius:100px;background:white}
+}
+@media(max-width:360px){.personal-feed-page #personal-feed .feed-podcast-card .feed-podcast-progress>span{width:32px;font-size:10px}.personal-feed-page #personal-feed .feed-podcast-card .v3-audio{gap:4px}}

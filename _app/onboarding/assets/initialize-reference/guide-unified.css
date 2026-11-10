@@ -1,0 +1,29 @@
+/* The full AI workspace and reading guide share the same component skin. */
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome{text-align:left;color:#131921}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome :is(h1,h3){font:400 24px/32px Figtree,"PingFang SC",sans-serif;margin:0;letter-spacing:0;color:#131921}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome>p{font:400 16px/28px Figtree,"PingFang SC",sans-serif;color:#909399;margin:0 0 20px}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .ai-guide-choices{display:block}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt{display:flex;width:100%;height:70px;box-sizing:border-box;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px;margin:0 0 10px;border:1px solid #ddd;border-radius:14px;background:#ffffffb3;color:#131921;text-align:left}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt:last-child{margin-bottom:0}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt>span{display:block;min-width:0}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt strong{display:block;font:700 16px/28px Figtree,"PingFang SC",sans-serif;margin:0;color:#131921}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt small{display:block;font:400 12px/16px Figtree,"PingFang SC",sans-serif;margin:0;color:#909399;white-space:normal}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt>i{font-size:24px;line-height:24px;flex:none}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer{box-sizing:border-box;width:100%;height:130px;margin:0;padding:10px;border:1px solid #ffffffd9;border-radius:24px;background:#ffffffcc;backdrop-filter:blur(32px);box-shadow:0 12px 42px #22263212,inset 0 1px #fff}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer textarea{box-sizing:border-box;display:block;width:100%;height:76px!important;min-height:76px;max-height:76px;margin:0;padding:10px;border:0;outline:0;background:transparent;color:#606266;font:400 16px/28px Figtree,"PingFang SC",sans-serif;resize:none;box-shadow:none}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer textarea::placeholder{color:#606266;opacity:1}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer :is(.pe-chat-tools,.ai-composer-tools){display:flex;align-items:center;justify-content:flex-end;gap:10px;height:32px;margin:0;padding:0}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer :is(button[type=submit],.pe-chat-attach,.guide-unified-attach){box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:none;width:32px;height:32px;min-height:32px;margin:0;padding:4px;border:0;border-radius:12px;background:#ffffff1a;color:#303133;cursor:pointer;font-size:24px;line-height:24px}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer button[type=submit]{background:#020617;color:#fff}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer i{font-size:24px;line-height:24px}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer input[hidden]{display:none}
+body:has(#view-search.active)>.topbar{pointer-events:none}
+body:has(#view-search.active)>.topbar>.nav-island{pointer-events:auto}
+.ai-history{padding-top:16px}
+.ai-main-header{top:16px}
+@media(max-width:800px){.ai-history{padding-top:16px}.ai-main-header{top:146px}.ai-workspace:not(.ai-sidebar-collapsed){z-index:201}}
+:is(.pe-chat,.ai-workspace) .guide-unified-welcome .pe-guide-prompt{font:400 14px/20px Figtree,"PingFang SC",sans-serif}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer{font:400 14px/21px Figtree,"PingFang SC",sans-serif;color:#131921}
+:is(.pe-chat,.ai-workspace) :is(.guide-unified-composer,.guide-unified-welcome) :is(.icon-Arrow_Forward-2,.icon-Link){font-family:reading-guide-icons!important}
+:is(.pe-chat,.ai-workspace) :is(.guide-unified-composer,.guide-unified-welcome) .icon-Arrow_Forward-2:before{content:"\e751"}
+:is(.pe-chat,.ai-workspace) .guide-unified-composer .icon-Link:before{content:"\e6d6"}

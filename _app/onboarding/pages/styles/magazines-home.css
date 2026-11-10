@@ -1,0 +1,187 @@
+/* Figma 190:4047 — scoped to the magazine discovery homepage. */
+#view-magazines>.magazines-legacy{display:none!important}
+body:has(#view-magazines.active),#view-magazines{background:#fff}
+.magazines-home{color:#131921;font-family:Figtree,"PingFang SC",sans-serif}
+.magazines-home *{box-sizing:border-box}
+.magazines-home h1,.magazines-home h2,.magazines-home h3,.magazines-home p{margin:0}
+.magazines-home a{color:inherit;text-decoration:none}
+.magazines-home button{font-family:inherit;cursor:pointer}
+.magazines-home :is(a,button):focus-visible{outline:2px solid #131921;outline-offset:5px}
+.magazines-home-hero{width:100vw;margin-inline:calc((100% - 100vw)/2);margin-top:-78px;height:960px;padding:80px 40px 0;background:#efefef;overflow:clip}
+.magazines-home-feature{max-width:1360px;height:100%;margin:auto;padding:100px 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 100px;gap:20px;align-items:center}
+.magazines-home-info{display:flex;flex-direction:column;gap:40px;align-items:flex-start;min-width:0}
+.magazines-home-identity{display:flex;flex-direction:column;gap:10px;width:100%}
+.magazines-home-kicker{display:flex;gap:4px;align-items:center;font:700 16px/24px "Noto Serif SC","Songti SC",serif}
+.magazines-home-kicker img{display:block}
+.magazines-home-kicker img:last-child{transform:scaleX(-1)}
+.magazines-home-identity h1{font:700 80px/96px Figtree,"PingFang SC",sans-serif;letter-spacing:0;overflow-wrap:anywhere}
+.magazines-home-issue{display:flex;align-items:center;gap:20px;padding:20px 0;font-size:16px;font-weight:700;line-height:24px}
+.magazines-home-issue a{display:flex;align-items:center;padding:4px;background:#ffffff1a;border-radius:12px}
+.magazines-home-issue a>span{display:grid;place-items:center;width:24px;height:24px;transform:rotate(90deg)}
+.magazines-home-reading{width:100%;padding:20px;border-radius:40px;display:flex;flex-direction:column;gap:10px;background:#ffffff80;box-shadow:0 2px 6px #0000001a}
+.magazines-home-guide{display:flex;gap:10px;align-items:center}
+.magazines-home-guide>img{border-radius:100%;object-fit:cover}
+.magazines-home-guide strong{display:flex;align-items:center;gap:4px;font-size:16px;line-height:28px}
+.magazines-home-guide small{padding:2px 4px;border-radius:4px;background:#d4380d;color:#fff;font-size:8px;line-height:12px}
+.magazines-home-guide p{font-size:12px;line-height:16px;color:#909399}
+.magazines-home-progress{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px;border-radius:20px;background:white}
+.magazines-home-progress strong{font-size:16px;line-height:28px}
+.magazines-home-progress p{font-size:12px;line-height:16px}
+.magazines-home-participants{display:flex;gap:8px;align-items:center;margin-top:10px;font-size:12px;line-height:16px;color:#909399}
+.magazines-home-participants>span{display:flex}
+.magazines-home-participants img{border:1px solid #fff;border-radius:100%;object-fit:cover;box-shadow:0 2px 6px #0000001a}
+.magazines-home-participants img+img{margin-left:-4px}
+.magazines-home-ring{display:grid;place-items:center;flex:none;border:10px solid #131921;border-radius:50%;width:88px;height:88px;font-size:16px;font-weight:700}
+.magazines-home-read{display:grid;place-items:center;width:160px;padding:14px 40px;border-radius:12px;background:#fff;box-shadow:0 2px 3px #0000001a;font-size:14px;line-height:20px;font-weight:500}
+.magazines-home-cover{display:flex;align-items:center;justify-content:center;height:100%;padding:90px 0;min-width:0}
+.magazines-home-cover .oc-book-stage{height:100%;width:auto;max-width:90%;aspect-ratio:14/19;margin:0}
+.magazines-home-thumbnails{display:flex;flex-direction:column;gap:20px}
+.magazines-home-thumbnails button{display:grid;place-items:center;width:100px;height:100px;padding:20px;border:1px solid transparent;border-radius:20px;background:#ffffff80;transition:box-shadow 180ms,border-color 180ms,background-color 180ms}
+.magazines-home-thumbnails img{height:60px;width:auto;max-width:60px;object-fit:contain;border-radius:4px;box-shadow:0 8px 16px #21212112}
+.magazines-home-thumbnails button[aria-pressed=true]{border-color:#131921;background:#fff;box-shadow:0 4px 14px #1319211a}
+.magazines-home-body{position:relative;left:50%;transform:translateX(-50%);width:min(1360px,calc(100vw - 80px));margin:0;padding:80px 0;display:flex;flex-direction:column;gap:80px}
+.magazines-stories,.magazines-all{display:flex;flex-direction:column;gap:20px}
+.magazines-section-title{display:flex;flex-direction:column;gap:10px;flex:none}
+.magazines-section-title>span{color:#909399;font-size:12px;line-height:16px}
+.magazines-section-title h2{font-size:32px;line-height:40px;font-weight:700}
+.magazines-stories-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px}
+.magazines-story{position:relative;display:flex;align-items:flex-end;min-width:0;padding:20px;border-radius:20px;overflow:hidden;box-shadow:0 2px 6px #0000001a}
+.magazines-story.is-featured{grid-column:span 3;aspect-ratio:16/9}
+.magazines-story>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.magazines-story::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,#000);pointer-events:none}
+.magazines-story-caption{position:relative;z-index:1;display:flex;gap:20px;align-items:flex-end;width:100%;color:white}
+.magazines-story-caption>div{flex:1;min-width:0}
+.magazines-story-caption h3{font-size:20px;line-height:28px;font-weight:700;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.magazines-story-caption p{font-size:14px;line-height:20px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.magazines-story-caption>span{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:#ffffff33}
+.magazines-story:not(.is-featured) .magazines-story-caption{display:none}
+.magazines-all-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.magazines-category-filters{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+.magazines-category-filters button{padding:8px 16px;border:0;border-radius:100px;background:#fff;box-shadow:0 2px 3px #0000001a;font-size:14px;font-weight:700;line-height:20px;color:#131921}
+.magazines-category-filters button[aria-pressed=true]{background:#131921;color:white;box-shadow:none}
+.magazines-all-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.magazines-all-card{display:flex;flex-direction:column;min-width:0;padding:20px;border-radius:20px;box-shadow:0 6px 18px #0206170a;background:#fff;overflow:clip}
+.magazines-card-cover{position:relative;aspect-ratio:1;width:100%}
+.magazines-card-cover .oc-book-stage{position:absolute;top:40px;left:50%;transform:translateX(-50%);height:calc(100% - 80px);width:auto;aspect-ratio:14/19;margin:0}
+.magazines-card-info h3{font-size:24px;line-height:32px;font-weight:600;color:#020617}
+.magazines-card-info p{font-size:12px;line-height:23px;color:#71717a}
+.magazines-all-card footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid #e5e8e4;padding-top:10px;margin-top:10px;color:#71717a;font-size:12px;line-height:20px}
+.magazines-card-arrow{display:grid;place-items:center;width:32px;height:32px;padding:4px}
+
+
+@media(max-width:1100px){.magazines-home-identity h1{font-size:56px;line-height:1.2}.magazines-home-feature{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 80px}.magazines-home-thumbnails button{width:80px;height:80px;padding:10px}.magazines-home-reading{padding:16px}.magazines-home-progress{padding:12px}.magazines-home-ring{width:72px;height:72px;border-width:8px}.magazines-home-cover{padding:120px 0}.magazines-all-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.magazines-home-hero{height:auto;min-height:960px;margin-top:-126px;padding:160px 24px 50px}.magazines-home-feature{padding:0;grid-template-columns:minmax(0,1fr) 80px;gap:32px}.magazines-home-cover{grid-row:1;grid-column:1;padding:24px 0;height:440px}.magazines-home-info{grid-column:1/-1;grid-row:2;gap:24px}.magazines-home-identity h1{font-size:48px;line-height:60px}.magazines-home-thumbnails{grid-column:2;grid-row:1;gap:10px}.magazines-home-thumbnails button{width:70px;height:70px}.magazines-home-thumbnails img{height:50px;max-width:50px}.magazines-home-body{width:calc(100vw - 48px);padding-block:60px;gap:60px}.magazines-stories-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.magazines-story:not(.is-featured){height:180px;padding:12px}.magazines-all-heading{align-items:flex-start;flex-direction:column}.magazines-category-filters{justify-content:flex-start}.magazines-all-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.magazines-all-card{padding:14px}.magazines-card-cover .oc-book-stage{top:24px;height:calc(100% - 48px)}.magazines-card-info h3{font-size:18px;line-height:26px}}
+@media(prefers-reduced-motion:reduce){.magazines-home-thumbnails button,.magazines-story>img{transition:none}}
+
+/* Refined hero angle, independently configurable from other reading volumes. */
+.magazines-home-cover{padding-block:50px}
+.magazines-home-cover .oc-book-stage{--book-rx:20deg;--book-ry:-20deg;max-width:100%}
+.magazines-home-cover .oc-book-object{transform:rotateX(var(--book-rx)) rotateY(var(--book-ry)) rotateZ(5deg)}
+/* One expanded story; all four titles remain visible. */
+.magazines-stories-grid{grid-template-columns:3fr 1fr 1fr 1fr;aspect-ratio:1360/365.625;transition:grid-template-columns 600ms cubic-bezier(.2,.8,.2,1)}
+.magazines-story.is-featured{grid-column:auto;aspect-ratio:auto}
+.magazines-story-toggle{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;z-index:2;border-radius:inherit}
+.magazines-story-toggle:focus-visible{outline-offset:-5px!important;outline-color:#fff!important}
+.magazines-story-caption{pointer-events:none}
+.magazines-story:not(.is-featured) .magazines-story-caption{display:flex}
+.magazines-story:not(.is-featured) h3{font-size:16px;line-height:28px}
+.magazines-story-caption>div{overflow:hidden}
+.magazines-story-read{display:grid;place-items:center;flex:none;width:32px;height:32px;border-radius:50%;background:#ffffff33;pointer-events:auto;position:relative;z-index:3}
+.magazines-story-read[hidden],.magazines-story p[hidden]{display:none}
+.magazines-story.is-featured .magazines-story-caption{animation:magazine-story-caption 350ms ease-out}
+.magazines-all-card:focus-visible .books-library-cover{transform:rotateY(-18deg)}
+@media(hover:hover) and (pointer:fine){.magazines-all-card:hover .books-library-cover{transform:rotateY(-18deg);box-shadow:8px 8px 16px #2121211a}}
+@keyframes magazine-story-caption{from{opacity:.3;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1100px){.magazines-home-cover{padding-block:80px}}
+@media(max-width:760px){.magazines-home-cover{padding-block:10px}.magazines-stories-grid{display:flex;flex-direction:column;aspect-ratio:auto}.magazines-story:not(.is-featured){height:72px;min-height:72px;padding:16px 20px}.magazines-story.is-featured{height:240px;min-height:240px}.magazines-story:not(.is-featured) h3{-webkit-line-clamp:1}}
+@media(prefers-reduced-motion:reduce){.magazines-stories-grid{transition:none}.magazines-story.is-featured .magazines-story-caption{animation:none}.magazines-all-card:is(:hover,:focus-visible) .books-library-cover{transform:none}}
+
+/* A single clock drives the progress arc and its numeric label. */
+.magazines-home-ring{position:relative;border:0}
+.magazines-home-ring svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}
+.magazines-home-ring circle{fill:none;stroke-width:10}
+.magazines-progress-track{stroke:#e5e7eb}
+.magazines-progress-arc{stroke:#131921;stroke-linecap:round}
+.magazines-home-ring>span{position:relative;font-variant-numeric:tabular-nums}
+@media(max-width:1100px){.magazines-home-ring{border:0}}
+
+/* Give the featured cover six parts of the space beside four parts of copy. */
+@media(min-width:761px){
+ .magazines-home-feature{grid-template-columns:minmax(0,4fr) minmax(0,6fr) 100px}
+ .magazines-home-cover{padding-block:10px}
+ .magazines-home-cover .oc-book-stage{max-width:100%;height:100%;width:auto}
+ .magazines-home-identity h1{font-size:clamp(40px,4.63vw,80px);line-height:1.2}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .magazines-home-feature{grid-template-columns:minmax(0,4fr) minmax(0,6fr) 80px}
+ .magazines-home-cover{padding-block:35px}
+ .magazines-home-progress{flex-wrap:wrap}
+}
+@media(min-width:1101px) and (max-width:1450px){
+ .magazines-home-progress{gap:8px}
+ .magazines-home-progress p{font-size:11px;white-space:nowrap}
+ .magazines-home-ring{width:72px;height:72px}
+}
+/* Keep image geometry stable while the accordion only reveals more of it. */
+.magazines-stories-grid{container-type:inline-size}
+.magazines-story>img{inset:auto;left:50%;top:50%;width:calc((100cqw - 60px)/2);max-width:none;height:100%;transform:translate(-50%,-50%);transition:transform 450ms ease}
+@media(hover:hover) and (pointer:fine){.magazines-story:hover>img{transform:translate(-50%,-50%) scale(1.025)}}
+@media(max-width:760px){.magazines-story>img{width:100%;height:240px}}
+@media(prefers-reduced-motion:reduce){.magazines-story>img{transition:none}.magazines-story:hover>img{transform:translate(-50%,-50%)}}
+
+/* Keep long story titles fully visible. */
+.magazines-story-caption h3,.magazines-story:not(.is-featured) h3{display:block;-webkit-line-clamp:unset;overflow:visible;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:760px){.magazines-story:not(.is-featured){height:auto;min-height:72px}}
+
+.magazines-home-cover-link{display:flex;align-items:center;justify-content:center;width:100%;height:100%;cursor:pointer}
+
+/* One-line category rail, fading only at edges with hidden content. */
+.magazines-all-heading{gap:120px}
+.magazines-category-filters{flex:1;min-width:0;max-width:100%;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;overflow-y:hidden;padding:8px 0;scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(to right,transparent 0,#000 var(--category-fade-left,0px),#000 calc(100% - var(--category-fade-right,0px)),transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--category-fade-left,0px),#000 calc(100% - var(--category-fade-right,0px)),transparent 100%)}
+.magazines-category-filters::-webkit-scrollbar{display:none}
+.magazines-category-filters button{flex:none;white-space:nowrap}
+@media(max-width:760px){.magazines-all-heading{gap:24px}.magazines-category-filters{flex:none;width:100%}}
+
+/* Put the category rail below the section title. */
+.magazines-all-heading{flex-direction:column;align-items:stretch;gap:20px}
+.magazines-category-filters{flex:none;width:100%;max-width:100%}
+
+/* A compact six-column magazine catalogue: cover, name and issue only. */
+.magazines-all-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.magazines-all-card{padding:16px}
+.magazines-card-cover .books-library-volume{top:20px;height:calc(100% - 40px)}
+.magazines-card-info h3{font-size:18px;line-height:26px}
+@media(max-width:1100px){.magazines-all-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:760px){.magazines-all-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.magazines-all-card{padding:14px}}
+/* Bare magazine covers without an outer card surface. */
+.magazines-all-card{padding:0;background:transparent;box-shadow:none;border-radius:0;overflow:visible}
+.magazines-card-info h3{font-size:16px;line-height:24px}
+/* Let every cover fill its column while preserving the original image ratio. */
+.magazines-card-cover.books-library-cover-area{aspect-ratio:auto;padding:0;display:block;margin-bottom:8px}
+.magazines-card-cover .books-library-volume{position:relative;inset:auto;display:block;width:100%;height:auto;transform:none}
+.magazines-card-cover .books-library-cover{width:100%;height:auto;object-fit:contain}
+
+/* Extra depth for the enlarged homepage magazine only. */
+.magazines-home-cover .oc-book-magazine{--book-depth:30px;--book-half:15px}
+
+/* Figma 192:4454 — compact guide panel with a completed reading status. */
+.magazines-home-reading{padding:10px;border-radius:30px;gap:0;background:#ffffff80;box-shadow:0 2px 6px #0000001a}
+.magazines-home-guide{padding-block:10px;gap:10px;width:100%}
+.magazines-home-guide>img{flex:none;width:40px;height:40px}
+.magazines-home-guide>div{flex:1;min-width:0}
+.magazines-home-progress{padding:16px;border-radius:20px;gap:16px;flex-wrap:nowrap;width:100%}
+.magazines-home-progress>div:first-child{flex:1;min-width:0}
+.magazines-home-progress p{font-size:12px;line-height:16px;white-space:normal}
+.magazines-home-participants{gap:8px;white-space:nowrap}
+.magazines-home-participants>span{flex:none}
+.magazines-home-reading-status{flex:none;border-radius:4px;background:#00000080;color:#fff;padding:2px 4px;font-size:8px;line-height:12px;font-weight:700}
+.magazines-home-ring{width:88px;height:88px;border:0}
+@media(max-width:1100px) and (min-width:761px){.magazines-home-progress{gap:10px;padding:12px}.magazines-home-participants{flex-wrap:wrap}}
+
+/* Figma 192:4453 — ring, reading details, then the join action. */
+.magazines-home-progress .magazines-home-ring{order:-1}
+.magazines-home-progress-copy{flex:1;min-width:0}
+.magazines-home-join{flex:none;display:flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:100px;background:#131921;box-shadow:0 2px 3px #0000001a;font-size:14px;line-height:20px;font-weight:500;white-space:nowrap}
+.magazines-home a.magazines-home-join{color:#fff}
+@media(max-width:1100px) and (min-width:761px){.magazines-home-progress{flex-wrap:wrap}.magazines-home-progress-copy{flex-basis:calc(100% - 98px)}.magazines-home-join{margin-left:auto}}
+@media(max-width:420px){.magazines-home-progress{gap:10px;padding:12px}.magazines-home-ring{width:72px;height:72px}.magazines-home-join{padding-inline:16px}.magazines-home-participants{flex-wrap:wrap;row-gap:4px}}

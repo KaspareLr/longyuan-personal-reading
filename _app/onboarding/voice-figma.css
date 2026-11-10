@@ -1,0 +1,39 @@
+/* Figma 564:4144 / 4230 / 4608 — idle, hold-to-record and sent. */
+.initialize-conversation.voice-answer-step{background:#fff;color:#131921;overflow-x:clip}
+.voice-answer-step .setup-top,.voice-answer-step .guide-identity,.voice-answer-step #answer-trail,.voice-answer-step #bottom-note,.voice-answer-step #inline-feedback,.voice-answer-step #supplement,.voice-answer-step .demo-reading-widget,.voice-answer-step .resume-banner,.voice-answer-step #action-dock{display:none!important}
+.initialize-conversation.voice-answer-step #setup-main.ai-thread{box-sizing:border-box;width:100%;max-width:760px;min-height:100dvh;margin:0 auto;padding:calc(var(--setup-header-height,67px) + 40px) 16px 180px}
+.initialize-conversation.voice-answer-step #current-message{width:100%;min-height:0;margin:0;padding:0;scroll-margin-top:107px}
+.initialize-conversation.voice-answer-step .guide-heading{display:flex;flex-direction:column;align-items:flex-start;width:100%;margin:0 0 20px;padding:0;text-align:left}
+.initialize-conversation.voice-answer-step #step-eyebrow{width:100%;margin:0;padding:0;color:#909399;font-size:12px;font-weight:400;line-height:16px;letter-spacing:0}
+.initialize-conversation.voice-answer-step #question{width:100%;margin:0;padding:0;color:#131921;font-size:40px;font-weight:400;line-height:48px;letter-spacing:0;white-space:pre-line;text-align:left}
+.initialize-conversation.voice-answer-step #description{width:100%;max-width:none;margin:0;padding:4px 0 0;color:#909399;font-size:14px;font-weight:400;line-height:20px;letter-spacing:0;text-align:left}
+.initialize-conversation.voice-answer-step #work-area,.initialize-conversation.voice-answer-step .profile-panel{width:100%;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;overflow:visible}
+.voice-answer-step .voice-answer{display:block;margin:0;padding:0;text-align:left}
+.voice-answer-step .voice-reply-row{display:flex;justify-content:flex-end;align-items:flex-start;width:100%;height:74px;padding-top:30px}
+.voice-answer-step .voice-reply{display:flex;align-items:center;gap:0;box-sizing:border-box;height:44px;min-height:44px;margin:0;padding:10px 20px;border:0;border-radius:24px;background:#f5f7fa;color:#606266;font-size:14px;font-weight:400;line-height:24px}
+.voice-reply img{display:block;width:24px;height:24px;flex:0 0 24px}.voice-reply.is-playing img{animation:voice-play-pulse .8s ease-in-out infinite}
+.voice-answer-step .voice-controls{position:fixed;bottom:env(safe-area-inset-bottom,0px);left:50%;transform:translateX(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:10px;box-sizing:border-box;width:100%;max-width:760px;padding:10px 10px 20px}
+.voice-answer-step .voice-record{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;height:70px;min-height:70px;margin:0;padding:20px;border:1px solid #ffffffd9;border-radius:100px;background:#ffffffcc;backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:0 12px 42px #22263212,inset 0 1px 0 #fff;color:#131921;font-size:16px;font-weight:700;line-height:28px;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.voice-answer-step .voice-continue{height:40px;min-height:40px;margin:0;padding:0 24px;border:0;background:none;color:#606266;font-size:12px;font-weight:400;line-height:40px}
+.voice-answer-step .voice-status{max-width:100%;margin:0;text-align:center;font-size:12px;line-height:20px;color:#909399}.voice-answer-step .voice-status:empty{display:none}
+.voice-answer-step .voice-upload{min-height:32px;font-size:12px;line-height:24px;color:#606266}
+.voice-answer-step .voice-recording-layer{position:fixed;bottom:0;left:calc(50% + 5px);transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:10px;width:440px;height:260px;pointer-events:none}
+.voice-glow-slot{position:relative;flex-shrink:0;width:520px;height:520px}.voice-glow-slot img{position:absolute;top:-80px;left:-80px;display:block;width:680px;height:680px;max-width:none}
+.voice-answer-step .voice-recording-layer p{position:absolute;top:100px;left:50%;transform:translateX(-50%);margin:0;color:white;white-space:nowrap;font-size:14px;font-weight:700;line-height:20px}
+.voice-wave{position:absolute;top:130px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:4px;height:12px}.voice-wave span{flex:0 0 4px;width:4px;height:12px;border-radius:10px;background:#fff}
+.voice-answer-step .voice-answer[data-state=recording] .voice-controls{opacity:0;pointer-events:none}.voice-answer-step .voice-answer[data-state=recording] .voice-record{pointer-events:auto}
+.voice-answer-step .is-cancelling .voice-wave{opacity:.45}
+@media(max-width:760px){
+ .initialize-conversation.voice-answer-step .setup-progress-header,.initialize-conversation.voice-answer-step .setup-progress-header:has(.resume-banner:not([hidden])){height:calc(67px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 0 0;background:#ffffff80;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);box-shadow:0 2px 6px #0000001a}
+ .initialize-conversation.voice-answer-step .setup-progress-header .setup-steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));align-items:start;gap:0;box-sizing:border-box;height:67px;width:100%;margin:0;padding:12px 16px}
+ .voice-answer-step .setup-steps .step-item{width:100%;gap:5px;font-size:10px;line-height:14px}
+ .voice-answer-step .setup-steps .step-dot{box-sizing:border-box;width:24px;height:24px;font-size:11px;font-weight:700;line-height:14px;color:#131921;border:1px solid #e4e7ed;background:#fff}
+ .voice-answer-step .setup-steps .current .step-dot{border-color:#131921;background:#131921;color:#fff}
+ .voice-answer-step .setup-steps .step-connector{width:100%;min-width:0;max-width:none;height:1px;margin-top:11.5px;background:#c0c4cc}
+}
+@keyframes voice-play-pulse{50%{opacity:.3}}
+@media(prefers-reduced-motion:reduce){.voice-reply.is-playing img{animation:none}}
+/* A translated animation wrapper must not become the fixed controls' containing block. */
+.initialize-conversation.voice-answer-step #work-area{translate:none!important;transform:none!important}
+.initialize-conversation.voice-answer-step #work-area .voice-recording-layer p{color:#fff;font-size:14px;font-weight:700;line-height:20px}
+.voice-reply img{transform:rotate(-90deg)}

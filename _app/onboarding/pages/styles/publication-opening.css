@@ -1,0 +1,82 @@
+/* Isolated publication viewer. The surface has exactly one layout in all phases. */
+.ly-book-open-dialog{width:min(1240px,calc(100vw - 48px));height:min(820px,90svh);max-width:none;max-height:none;padding:0;border:0;margin:auto;background:transparent;overflow:visible;color:#25323b}
+.ly-book-open-dialog::backdrop{background:#dce4eacc;backdrop-filter:blur(16px)}
+.ly-book-open-dialog[data-phase=extracting]::backdrop{background:#dce4ea35;backdrop-filter:none}
+.ly-detail-surface{height:100%;background:#fff;box-shadow:0 26px 70px #25384725;overflow:hidden;border-radius:3px}
+.ly-book-open-dialog[data-phase=extracting] .ly-detail-surface{visibility:hidden;opacity:0;pointer-events:none}
+.ly-book-open-dialog[data-phase=unfolding] .ly-detail-surface{pointer-events:none}
+.ly-book-close{position:absolute;right:14px;top:12px;z-index:40;width:36px;height:36px;border:0;border-radius:50%;background:#eff2f5;color:#647481;display:grid;place-items:center}
+.ly-publication-bar{height:60px;padding:0 68px 0 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #edf0f2;font-size:10px;letter-spacing:1px;color:#7d8992}
+.ly-publication-expand{border:0;border-radius:8px;background:#f3f5f7;color:#516473;padding:9px 12px;font-size:11px}
+.ly-open-volume{height:calc(100% - 60px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) 116px;background:#fff}
+.ly-volume-left{min-height:0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 24px;background:#fafbfc;overflow:auto}
+.ly-volume-left>img{display:block;width:auto;height:min(55svh,510px);max-width:100%;aspect-ratio:14/19;object-fit:cover;box-shadow:12px 18px 28px #1c33442b;border-radius:1px;flex:none}
+.ly-volume-left h2{font-size:18px;font-weight:600;margin:24px 0 8px}.ly-volume-left p{color:#85909a;font-size:12px;margin:0}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left>img{visibility:hidden}
+.ly-volume-right{padding:50px 32px;min-height:0;min-width:0;overflow:auto}
+.ly-volume-right h3{font:600 31px/1.4 Georgia,'Songti SC',serif;margin:20px 0 24px}.ly-volume-right>p{font-size:14px;line-height:2;color:#78858f}.ly-volume-right>small{font-size:11px;line-height:1.8;display:block;color:#98a1a8;margin-top:24px}
+.ly-volume-links{display:grid;gap:0;margin-top:30px;border-top:1px solid #edf0f3}.ly-volume-links a{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid #edf0f3;font-size:12px}
+.ly-publication-rail{overflow:auto;min-height:0;border-left:1px solid #edf0f2;background:#fcfcfc;padding:10px 0}.ly-publication-rail button{display:block;width:100%;border:0;background:transparent;padding:18px 14px}.ly-publication-rail button:hover{background:#eef3f6}.ly-publication-rail img{display:block;width:62px;aspect-ratio:14/19;object-fit:cover;margin:auto;box-shadow:3px 6px 10px #0002}.ly-publication-rail small{display:block;font-size:9px;line-height:1.5;color:#86939c;margin-top:10px}
+.ly-opening-leaf{position:fixed;top:0;left:0;z-index:30;pointer-events:none;transform-origin:left center;transform-style:preserve-3d}
+.ly-opening-leaf>img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;backface-visibility:hidden;border-radius:1px;box-shadow:12px 18px 25px #20364a22}
+.ly-opening-front{transform:translateZ(.5px)}.ly-opening-back{transform:rotateY(180deg) translateZ(.5px)}
+.ly-book-open-dialog.is-expanded{width:100vw;height:100dvh;margin:0}.is-expanded .ly-detail-surface{border-radius:0}.is-expanded .ly-volume-left>img{height:min(65svh,650px)}
+@media(max-width:850px){.ly-open-volume{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 80px}.ly-volume-left{padding:22px 14px}.ly-volume-left>img{width:100%;height:auto;max-height:55svh}.ly-volume-right{padding:28px 20px}.ly-volume-right h3{font-size:24px}.ly-publication-rail img{width:48px}}
+@media(max-width:600px){.ly-book-open-dialog{width:calc(100vw - 20px);height:92svh}.ly-publication-bar>span:nth-child(2){display:none}.ly-publication-bar{padding-left:16px}.ly-open-volume{grid-template-columns:minmax(0,1fr) 72px;overflow:auto;height:calc(100% - 60px);align-content:start}.ly-volume-left{grid-column:1;overflow:visible;padding:25px 20px}.ly-volume-left>img{width:min(220px,100%);height:auto;max-height:none}.ly-volume-right{grid-column:1;overflow:visible;padding:25px}.ly-publication-rail{grid-column:2;grid-row:1/3;position:sticky;top:0;max-height:82svh}}
+#view-home .shelf-cover.is-opening{z-index:2000!important}
+#view-home .shelf-cover.is-opening img{mask-image:none;-webkit-mask-image:none}
+.ly-inside-page{position:absolute;inset:0;background:#fafbfc;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;backface-visibility:hidden}
+.ly-inside-page h2{font:600 30px/1.5 Georgia,serif;margin:20px 0}.ly-inside-page p{font-size:12px;color:#85909a}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left{visibility:hidden}
+.ly-book-open-dialog[data-phase=ready] .ly-volume-left{visibility:hidden}
+@media(prefers-reduced-motion:reduce){.ly-book-open-dialog[data-phase=ready] .ly-volume-left{visibility:visible}}
+
+/* Flatten sibling ordering while extracting: the active book stays above every neighbour. */
+#view-home .shelf-stage:has(.is-opening){transform-style:flat}
+#view-home .shelf-cover.is-opening{z-index:99999!important}
+#view-home .hero-shelf:has(.is-opening){z-index:100;isolation:isolate}
+.ly-book-open-dialog{width:var(--spread-width);height:var(--spread-height)}
+.ly-detail-surface{position:relative;z-index:1}
+.ly-open-volume{grid-template-columns:50% minmax(0,1fr) 90px}
+.ly-volume-left{position:relative;background:#fafbfc}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left,.ly-book-open-dialog[data-phase=ready] .ly-volume-left{visibility:visible}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left>img{visibility:visible}
+.ly-volume-left>img{height:auto;width:min(72%,310px);max-height:70%;object-fit:contain;aspect-ratio:14/19}
+.ly-book-open-dialog[data-phase=ready] .ly-opening-leaf{z-index:0}
+.ly-inside-page{background:#fafbfc}
+.ly-volume-right{padding:30px 22px}.ly-volume-right h3{font-size:25px}
+.ly-book-open-dialog.is-expanded{width:100vw;height:100dvh}
+@media(max-width:600px){.ly-open-volume{grid-template-columns:50% minmax(0,1fr);align-content:stretch;overflow:auto}.ly-volume-left{grid-column:1;grid-row:1;padding:16px}.ly-volume-right{grid-column:2;grid-row:1;padding:16px;overflow:auto}.ly-volume-left>img{width:90%}.ly-publication-rail{display:none}.ly-volume-right h3{font-size:18px}.ly-volume-right>p,.ly-volume-links a{font-size:11px}.ly-publication-bar{height:44px}.ly-open-volume{height:calc(100% - 44px)}.ly-volume-left h2{font-size:14px}.ly-volume-left p{font-size:10px}}
+
+/* Right page stays opaque beneath the cover and shares its moving spine. */
+.ly-book-open-dialog[data-phase=unfolding] .ly-detail-surface{opacity:1;clip-path:inset(0 0 0 50%);will-change:transform}
+.ly-book-open-dialog[data-phase=ready] .ly-detail-surface{opacity:1;clip-path:none;transform:none;will-change:auto}
+.ly-book-open-dialog[data-phase=unfolding]{overflow:visible}
+/* The inside of the physical cover contains the same independent editorial content. */
+.ly-inside-page{padding:88px 24px 28px;gap:0}
+.ly-inside-page>img{position:static;width:min(72%,310px);height:auto;max-height:70%;aspect-ratio:14/19;object-fit:contain;box-shadow:12px 18px 28px #1c33442b;flex:none}
+.ly-inside-page h2{font:600 18px/1.5 var(--sans);margin:24px 0 8px}.ly-inside-page p{margin:0;font-size:12px}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left{visibility:hidden}
+.ly-book-open-dialog{width:var(--spread-width);height:var(--spread-height);overscroll-behavior:contain}
+.ly-detail-surface{border-radius:calc(3px * (1 - var(--expand-progress,0)))}
+.ly-volume-right{padding:calc(30px + 30px * var(--expand-progress,0)) calc(22px + 20px * var(--expand-progress,0));overscroll-behavior:contain}
+.ly-volume-left{overscroll-behavior:contain}.ly-volume-right h3{font-size:calc(25px + 9px * var(--expand-progress,0))}
+.ly-volume-left>img{width:min(72%,calc(310px + 100px * var(--expand-progress,0)))}
+@media(max-width:600px){.ly-inside-page{padding:60px 16px 16px}.ly-inside-page>img{width:90%}.ly-inside-page h2{font-size:14px}.ly-inside-page p{font-size:10px}}
+.ly-book-open-dialog[data-phase=unfolding] .ly-volume-left>img{visibility:hidden}
+.ly-publication-rail h4{font-size:11px;font-weight:500;color:#7d8994;text-align:center;margin:12px 0 4px}
+.ly-publication-rail button[aria-pressed=true]{background:#edf3f8;box-shadow:inset 2px 0 #536d81}
+.ly-publication-rail small{font-size:10px;line-height:1.6}
+.ly-volume-left .ly-issue-label,.ly-inside-page .ly-issue-label{margin-top:10px;font-size:12px;color:#637887}
+@media(max-width:600px){.ly-publication-rail{display:flex;grid-column:1/-1;grid-row:2;position:static;max-height:none;overflow-x:auto;padding:10px;border-left:0;border-top:1px solid #edf0f2;align-items:center}.ly-publication-rail h4{flex:0 0 28px;margin:0 10px;font-size:10px}.ly-publication-rail button{flex:0 0 76px;padding:10px}.ly-publication-rail img{width:46px}.ly-publication-rail small{font-size:9px}}
+
+
+/* The animation wraps one intact detail component; it does not dictate its layout. */
+.ly-open-volume.ly-unified-detail{display:block;height:calc(100% - 60px);overflow:auto;background:#f6f9fc;overscroll-behavior:contain;scrollbar-gutter:stable}
+.ly-unified-detail>.rd-page{padding:24px 28px 60px;max-width:1180px;margin:auto;box-sizing:border-box}
+.ly-page-back{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;background:#f6f9fc}
+.ly-page-mirror{position:absolute;top:0;left:0;width:var(--spread-width);height:var(--spread-height);overflow:hidden;pointer-events:none;color:#25323b}
+.ly-page-mirror .ly-open-volume{pointer-events:none}
+.ly-book-open-dialog[data-phase=ready] .ly-opening-leaf{visibility:hidden}
+.ly-book-open-dialog[data-phase=unfolding] .ly-opening-leaf{visibility:visible}
+@media(max-width:600px){.ly-open-volume.ly-unified-detail{height:calc(100% - 44px)}.ly-unified-detail>.rd-page{padding:18px 16px 40px}}

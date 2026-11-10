@@ -1,0 +1,27 @@
+/* Shared overflow handling, independent of reader body typography. */
+[data-secondary-lines]{min-width:0;max-width:100%;overflow-wrap:anywhere;}
+[data-secondary-lines="1"]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+[data-secondary-lines="2"],[data-secondary-lines="3"],[data-secondary-lines="4"],[data-secondary-lines="8"]{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--secondary-lines);overflow:hidden;}
+[data-secondary-lines="2"]{--secondary-lines:2;}
+[data-secondary-lines="3"]{--secondary-lines:3;}
+[data-secondary-lines="4"]{--secondary-lines:4;}
+[data-secondary-lines="8"]{--secondary-lines:8;}
+[data-secondary-lines="0"]{white-space:normal;overflow:visible;}
+.portal-prose,.reader-paper,.reader-content,.portal-article-notes article p,.answer-card,.pe-chat-messages,.conversation-main{overflow-wrap:anywhere;min-width:0;}
+.portal-heading>*,.portal-event>*,.portal-event-detail>*,.portal-account>*,.portal-account-panel,.portal-section-heading>*,.oc-reading-list-content,.oc-reading-list-heading>*,.people-guide-card-copy,.book-sidebar-heading,.book-sidebar-meta,.reader-resource>span,.reader-toc-article>span,.book-contents-summary,.book-contents-item>div,.pe-identity-top,.pe-intro-copy,.books-library-info,.magazines-card-info{min-width:0;}
+.portal-facts dd,.portal-event-meta,.activity-meta,.rd-facts,.portal-article-meta,.portal-faq,.portal-source-note,.price{overflow-wrap:anywhere;}
+.field-limit-counter{display:block;width:100%;min-width:0;margin:4px 0 8px;color:#606266;font-size:12px;line-height:1.5;font-variant-numeric:tabular-nums;text-align:right;grid-column:1/-1;}
+.portal-profile-form input,.portal-profile-form textarea{max-width:100%;min-width:0;}
+@media(max-width:760px){
+ .nav-shell nav,.nav-links-group,.portal-tabs{flex-wrap:wrap;}
+ .nav-shell nav a{max-width:100%;}
+ .portal-section-heading{flex-wrap:wrap;gap:12px;}
+ .portal-article-meta,.portal-event-meta{flex-wrap:wrap;}
+ .book-contents-summary{flex-wrap:wrap;gap:8px;}
+ .portal-event h2,.book-sidebar-heading h1,.rd-heading h1{line-height:1.35;}
+}
+
+/* Composite recommendation labels keep their layout at every breakpoint; only the text leaf truncates. */
+.books-home-kicker,.magazines-home-kicker{display:inline-flex;align-items:center;gap:4px;width:fit-content;max-width:100%}
+.books-home-kicker>img,.magazines-home-kicker>img{display:block;flex:none;max-width:none}
+.books-home-kicker>span,.magazines-home-kicker>span{min-width:0;flex:0 1 auto}

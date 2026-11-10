@@ -1,0 +1,7 @@
+{
+  "yicai-202610.jpg": {"kind":"真实期刊封面","source":"https://img.resource.qikan.cn/qkimages/dycy/dycy202610-z.jpg","issue":"第一财经 2026 年第 10 期"},
+  "economics-one-lesson.jpg": {"kind":"真实图书封面","source":"https://img1.doubanio.com/view/subject/l/public/s24055284.jpg","catalog":"https://book.douban.com/subject/3225979/"},
+  "unhedged.jpeg": {"kind":"真实节目封面","source":"https://assets.pippa.io/shows/6478a825654260001190a7cb/1787937666840-7b58b90f-665d-4b75-8ab4-77d590597a7c.jpeg"},
+  "unhedged-bond-market.mp3": {"kind":"官方 RSS 音频","rss":"https://feeds.acast.com/public/shows/unhedged","episode":"Breaking down the bond market","date":"2026-10-22","duration":"17:50","source":"https://sphinx.acast.com/p/open/s/6478a825654260001190a7cb/e/6ada6a144281670f07aebaba/media.mp3"},
+  "snack-editorial.png": {"kind":"AI 生成编辑配图","ratio":"2:3","dimensions":"1024x1536","note":"非品牌实拍，不是书刊封面"}
+}

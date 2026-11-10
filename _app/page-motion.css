@@ -1,0 +1,4 @@
+html.club-motion-boot body>main{opacity:0}
+.club-motion-snapshot{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:80;contain:paint}
+.club-motion-snapshot *{animation-play-state:paused!important;pointer-events:none!important}
+@media(prefers-reduced-motion:reduce){html.club-motion-boot body>main{opacity:1}}

@@ -1,0 +1,35 @@
+/* Local demonstration audio and its matching transcript. No automatic playback. */
+(()=>{
+ const audio=document.querySelector('#podcast-audio'),play=document.querySelector('#podcast-play'),seek=document.querySelector('#podcast-seek'),status=document.querySelector('#podcast-status'),captions=document.querySelector('#podcast-captions');
+ const episodes=window.clubPodcastEpisodes,requested=Number(new URLSearchParams(location.search).get('episode')||0),episode=Number.isInteger(requested)&&requested>=0&&requested<episodes.length?requested:0,track=episodes[episode];
+ const lines=track.finance?[]:track.transcript.match(/[^。！？]+[。！？]?/g)||[track.transcript];
+ audio.src=track.audio;document.querySelector('.podcast-mobile-track-title').textContent=track.title;
+ if(episode){document.querySelector('.podcast-intro h1').textContent=track.title;document.querySelector('.podcast-track-heading>strong').textContent=track.title;}
+ document.querySelector('.podcast-desktop-demo').textContent='试听演示 · 《'+track.title+'》';
+ document.querySelector('.podcast-demo').textContent='当前为试听演示，音频与字幕内容为《'+track.title+'》。';
+ document.querySelectorAll('.demo-reading-widget .pe-guide-avatar,.demo-reading-widget .pe-chat-reopen img').forEach(img=>img.src='assets/podcast/assistant.png');
+
+ const stage=document.querySelector('.podcast-mobile-artwork'),surface=document.querySelector('.podcast-mobile-return');
+ if(episode)stage.querySelector('strong').textContent=track.title;
+ function setTranscript(open){document.body.classList.toggle('podcast-shows-transcript',open);stage.setAttribute('aria-expanded',String(open));if(!open&&matchMedia('(max-width:760px)').matches)scrollTo({top:0,behavior:'instant'});}
+ stage.addEventListener('click',()=>setTranscript(true));surface.addEventListener('click',()=>{setTranscript(false);stage.focus({preventScroll:true})});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape'&&document.body.classList.contains('podcast-shows-transcript')){setTranscript(false);stage.focus({preventScroll:true})}});
+ const controlRow=document.createElement('div');controlRow.className='podcast-controls-row';controlRow.append(document.querySelector('#podcast-mute'),document.querySelector('.podcast-controls'),document.querySelector('.podcast-rate-label'));document.querySelector('.podcast-player-inner').append(controlRow);
+ const mute=document.querySelector('#podcast-mute');mute.addEventListener('click',()=>{audio.muted=!audio.muted;mute.setAttribute('aria-pressed',String(audio.muted));mute.setAttribute('aria-label',audio.muted?'取消静音':'静音');mute.firstElementChild.className='iconfont '+(audio.muted?'icon-sound-off':'icon-sound-on')});
+ const time=n=>{n=Math.max(0,Math.floor(Number.isFinite(n)?n:0));return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')};
+ let starts=[],follow=true,last=-1;
+ lines.forEach((line,i)=>{const b=document.createElement('button');b.type='button';b.className='podcast-caption';b.dataset.cue=i;const t=document.createElement('time'),text=document.createElement('span');t.textContent='--:--';text.textContent=line;b.append(t,text);captions.append(b)});
+ const buttons=[...captions.children];
+ function timing(){if(!Number.isFinite(audio.duration)||!audio.duration)return;const total=lines.reduce((sum,s)=>sum+s.length,0);let count=0;starts=lines.map((s,i)=>{const at=count/total*audio.duration;count+=s.length;buttons[i].querySelector('time').textContent=time(at);buttons[i].setAttribute('aria-label',time(at)+'，'+s);return at});seek.disabled=false;document.querySelector('#podcast-duration').textContent=time(audio.duration);sync()}
+ function sync(){const active=!audio.paused&&!audio.ended;play.setAttribute('aria-pressed',String(active));play.setAttribute('aria-label',active?'暂停播客':'播放播客');play.firstElementChild.className='iconfont '+(active?'icon-Pause':'icon-Play');document.querySelector('#podcast-current').textContent=time(audio.currentTime);if(Number.isFinite(audio.duration)){seek.value=audio.currentTime/audio.duration*100;seek.style.setProperty('--podcast-progress',seek.value+'%');seek.setAttribute('aria-valuetext',time(audio.currentTime)+' / '+time(audio.duration))}const cue=starts.length?Math.max(0,starts.findLastIndex(at=>at<=audio.currentTime)):-1;if(cue!==last){buttons.forEach((b,i)=>{if(i===cue)b.setAttribute('aria-current','true');else b.removeAttribute('aria-current')});last=cue;if(follow&&active&&cue>=0){const rect=buttons[cue].getBoundingClientRect();const behavior=matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth';const reserve=matchMedia('(min-width:761px)').matches?180:document.querySelector('.podcast-player').offsetHeight+24;if(rect.top<110||rect.bottom>innerHeight-reserve)buttons[cue].scrollIntoView({block:'center',behavior})}}}
+ async function start(){try{await audio.play();status.textContent=''}catch{status.textContent='暂时无法播放，请再次点击播放。'}}
+ play.addEventListener('click',()=>{if(audio.paused){if(audio.ended)audio.currentTime=0;start()}else audio.pause()});
+ document.querySelector('#podcast-rewind').addEventListener('click',()=>{audio.currentTime=Math.max(0,audio.currentTime-10);sync()});
+ document.querySelector('#podcast-forward').addEventListener('click',()=>{if(Number.isFinite(audio.duration))audio.currentTime=Math.min(audio.duration,audio.currentTime+10);sync()});
+ seek.addEventListener('input',()=>{if(Number.isFinite(audio.duration)){audio.currentTime=Number(seek.value)/100*audio.duration;sync()}});
+ document.querySelector('#podcast-rate').addEventListener('change',e=>audio.playbackRate=Number(e.target.value));
+ document.querySelector('#podcast-follow').addEventListener('click',e=>{follow=!follow;e.currentTarget.setAttribute('aria-pressed',String(follow));e.currentTarget.querySelector('span').textContent=follow?'跟随播放':'自由浏览'});
+ captions.addEventListener('click',event=>{const b=event.target.closest('[data-cue]');if(!b||!starts.length)return;audio.currentTime=starts[Number(b.dataset.cue)];sync();start()});
+ ['loadedmetadata','durationchange'].forEach(name=>audio.addEventListener(name,timing));['play','pause','ended','timeupdate','seeked'].forEach(name=>audio.addEventListener(name,sync));audio.addEventListener('error',()=>status.textContent=readingCopy.t('podcast.failed'));addEventListener('pagehide',()=>audio.pause());timing();sync();
+ if(track.finance){const story=window.personalFinancePodcast;document.querySelector('.podcast-demo').textContent='Financial Times · Unhedged · '+story.audio.date;document.querySelector('.podcast-desktop-demo').textContent=story.sourceNote||'Financial Times · Unhedged';document.querySelector('.podcast-transcript h2').textContent='阅读笔记';document.querySelector('.podcast-transcript .eyebrow').textContent='READING NOTES';document.querySelector('.podcast-caption-hint').textContent=readingCopy.t('podcast.notesHint');document.querySelector('#podcast-follow').hidden=true;captions.setAttribute('aria-label','播客阅读笔记');for(const text of story.body||story.preview||[]){const p=document.createElement('p');p.className='personal-podcast-note';p.textContent=text;captions.append(p)}}
+})();

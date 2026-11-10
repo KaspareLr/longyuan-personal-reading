@@ -1,0 +1,8 @@
+/* Semantic line groups for authored UI headings; never applied to resource titles. */
+.system-copy-title .system-title-line{display:block}
+.system-copy-title .system-title-phrase{display:inline-block;white-space:nowrap;vertical-align:top}
+.system-copy-title.system-copy-mobile-lines .system-title-line{display:inline}
+@media(max-width:760px){.system-copy-title.system-copy-mobile-lines .system-title-line{display:block}}
+.personal-feed-page .feed-future-state h2.system-copy-title{height:auto;max-height:none;overflow:visible}
+.personal-me-page #preferences-title{line-break:strict;word-break:normal;overflow-wrap:anywhere;text-wrap:pretty}
+@supports(text-wrap:pretty){.intro-copy,.auth-description,.me-summary-body p,.initialize-conversation #description{text-wrap:pretty}}

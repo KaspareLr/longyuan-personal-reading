@@ -1,0 +1,162 @@
+/* Imported articles inherit the product black-and-white reading theme. */
+html:has(.portal-reader.is-editorial.night),.portal-body:has(.portal-reader.is-editorial.night){background:#131921}
+.portal-reader.is-editorial{grid-template-columns:180px minmax(0,1fr);gap:40px}
+.portal-reader.is-editorial .portal-reader-content{width:100%;min-width:0;padding:0 76px 0 0}
+.portal-reader.is-editorial .portal-toc{padding:0 16px 0 0}
+.portal-reader.is-editorial .portal-article-head,.portal-reader.is-editorial .portal-reader-next,.portal-reader.is-editorial .portal-article-notes{width:100%;max-width:1040px;margin-inline:auto}
+.er-article-region{width:100%;min-width:0}
+.portal-reader.is-editorial .er-prose{--reader-size:18px;max-width:680px;margin-inline:auto;padding-top:28px;font-size:var(--reader-size);line-height:1.78;overflow-wrap:break-word}
+.portal-reader.is-editorial[data-editorial-layout=double] .er-prose{max-width:1040px}
+.portal-reader .er-prose>.er-column-group{margin:0!important}
+.er-column-group>p{margin:0 0 1.1em;text-indent:2em;orphans:3;widows:3}
+.er-column-group>p:last-child{margin-bottom:0}
+.portal-reader .er-prose>.er-heading{font-size:1.4em;line-height:1.5;margin:44px 0 20px!important;break-after:avoid;letter-spacing:0}
+.portal-reader .er-prose>.er-heading-4{font-size:1.12em;line-height:1.6;margin-top:12px!important}
+.portal-reader .er-prose>.er-heading:first-child{margin-top:0!important}
+.portal-reader .er-prose>figure{width:100%;margin:36px 0!important;break-inside:avoid}
+.portal-reader.is-editorial .er-prose figure>img{display:block;max-width:100%;width:auto;height:auto;max-height:none;margin:0 auto;object-fit:contain;border-radius:4px;background:transparent;aspect-ratio:auto!important}
+.portal-reader .er-prose figure>figcaption{margin:6px 0 0!important;font:400 12px/20px Figtree,"PingFang SC",sans-serif;color:#909399;text-align:center}
+.portal-reader.is-editorial[data-editorial-layout=double] .er-column-group{column-count:2;column-gap:40px;column-fill:balance}
+.portal-reader.night .er-prose figcaption{color:#b0b8c3}
+.er-source{max-width:680px;margin:32px auto 0;font:400 12px/20px Figtree,"PingFang SC",sans-serif}
+@media(max-width:1100px){.portal-reader.is-editorial{grid-template-columns:150px minmax(0,1fr);gap:24px}}
+@media(max-width:760px){
+ .portal-reader.is-editorial{display:block}
+ .portal-reader.is-editorial .portal-reader-content{padding:0}
+ .portal-reader.is-editorial .er-prose{--reader-size:17px;padding-top:24px;max-width:none;font-size:var(--reader-size);line-height:1.8}
+ .portal-reader.is-editorial[data-editorial-layout=double] .er-column-group{column-count:1}
+ .portal-reader .er-prose>.er-heading{font-size:1.3em;margin-top:32px!important;margin-bottom:16px!important}
+ .portal-reader .er-prose>figure{margin-block:24px!important}
+ .portal-reader.is-editorial .er-prose figure>img{max-height:none;width:auto}
+}
+
+/* Continuous reading: most copy shares one stable typographic rhythm. */
+.portal-reader .er-prose.er-magazine .er-text{font:inherit;color:inherit;letter-spacing:0;margin:0 0 1em;text-indent:2em;text-align:justify;text-justify:inter-ideograph;orphans:3;widows:3}
+.portal-reader .er-prose.er-magazine>.er-lead{max-width:680px;margin:28px auto 32px!important;padding:18px 0 0;font-size:var(--article-heading-size);line-height:1.5;font-weight:500;text-indent:0;text-align:center}
+.portal-reader .er-prose.er-magazine .er-quote{max-width:680px;margin:36px auto!important;padding:4px 0 4px 20px;border:0;border-left:0;border-radius:0;background:transparent;color:inherit;font-size:1.12em;line-height:1.8;font-weight:500;text-indent:0;text-align:start}
+.er-inline-emphasis{font:inherit;font-weight:650}
+.er-magazine .er-column-group>.er-heading{font-size:1.22em;line-height:1.55;margin:1.6em 0 .65em;break-after:avoid-column;text-align:start}
+.er-magazine .er-column-group>.er-heading:first-child{margin-top:0}
+.portal-reader .er-prose.er-magazine>.er-exhibit{margin:36px 0!important;padding:0;border:0;break-inside:avoid}
+.er-exhibit>.er-heading{font:600 15px/26px Figtree,"PingFang SC",sans-serif;margin:0 0 16px;letter-spacing:0}
+.portal-reader .er-prose.er-magazine figure img{max-height:none;width:auto;height:auto;object-fit:contain;aspect-ratio:auto!important}
+.portal-reader .er-prose.er-magazine>.er-figure{margin:32px auto!important}
+.portal-reader .er-prose.er-magazine>.er-hero{max-width:1040px;margin:12px auto 32px!important}
+.portal-reader .er-prose.er-magazine .er-exhibit>figure{margin:0!important}
+.er-table-scroll{overflow:auto;width:100%;max-width:100%;overscroll-behavior-inline:contain}
+.er-table-scroll table{width:100%;min-width:580px;border-collapse:collapse;font:400 14px/24px Figtree,"PingFang SC",sans-serif;font-variant-numeric:tabular-nums}
+.er-table-scroll th,.er-table-scroll td{padding:14px 12px;border-bottom:1px solid #13192126;text-align:right;white-space:nowrap}
+.er-table-scroll thead th{font-size:12px;font-weight:500;white-space:normal;min-width:110px;vertical-align:bottom;color:#606266}
+.er-table-scroll th:first-child{text-align:left;min-width:80px}
+.er-table-scroll tbody td:last-child{font-weight:650}
+.er-original-chart{margin-top:12px;font:400 12px/20px Figtree,"PingFang SC",sans-serif;color:#909399}
+.er-original-chart summary{cursor:pointer;min-height:36px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:4px;list-style:none}
+.portal-reader.is-editorial .er-prose .er-original-chart[open]>img{margin:12px auto 0!important}
+.portal-reader.night .er-table-scroll :is(th,td){border-color:#ffffff26}
+.portal-reader.night .er-table-scroll thead th,.portal-reader.night .er-original-chart{color:#b0b8c3}
+@media(max-width:760px){
+ .portal-reader .er-prose.er-magazine>.er-lead{margin:24px auto!important}
+ .portal-reader .er-prose.er-magazine .er-quote{padding-left:16px;font-size:1.06em;margin:28px 0!important}
+ .portal-reader .er-prose.er-magazine>.er-exhibit{margin:28px 0!important}
+ .er-original-chart summary{min-height:44px}
+}
+
+/* The reader is centered on the viewport; the tools never reserve text space. */
+.portal-reader.reader-has-directory .portal-reader-content{padding:0;width:100%;max-width:none}
+.portal-reader.is-editorial .portal-reader-content{padding:0}
+.portal-reader.reader-has-directory .portal-article-head,.portal-reader.reader-has-directory .portal-reader-next,.portal-reader.reader-has-directory .portal-article-notes{max-width:800px;margin-inline:auto}
+.portal-reader.is-editorial.reader-has-directory .portal-article-head,.portal-reader.is-editorial.reader-has-directory .portal-reader-next,.portal-reader.is-editorial.reader-has-directory .portal-article-notes{max-width:1040px}
+.portal-reader.reader-has-directory .portal-prose{margin-inline:auto}
+@media(min-width:761px){
+ html body .portal-reader.reader-has-directory .portal-reader-content>.portal-reader-tools{position:fixed;float:none;top:50%;right:max(16px,calc((100vw - 1040px)/2 - 80px));left:auto;bottom:auto;transform:translateY(-50%);width:58px;margin:0;padding:0}
+}
+/* Apply the same centering rule to standalone articles without a directory. */
+.portal-reader .portal-reader-content,.portal-reader.is-standalone .portal-reader-content{padding:0}
+.portal-reader .portal-prose{margin-inline:auto}
+.portal-reader.is-standalone .portal-article-head,.portal-reader.is-standalone .portal-reader-next,.portal-reader.is-standalone .portal-article-notes{max-width:800px;margin-inline:auto}
+@media(min-width:761px){
+ html body .portal-reader.is-standalone .portal-reader-content>.portal-reader-tools{position:fixed;float:none;top:50%;right:max(16px,calc((100vw - 1040px)/2 - 80px));left:auto;bottom:auto;transform:translateY(-50%);width:58px;margin:0;padding:0}
+}
+
+/* Settings live in the reader toolbar, outside the centered article layout. */
+html body .portal-reader-tools button[data-er-toggle][aria-pressed=true]{background:#131921!important;color:#fff!important;box-shadow:none;border-color:transparent}
+html body .portal-reader-tools button[data-er-toggle]:disabled{opacity:.35;cursor:not-allowed}
+@media(max-width:760px){html body .portal-reader-tools button[data-er-toggle]{display:none!important}}
+
+/* Preserve intrinsic image size; shrink only when wider than the reading area. */
+.portal-reader .portal-prose img{width:auto;max-width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
+
+/* Linked and unlinked figures share the same image alignment and caption gap. */
+.portal-reader.is-editorial .er-prose figure img{display:block;margin:0 auto!important;width:auto;max-width:100%;height:auto;max-height:none;object-position:center;transform:none}
+.portal-reader.is-editorial .er-prose figure>a{display:block;margin:0;padding:0;line-height:0}
+.portal-reader.is-editorial .er-prose figure>figcaption{margin:6px 0 0!important;padding:0;line-height:20px;text-align:center}
+
+/* Quiet editorial ornaments; decoration never changes the source copy. */
+.portal-reader.is-editorial{--er-rule:#13192126;--er-ornament:#606266}
+.portal-reader.is-editorial.night{--er-rule:#ffffff26;--er-ornament:#b0b8c3}
+.portal-reader .er-prose .er-heading{position:relative;padding-inline-start:18px}
+.portal-reader .er-prose .er-heading:before{content:"";position:absolute;inset-inline-start:0;top:.58em;width:6px;height:6px;background:var(--er-ornament)}
+.portal-reader.is-editorial[data-editorial-layout=double] .er-column-group{column-rule:1px solid var(--er-rule)}
+.portal-reader .er-prose.er-magazine .er-quote{position:relative;border-left:0;padding:24px 24px 20px;font-size:1.12em;text-align:center;text-indent:0}
+.portal-reader .er-prose.er-magazine .er-quote:before{content:"“";display:block;margin-bottom:8px;font:36px/24px Georgia,serif;color:var(--er-ornament)}
+.portal-reader .er-prose.er-magazine .er-quote:after{content:"”";display:block;margin-top:12px;font:36px/24px Georgia,serif;color:var(--er-ornament)}
+.portal-reader .er-prose.er-magazine>.er-lead{position:relative;padding-top:18px}
+.portal-reader .er-prose.er-magazine>.er-lead:before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:40px;height:2px;background:var(--er-ornament)}
+.portal-reader .er-prose>.er-end{display:flex;align-items:center;justify-content:center;gap:10px;max-width:680px;margin:48px auto 0!important;padding:16px 0;border-block:1px solid var(--er-rule);color:var(--er-ornament);font:600 11px/18px Figtree,sans-serif;letter-spacing:.3em;break-inside:avoid}
+.er-end:before{content:"";width:6px;height:6px;background:var(--er-ornament)}
+@media(max-width:760px){
+ .portal-reader .er-prose>.er-end{margin-top:32px!important;padding-block:14px}
+ .portal-reader .er-prose.er-magazine .er-quote{padding:20px 16px;font-size:1.06em}
+ .portal-reader.is-editorial .er-column-group{column-rule:none}
+}
+
+/* Reader type scale: standard 16/28, large 20/32, extra-large 24/36. */
+html body .portal-reader{--article-body-size:16px;--article-body-leading:28px;--article-heading-size:calc(var(--article-body-size) * 1.5);--article-small-size:max(12px,calc(var(--article-body-size) / 1.5))}
+html body .portal-reader .portal-prose{--reader-size:var(--article-body-size);font-size:var(--article-body-size);line-height:var(--article-body-leading)}
+html body .portal-reader .portal-prose :is(h2,h3,.er-heading){font-size:var(--article-heading-size);line-height:1.5}
+html body .portal-reader .portal-prose :is(.lead,.er-lead,.er-quote,blockquote){font-size:var(--article-body-size);line-height:var(--article-body-leading)}
+html body .portal-reader :is(.portal-article-meta,.portal-article-head>.club-overline,.er-source,.er-original-chart),html body .portal-reader .portal-prose :is(figcaption,.er-end){font-size:var(--article-small-size);line-height:1.65}
+html body .portal-reader .er-prose .er-table-scroll table{font-size:var(--article-body-size);line-height:var(--article-body-leading)}
+html body .portal-reader .er-table-scroll thead th{font-size:var(--article-small-size);line-height:1.65}
+
+/* Bind actual paragraph nodes as well as their container to the selected scale. */
+html body .portal-reader .portal-prose :is(p,li,.er-text){font-size:var(--article-body-size);line-height:var(--article-body-leading)}
+html body .portal-reader .portal-prose .er-column-group{font-size:var(--article-body-size);line-height:var(--article-body-leading)}
+
+/* Lead and figure copy have distinct editorial roles. */
+html body .portal-reader .er-prose.er-magazine>.er-lead{font-size:var(--article-heading-size);line-height:1.5;text-align:center;text-indent:0}
+html body .portal-reader .er-prose.er-magazine>.er-lead:before{left:50%;transform:translateX(-50%)}
+html body .portal-reader .er-prose .er-exhibit>.er-heading{font-family:inherit;font-size:var(--article-body-size);line-height:var(--article-body-leading);font-weight:600;text-align:center;padding-inline:0;margin:0 0 8px}
+html body .portal-reader .er-prose .er-exhibit>.er-heading:before{content:none}
+html body .portal-reader .er-prose figure>figcaption{font-size:var(--article-body-size);line-height:var(--article-body-leading);text-align:center;margin:6px 0 0!important}
+
+/* Space belongs outside the complete figure group, not between image and caption. */
+html body .portal-reader .er-prose>figure,
+html body .portal-reader .er-prose.er-magazine>.er-figure,
+html body .portal-reader .er-prose.er-magazine>.er-exhibit{margin:48px auto!important}
+html body .portal-reader .er-prose.er-magazine .er-exhibit>figure{margin:0!important}
+html body .portal-reader .er-prose .er-exhibit>figure+.er-heading{margin:6px 0 0}
+html body .portal-reader .er-prose :is(.er-metric,.er-subheading){padding-inline:0}
+html body .portal-reader .er-prose :is(.er-metric,.er-subheading):before{content:none}
+html body .portal-reader .er-prose .er-metric{font-weight:700;margin-bottom:6px}
+html body .portal-reader .er-prose .er-subheading{margin-top:0;font-weight:600}
+@media(max-width:760px){
+ html body .portal-reader .er-prose>figure,
+ html body .portal-reader .er-prose.er-magazine>.er-figure,
+ html body .portal-reader .er-prose.er-magazine>.er-exhibit{margin:32px auto!important}
+}
+
+/* Center lead copy and its rule; quotations use larger marks without a side rule. */
+html body .portal-reader .er-prose.er-magazine>.er-lead{text-align:center;text-indent:0}
+html body .portal-reader .er-prose.er-magazine>.er-lead:before{left:50%;right:auto;transform:translateX(-50%)}
+html body .portal-reader .er-prose.er-magazine .er-quote{border:0;border-left:0;border-inline-start:0;text-align:center}
+html body .portal-reader .er-prose.er-magazine .er-quote:before,
+html body .portal-reader .er-prose.er-magazine .er-quote:after{font-size:3em;line-height:.8;color:var(--er-ornament)}
+
+/* Keep paragraph separation proportional to the chosen reading size. */
+html body .portal-reader .portal-prose>p:not(.er-lead),html body .portal-reader .er-column-group>p{margin-top:0!important;margin-bottom:1em!important}
+
+/* Lighter body copy; headings and explicit emphasis retain their hierarchy. */
+html body .portal-reader .portal-prose{font-weight:350}
+html body .portal-reader .portal-prose :is(p,li,.er-text){font-weight:350}
+html body .portal-reader .portal-prose :is(strong,b,.er-inline-emphasis){font-weight:650}

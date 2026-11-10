@@ -1,0 +1,8 @@
+/* Figma 558:3114: original V3 book data, revised resource grouping and share/read actions. */
+(()=>{
+ window.createFeedEditorFeature=function(){
+  const fields=clubBookRecommendationFields.forBook({id:'home-v3-house'}),href='portal.html#/book/home-v3-house',card=createV3Recommendation({type:'book',title:'好住的家，\n应该少让人费一点劲。',body:fields.body,resourceTitle:'住宅设计解剖书',resourceMeta:'［日］增田奏 著 · 赵可 译',guide:fields.guide,why:fields.why,cover:'assets/home-v3/83ddc.png',href});card.classList.add('feed-editor-feature');card.dataset.figmaNode='558:3114';const textGroup=document.createElement('div');textGroup.className='editor-feature-copy';const recommendationCopy=card.querySelector('.v3-recommendation-copy');textGroup.append(recommendationCopy.querySelector('h2'),recommendationCopy.querySelector('[data-v3-field=recommendationBody]'));recommendationCopy.prepend(textGroup);
+  const resource=card.querySelector('.v3-resource'),cover=resource.querySelector('.v3-cover-link'),identity=resource.querySelector('.v3-resource-top>div'),guide=resource.querySelector('blockquote'),reason=resource.querySelector('.v3-reason'),row=document.createElement('div'),copy=document.createElement('div');row.className='editor-resource-top';copy.className='editor-resource-copy';identity.classList.add('editor-resource-identity');copy.append(identity,guide);row.append(cover,copy);resource.replaceChildren(row,reason);
+  return applyFeedCardStyle(card,{id:'home-v3-house',title:'住宅设计解剖书',recommendationTitle:'好住的家，应该少让人费一点劲。',author:'［日］增田奏 著 · 赵可 译',cover:'assets/home-v3/83ddc.png',summary:fields.body,guide:fields.guide,reason:fields.why,href,format:'图书'});
+ };
+})();

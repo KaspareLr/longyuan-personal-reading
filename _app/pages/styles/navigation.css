@@ -1,0 +1,12 @@
+/* Floating grouped navigation, inspired by butter.video/product. */
+.topbar{height:86px;min-height:86px;max-width:none;width:100%;padding:18px clamp(24px,6.2vw,100px) 4px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0;background:transparent;position:relative;z-index:50;border:0;box-shadow:none}
+.nav-island{display:flex;align-items:center;gap:32px;min-height:64px;padding:8px 24px;background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.4);border-radius:18px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.topbar .brand{display:flex;flex:none;align-items:center;margin:0}.topbar .brand-logo{display:block;width:116px;height:auto;padding:0;background:none;border-radius:0}
+.topbar .nav{display:flex;gap:26px;align-items:center;margin:0;width:auto;order:initial;overflow:visible}
+.topbar .nav a{display:flex;align-items:center;min-height:44px;padding:0;white-space:nowrap;color:#38414a;font-size:14px;font-weight:400;border:0;border-radius:0;box-shadow:none;background:transparent}
+.topbar .nav a:hover{color:#020617}.topbar .nav a.active{font-weight:600;color:#020617;box-shadow:none}.topbar .nav a.active:after{display:none}
+.topbar .top-actions{display:flex;align-items:center;flex:none;margin:0;padding:8px;background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.4);border-radius:18px;backdrop-filter:blur(20px)}
+.topbar .top-actions .btn{min-height:46px;border-radius:12px;padding:12px 24px;font-size:13px;background:#202124;color:#fff}
+.topbar .top-actions .btn:hover{background:#34363a}
+@media(max-width:1050px){.topbar{padding-inline:24px;gap:14px}.nav-island{gap:22px;padding-inline:18px}.topbar .nav{gap:18px}.topbar .brand-logo{width:102px}.topbar .top-actions .btn{padding-inline:18px}}
+@media(max-width:760px){.topbar{height:126px;min-height:126px;padding:12px 16px;display:block}.nav-island{min-height:100px;padding:10px 16px;display:flex;flex-wrap:wrap;gap:4px;align-content:space-between;border-radius:16px}.topbar .brand-logo{width:96px}.topbar .nav{width:100%;justify-content:space-between;gap:12px;overflow-x:auto}.topbar .nav a{font-size:12px;min-height:38px;flex:none}.topbar .top-actions{position:absolute;right:28px;top:19px;padding:0;border:0;background:transparent;backdrop-filter:none}.topbar .top-actions .btn{min-height:34px;padding:7px 14px;font-size:11px;border-radius:10px}}

@@ -1,0 +1,26 @@
+/* Global resource-cover policy. Magazine article illustrations and podcast artwork are excluded. */
+[data-resource-cover=book],[data-cover-frame-kind=book]{--resource-cover-ratio:2/3}
+[data-resource-cover=magazine],[data-cover-frame-kind=magazine]{--resource-cover-ratio:14/19}
+[data-resource-cover=article],[data-cover-frame-kind=article]{--resource-cover-ratio:2/3}
+img[data-resource-cover]{aspect-ratio:var(--resource-cover-ratio)!important;object-fit:cover!important;box-sizing:border-box}
+img[data-resource-cover][data-resource-cover-axis=width]{height:auto!important;max-height:none!important}
+img[data-resource-cover][data-resource-cover-axis=height]{width:auto!important}
+[data-cover-frame-kind]{aspect-ratio:var(--resource-cover-ratio)!important}
+body .oc-reading-list-book[data-cover-frame-kind]{height:auto!important;min-height:0!important}
+body .oc-reading-list-book[data-cover-frame-kind]>img{width:100%!important}
+body .oc-book-stage:not(.oc-book-magazine){aspect-ratio:2/3!important;height:auto!important}
+body .oc-book-stage.oc-book-magazine{aspect-ratio:14/19!important}
+body .books-home-center .oc-book-stage{width:60%!important;height:auto!important;max-width:320px!important}
+body .oc-book-stage .oc-guided-cover{width:100%!important;height:100%!important}
+body .book-contents-cover,body .book-sidebar-mobile-cover{aspect-ratio:2/3!important;height:auto!important}
+body .pe-mobile-resource-cover,body .pe-directory-cover,body .pe-header-cover img{aspect-ratio:14/19!important;height:auto!important}
+body .reader-resource>img[data-resource-cover]{flex:none;width:49px!important;height:auto!important}
+body.home-v3 .v3-recommendation-image{width:400px;height:600px;aspect-ratio:2/3!important}
+body .portal-reader.is-standalone .portal-prose>img[data-resource-cover=article]{width:min(100%,320px);height:auto!important;max-height:none!important}
+@media(min-width:761px) and (max-width:1200px){body.home-v3 .v3-recommendation-image{width:calc(440px * 2 / 3);height:440px}}
+@media(max-width:760px){
+ body .books-home-center .oc-book-stage{width:100%!important;max-width:200px!important}
+ body.home-v3 .v3-recommendation-image{width:100%;height:auto;aspect-ratio:2/3!important}
+}
+body .feature-cover[data-cover-frame-kind=book] .hinged-cover,body .feature-cover[data-cover-frame-kind=article] .hinged-cover{aspect-ratio:2/3!important}
+body .wm-small-book{height:auto;aspect-ratio:2/3}

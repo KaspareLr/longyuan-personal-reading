@@ -1,0 +1,34 @@
+{
+  "book": {
+    "title": "家的使用说明",
+    "author": "林序",
+    "fictional": true,
+    "image": "home-book.png",
+    "ratio": "2:3"
+  },
+  "podcast": {
+    "title": "住进日常",
+    "fictional": true,
+    "image": "home-podcast.png",
+    "ratio": "1:1"
+  },
+  "magazine": {
+    "title": "安邸AD",
+    "issue": "2025年第3期",
+    "source": "https://www.qikan.com.cn/magdetails/DE5F3399-07FF-4076-BD07-36CE8223E48A/2025/3.html",
+    "imageSource": "https://img.resource.qikan.cn/qkimages/adad/adad202503-z.jpg",
+    "image": "adad202503-z.jpg",
+    "ratio": "14:19"
+  },
+  "magazineArticle": {
+    "title": "极简回归",
+    "source": "https://www.qikan.com.cn/article/adad20250316.html",
+    "galleryImage": "https://img.resource.qikan.cn/qkimages/adad/adad202503/adad20250316-1-l.jpg",
+    "image": "adad-article-minimal.jpg"
+  },
+  "aiArticle": {
+    "image": "home-banner.png",
+    "ratio": "2:3",
+    "generated": true
+  }
+}
