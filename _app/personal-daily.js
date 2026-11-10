@@ -4,11 +4,11 @@ window.personalDailyEditions=function(stories,state){
  let editions=[];try{editions=JSON.parse(localStorage.getItem(key))||[]}catch{}
  const signature=JSON.stringify([state.profile?.categories,state.profile?.topics,state.profile?.topicsOther,state.domains,state.ops]);
  let changed=false;const current=editions.find(x=>x.date===date);
- if(!current||current.signature!==signature){editions=editions.filter(x=>x.date!==date);editions.push({date,signature,time:state.ops.deliveryTime||'07:30',stories});changed=true}
+ if(!current||current.signature!==signature){editions=editions.filter(x=>x.date!==date);editions.push({date,signature,time:state.ops.deliveryTime||'07:30',formats:[...(state.ops.formats||['文章','播客','图书','期刊'])],stories});changed=true}
  if(stories.length&&!editions.some(x=>x.date===yesterday)){
   // Reuse resources with working covers, players and detail routes; vary the selection and order.
   const split=Math.ceil(stories.length/2),previous=[...stories.slice(split),...stories.slice(0,split)].slice(0,4);
-  editions.push({date:yesterday,signature,time:state.ops.deliveryTime||'07:30',stories:previous,demo:true});changed=true;
+  editions.push({date:yesterday,signature,time:state.ops.deliveryTime||'07:30',stories:previous,formats:[...(state.ops.formats||['文章','播客','图书','期刊'])],demo:true});changed=true;
  }
  editions.sort((a,b)=>b.date.localeCompare(a.date));editions=editions.slice(0,30);
  if(changed)localStorage.setItem(key,JSON.stringify(editions));
