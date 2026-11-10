@@ -29,3 +29,5 @@
 }
 
 .personal-feed-page .intro[hidden]{display:none!important}
+
+@media(max-width:760px){.feed-with-feature-limit>.feed-last-extra{display:none!important}}
