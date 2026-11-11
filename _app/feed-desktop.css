@@ -189,3 +189,9 @@
  .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio{padding:4px;gap:4px}
  .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{padding-top:5px}
 }
+
+/* Equal-height article cards use spare row space for their existing full body. */
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto minmax(168px,1fr) auto}
+ .personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>[data-v3-field=articleBody]{contain:size;min-height:0;height:100%;white-space:pre-line;align-self:stretch}
+}
