@@ -195,3 +195,12 @@
  .personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto minmax(168px,1fr) auto}
  .personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>[data-v3-field=articleBody]{contain:size;min-height:0;height:100%;white-space:pre-line;align-self:stretch}
 }
+
+/* A half-width podcast follows its content-card partner rather than setting row height. */
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .feed-podcast-adapts{contain:size;min-height:0}
+ .personal-feed-page #personal-feed .feed-podcast-adapts .feed-podcast-card{min-height:0;height:100%}
+ .personal-feed-page #personal-feed .feed-podcast-adapts .feed-podcast-heading{display:grid;grid-template-rows:minmax(0,1fr) auto;flex:1;min-height:0}
+ .personal-feed-page #personal-feed .feed-podcast-adapts .v3-podcast-square{width:auto;height:100%;min-height:0;max-width:100%;aspect-ratio:1;justify-self:start}
+ .personal-feed-page #personal-feed .feed-podcast-adapts .v3-podcast-square>img{position:absolute;inset:0}
+}
