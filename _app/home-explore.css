@@ -1,0 +1,101 @@
+/* Eight isolated mobile editorial studies. No shared stylesheet is modified. */
+@media(max-width:760px){
+ html[data-explore] body.personal-feed-page #personal-feed .v3-recommendation{position:relative;display:flex;flex-direction:column;align-items:stretch;gap:22px;padding:24px 20px;height:auto;min-height:0;overflow:hidden;border:1px solid #e4e7ed;border-radius:24px;box-shadow:0 8px 30px #22263208;background:#fff}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-recommendation-copy{display:flex;flex-direction:column;gap:16px;padding:0;width:100%;order:0}
+ html[data-explore] body.personal-feed-page #personal-feed .editor-feature-copy{display:flex;flex-direction:column;gap:12px}
+ html[data-explore] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:25px;line-height:36px;font-weight:650;letter-spacing:-.5px;white-space:normal;text-wrap:pretty;margin:0}
+ html[data-explore] body.personal-feed-page #personal-feed .editor-feature-copy>p{font-size:15px;line-height:27px;margin:0;color:#606266;white-space:pre-line;--v3-lines:5}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource{order:1;display:flex;flex-direction:column;gap:14px;width:100%;height:auto;padding:16px;border-radius:16px;background:#f5f7fa}
+ html[data-explore] .explore-resource-row,html[data-explore] .editor-resource-top{display:flex;align-items:center;gap:16px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource-top{flex:1;min-width:0;display:flex;flex-direction:column;gap:12px;padding:0;border:0}
+ html[data-explore] body.personal-feed-page #personal-feed .editor-resource-copy{flex:1;min-width:0;gap:12px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-cover-link{flex:none;order:0;width:80px;height:120px;align-self:center}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-cover-link.magazine{width:88.42px;height:120px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource h3{font-size:17px;line-height:25px;font-weight:600}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource-top>div>p,html[data-explore] .editor-resource-identity>p{font-size:11px;line-height:17px;margin-top:4px;color:#909399}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource blockquote{padding-left:10px;border-left-width:2px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource blockquote p{font-size:12px;line-height:20px;color:#606266}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-resource .v3-reason{padding:14px;background:#fff;border-radius:10px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-reason h3{font-size:13px;line-height:20px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-reason p{font-size:12px;line-height:20px;--v3-lines:4}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-recommendation-footer{order:5;display:flex;gap:12px;justify-content:space-between;margin-top:0;padding-top:2px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-recommendation-image{order:-1;align-self:center;width:120px;height:180px;aspect-ratio:2/3;border-radius:12px;overflow:hidden}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-article-reason{margin:0;padding-left:12px;border-left-width:2px}
+ html[data-explore] body.personal-feed-page #personal-feed .v3-article-reason p{font-size:12px;line-height:20px}
+ html[data-explore] body.personal-feed-page #personal-feed .feed-podcast-card{border:1px solid #ffffff50;border-radius:24px;padding:20px;gap:20px;min-height:0}
+ html[data-explore] body.personal-feed-page #personal-feed .feed-podcast-heading{display:flex;align-items:center;gap:16px}
+ html[data-explore] body.personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-copy h3{font-size:20px;line-height:30px}
+ /* 01 · A quiet, readable book page. */
+ html[data-explore="1"] body.personal-feed-page #personal-feed .v3-recommendation{border:0;border-top:2px solid #131921;border-radius:2px;padding:28px 20px;background:#fffefb;box-shadow:0 8px 24px #22263208}
+ html[data-explore="1"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-family:'Songti SC','Noto Serif CJK SC',serif;font-size:28px;line-height:40px;font-weight:700}
+ html[data-explore="1"] body.personal-feed-page #personal-feed .v3-resource{background:transparent;padding:18px 0;border-top:1px solid #e4e7ed;border-bottom:1px solid #e4e7ed;border-radius:0}
+ html[data-explore="1"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{background:transparent;padding:0}
+ html[data-explore="1"] body.personal-feed-page #personal-feed .feed-podcast-card{border-radius:4px;padding:24px 20px}
+ /* 02 · Cover-led display, followed by the editorial invitation. */
+ html[data-explore="2"] body.personal-feed-page #personal-feed .v3-resource{order:-1;padding:24px 18px 18px;border-radius:20px;background:#edf1f5}
+ html[data-explore="2"] .explore-resource-row,html[data-explore="2"] .editor-resource-top{flex-direction:column;gap:22px}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .v3-cover-link{width:140px;height:210px}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .v3-cover-link.magazine{width:154.74px;height:210px}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .v3-resource-top,html[data-explore="2"] body.personal-feed-page #personal-feed .editor-resource-copy{width:100%}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:26px;line-height:36px}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .feed-podcast-heading{flex-direction:column;align-items:stretch}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-square{align-self:center;width:200px;height:200px}
+ html[data-explore="2"] body.personal-feed-page #personal-feed .feed-podcast-heading .v3-podcast-square>img{width:200px;height:200px}
+ /* 03 · A personal reading letter with soft paper and marginal notes. */
+ html[data-explore="3"] body.personal-feed-page #personal-feed .v3-recommendation{background:#faf8f3;border-color:#e7e0d4;border-radius:12px;gap:26px;padding:30px 24px}
+ html[data-explore="3"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-family:'Songti SC',serif;font-size:27px;line-height:39px;font-weight:600}
+ html[data-explore="3"] body.personal-feed-page #personal-feed .editor-feature-copy>p{font-size:15px;line-height:30px;color:#625c54}
+ html[data-explore="3"] body.personal-feed-page #personal-feed .v3-resource{background:#fffdf8;padding:16px;border:1px solid #e7e0d4;border-radius:6px}
+ html[data-explore="3"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{border-top:1px dashed #d6cbb9;background:none;padding:14px 0 0;border-radius:0}
+ html[data-explore="3"] body.personal-feed-page #personal-feed .feed-podcast-card{border-radius:12px}
+ /* 04 · A bookmark rail keeps every item anchored to its source. */
+ html[data-explore="4"] body.personal-feed-page #personal-feed .v3-recommendation{border:0;border-left:5px solid #aebbc7;border-radius:8px 24px 24px 8px;padding:24px 20px;box-shadow:0 4px 20px #2226320c}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .v3-resource{order:-1;background:transparent;padding:0 0 20px;border-bottom:1px solid #e4e7ed;border-radius:0}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{background:#f5f7fa;padding:12px;border-radius:8px}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .v3-cover-link{width:64px;height:96px}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .v3-cover-link.magazine{width:70.74px;height:96px}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:24px;line-height:35px}
+ html[data-explore="4"] body.personal-feed-page #personal-feed .feed-podcast-card{border-left:5px solid #aebbc7;border-radius:8px 24px 24px 8px}
+ /* 05 · A cinematic opening with a generous cover stage. */
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-recommendation{padding:0;border:0;border-radius:28px;gap:24px;box-shadow:0 14px 40px #22263212}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-recommendation-copy{padding:0 24px}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-resource{order:-1;padding:28px 24px;background:linear-gradient(145deg,#dce4eb,#f0e9e3);border-radius:0;gap:20px}
+ html[data-explore="5"] .explore-resource-row,html[data-explore="5"] .editor-resource-top{flex-direction:column;align-items:stretch;gap:24px}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-cover-link{width:160px;height:240px;transform:rotate(-4deg);margin:0 auto 8px;box-shadow:16px 20px 20px #13192122}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-cover-link.magazine{width:176.84px;height:240px}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{background:#ffffff80}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-recommendation-footer{padding:0 24px 24px}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .v3-recommendation-image{margin:24px 24px 0;width:160px;height:240px}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .feed-podcast-heading{flex-direction:column;align-items:stretch}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-square{width:100%;height:auto;aspect-ratio:1}
+ html[data-explore="5"] body.personal-feed-page #personal-feed .feed-podcast-heading .v3-podcast-square>img{width:100%;height:100%}
+ /* 06 · A two-part reading folio: editorial text, then source and annotations. */
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-recommendation{padding:0;gap:0;border-radius:16px;border:1px solid #dce0e5;box-shadow:4px 4px 0 #e8ecf0}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-recommendation-copy{padding:28px 24px;background:#fff}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-family:'Songti SC',serif;font-size:26px;line-height:38px}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .editor-feature-copy>p{--v3-lines:7}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-resource{background:#f2f4f6;padding:24px;border-radius:0;border-top:1px solid #dce0e5}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{padding:0;background:none}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-recommendation-footer{padding:20px 24px;background:#f2f4f6}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .v3-recommendation-image{margin:24px 0 0}
+ html[data-explore="6"] body.personal-feed-page #personal-feed .feed-podcast-card{border-radius:16px;box-shadow:4px 4px 0 #e8ecf0}
+ /* 07 · Aurora materials, with clear white reading surfaces. */
+ html[data-explore="7"] body.personal-feed-page #personal-feed .v3-recommendation{background:linear-gradient(140deg,#eef0ff,#f9f3f9 58%,#eaf6f6);border:1px solid #fff;box-shadow:0 10px 32px #65739515;border-radius:30px;padding:24px;gap:24px}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:27px;line-height:38px;font-weight:650}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .v3-resource{padding:18px;background:#ffffffb8;border:1px solid #ffffff;border-radius:20px}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{background:#ffffffa6}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .v3-cover-link{width:96px;height:144px}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .v3-cover-link.magazine{width:106.1px;height:144px}
+ html[data-explore="7"] body.personal-feed-page #personal-feed .feed-podcast-card{border-radius:30px;box-shadow:0 10px 32px #65739520;border:2px solid #dfe5ff}
+ /* 08 · A numbered journal index, defined by type and rules. */
+ html[data-explore="8"] body.personal-feed-page #personal-feed .v3-recommendation{background:transparent;border:0;border-top:1px solid #131921;border-radius:0;padding:24px 4px;box-shadow:none;gap:24px}
+ html[data-explore="8"] body.personal-feed-page #personal-feed .v3-recommendation::before{content:attr(data-explore-index);display:block;font-family:Figtree,sans-serif;font-size:52px;font-weight:400;line-height:1;color:#b3bac1;letter-spacing:-3px}
+ html[data-explore="8"] body.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:29px;line-height:40px;font-weight:700;letter-spacing:-1px}
+ html[data-explore="8"] body.personal-feed-page #personal-feed .v3-resource{background:none;padding:20px 0;border-top:1px solid #e4e7ed;border-bottom:1px solid #e4e7ed;border-radius:0}
+ html[data-explore="8"] body.personal-feed-page #personal-feed .v3-resource .v3-reason{padding:0;background:none}
+ html[data-explore="8"] body.personal-feed-page #personal-feed .feed-podcast-card{border-radius:0;padding:24px 16px}
+}
+@media(max-width:760px){
+ html[data-explore="5"] body.home-v3.personal-feed-page #personal-feed .feed-unified-card .v3-recommendation-footer{padding:0 24px 24px}
+ html[data-explore="6"] body.home-v3.personal-feed-page #personal-feed .feed-unified-card .v3-recommendation-footer{padding:20px 24px}
+}
