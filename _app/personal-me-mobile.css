@@ -6,7 +6,7 @@
 .me-summary-heading-copy{display:flex;flex:1;flex-direction:column;gap:2px;min-width:0}
 .personal-me-page .me-understanding #preferences-title{margin:0;padding:0;color:#131921;font-size:16px;font-weight:600;line-height:28px;overflow-wrap:anywhere}
 .me-summary-updated{margin:0;color:#909399;font-size:12px;line-height:16px}
-.me-summary-body{position:relative;box-sizing:border-box;max-height:224px;margin:0;padding-top:16px;overflow:hidden;mask-image:none;-webkit-mask-image:none;cursor:pointer}
+.me-summary-body{position:relative;box-sizing:border-box;max-height:224px;margin:0;padding-top:16px;overflow:hidden;mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);cursor:pointer}
 .me-summary-body.is-expanded{max-height:none;mask-image:none;-webkit-mask-image:none;cursor:auto}
 .personal-me-page .me-summary-body p{margin:0 0 16px;color:#606266;font-size:14px;font-weight:400;line-height:26px;overflow-wrap:anywhere}.personal-me-page .me-summary-body p:last-child{margin-bottom:0}
 .me-summary-more{display:block;box-sizing:border-box;height:48px;min-height:44px;margin:0;padding:14px 0 10px;border:0;background:none;color:#131921;font:500 14px/24px Figtree,'PingFang SC',sans-serif;text-align:left;cursor:pointer}
