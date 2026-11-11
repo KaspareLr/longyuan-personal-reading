@@ -41,3 +41,10 @@
 .avatar-selection-step .identity-avatar[aria-pressed=true]::after{border-color:#131921}
 
 .initialize-conversation.avatar-selection-step #question.system-copy-title{font-size:40px;line-height:48px;white-space:normal}
+/* Avatar meanings are chosen self-expression, rather than inferred personality scores. */
+.initialize-conversation.avatar-selection-step .avatar-meaning{display:flex;flex-direction:column;align-items:center;gap:8px;box-sizing:border-box;width:100%;max-width:360px;min-height:142px;margin:0;padding:0;text-align:center}
+.initialize-conversation.avatar-selection-step .avatar-meaning h2{margin:0;padding:0;color:#131921;font-size:18px;font-weight:600;line-height:28px}
+.avatar-meaning-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.avatar-meaning-tags>span{display:block;padding:4px 10px;border-radius:100px;background:#f5f7fa;color:#606266;font-size:12px;line-height:20px}
+.initialize-conversation.avatar-selection-step .avatar-meaning .avatar-meaning-description{width:100%;margin:0;padding:0;color:#606266;font-size:14px;line-height:22px;text-wrap:pretty}
+.initialize-conversation.avatar-selection-step .avatar-meaning .avatar-meaning-note{margin:0;padding:0;color:#909399;font-size:12px;line-height:20px}
