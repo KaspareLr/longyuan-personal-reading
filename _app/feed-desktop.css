@@ -160,3 +160,10 @@
 @media(min-width:1400px){
  body.home-v3.personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation:nth-child(2) .editor-feature-copy>h2{font-size:40px;line-height:48px}
 }
+/* Paired desktop cards share the row height and align their action footers. */
+@media(min-width:761px){
+ #personal-feed.feed-desktop-archive .daily-batch{align-items:stretch}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-footer{margin-top:auto}
+ .personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto 1fr auto}
+ .personal-feed-page #personal-feed .personal-podcast-entry>.feed-podcast-card{flex:1}
+}
