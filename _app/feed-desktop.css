@@ -208,3 +208,7 @@
 @media(min-width:761px){
  .personal-feed-page #personal-feed .v3-expand-recommendation{display:none!important}
 }
+@media(min-width:761px){
+ .personal-feed-page #profile-tags{display:none}
+ #personal-feed.feed-desktop-archive .daily-batch:first-child>.daily-edition-heading{display:none}
+}
