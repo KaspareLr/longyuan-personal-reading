@@ -38,3 +38,6 @@
 
 .me-summary-more[hidden]{display:none!important}
 .me-understanding #reset-preferences{box-shadow:none;filter:drop-shadow(0 2px 1.5px #0000001a)}
+@media(min-width:761px){
+ html body.home-v3.personal-me-page main#home.personal-main{width:100%;max-width:760px;margin-inline:auto}
+}
