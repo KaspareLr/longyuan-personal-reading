@@ -167,3 +167,25 @@
  .personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto 1fr auto}
  .personal-feed-page #personal-feed .personal-podcast-entry>.feed-podcast-card{flex:1}
 }
+/* Figma 574:6763: large landscape podcast with artwork and centered playback group. */
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-card{display:grid;grid-template-columns:440px minmax(0,1fr) 48px;grid-template-rows:1fr 1fr;column-gap:20px;row-gap:40px;height:600px;padding:80px;border-radius:40px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-square{grid-column:1;grid-row:1/-1;width:440px;height:440px;border-radius:40px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-copy{grid-column:2/-1;grid-row:1;align-self:end;gap:8px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-copy h3{font-size:40px;line-height:48px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-copy p{font-size:16px;line-height:28px;max-height:none}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio{grid-column:2;grid-row:2;align-self:start;width:100%;padding:10px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio>button{width:48px;height:48px;min-width:48px;padding:11px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{grid-column:3;grid-row:2;align-self:start;width:48px;padding-top:11px}
+}
+@media(min-width:761px) and (max-width:1399px){
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-card{grid-template-columns:36% minmax(0,1fr) 48px;height:auto;min-height:420px;padding:40px;row-gap:32px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-square{width:100%;height:auto;aspect-ratio:1}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-copy h3{font-size:32px;line-height:40px}
+}
+@media(min-width:761px) and (max-width:1050px){
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-card{grid-template-columns:30% minmax(0,1fr) 48px;min-height:360px;padding:24px;row-gap:24px;column-gap:16px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-podcast-copy h3{font-size:28px;line-height:38px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio{padding:4px;gap:4px}
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{padding-top:5px}
+}
