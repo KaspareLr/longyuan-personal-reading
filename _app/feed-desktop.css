@@ -204,3 +204,7 @@
  .personal-feed-page #personal-feed .feed-podcast-adapts .v3-podcast-square{width:auto;height:100%;min-height:0;max-width:100%;aspect-ratio:1;justify-self:start}
  .personal-feed-page #personal-feed .feed-podcast-adapts .v3-podcast-square>img{position:absolute;inset:0}
 }
+/* Desktop feed uses the reading entry; omit the full recommendation action. */
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .v3-expand-recommendation{display:none!important}
+}
