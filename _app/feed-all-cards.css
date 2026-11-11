@@ -42,3 +42,5 @@
  .feed-podcast-read{display:flex;align-items:center;justify-content:center;flex:none;width:48px;height:48px;padding:12px;border:0;border-radius:100px;background:white}
 }
 @media(max-width:360px){.personal-feed-page #personal-feed .feed-podcast-card .feed-podcast-progress>span{width:32px;font-size:10px}.personal-feed-page #personal-feed .feed-podcast-card .v3-audio{gap:4px}}
+
+.feed-share-icon{display:none}
