@@ -93,3 +93,22 @@
 @media(max-width:760px){
  body.home-v3.personal-feed-page #personal-feed .editor-feature-copy>p{max-height:192px;-webkit-line-clamp:8}
 }
+/* Reading rhythm for the larger mobile type scale: 8/12 within groups, 24 between groups. */
+@media(max-width:760px){
+ .personal-feed-page #home .intro{gap:8px}
+ .personal-feed-page #home .intro-copy{margin-top:4px}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation{gap:24px}
+ body.home-v3.personal-feed-page #personal-feed .editor-feature-copy,
+ .personal-feed-page #personal-feed .feed-unified-card .editor-feature-copy{gap:12px}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-copy{gap:12px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=resourceMeta]{margin-top:6px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=guide]{margin-top:6px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=why]{margin-top:8px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=articleWhy]{margin-top:6px}
+ .personal-feed-page #personal-feed .feed-podcast-card{gap:16px}
+ .personal-feed-page #personal-feed .feed-podcast-card .v3-podcast-copy{gap:8px}
+ .personal-feed-page #personal-feed .feed-podcast-reason p{padding-top:6px}
+ .feed-editorial-transition h2{margin-top:8px;margin-bottom:16px}
+ .feed-editorial-ending{gap:16px}
+ .feed-editorial-ending h2{margin-bottom:8px}
+}
