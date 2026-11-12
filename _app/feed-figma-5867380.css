@@ -1,0 +1,81 @@
+/* Figma 586:7380. Scoped to the original homepage; shared V3 components stay intact. */
+.personal-feed-page .feed-story-meta{display:flex;align-items:center;gap:10px;width:100%;min-width:0;color:#606266;font-size:12px;line-height:16px}
+.personal-feed-page .feed-story-meta strong{font-size:14px;line-height:20px;font-weight:600;color:#131921}
+.personal-feed-page .feed-story-type{margin-left:auto;color:#909399;flex:none}
+.personal-feed-page .feed-podcast-card .feed-story-meta,.personal-feed-page .feed-podcast-card .feed-story-type{color:#e4e7ed}
+.personal-feed-page .feed-podcast-card .feed-story-meta strong{color:#fff}
+.personal-feed-page .feed-podcast-reason{margin:0;padding:10px 0;color:#e4e7ed;border:0}
+.personal-feed-page .feed-podcast-reason strong,.personal-feed-page .feed-podcast-reason p{display:block;border-left:3px solid white;padding-left:8px;margin:0;font-size:12px;line-height:16px}
+.personal-feed-page .feed-podcast-reason strong{font-size:14px;line-height:20px;color:#fff}
+.feed-editorial-transition{display:none}
+.feed-editorial-ending{grid-column:1/-1;padding:40px 20px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;color:#606266}
+.feed-editorial-ending:before{content:'';display:block;width:24px;height:2px;background:#131921;margin-bottom:10px}
+.feed-editorial-ending>span{font-size:12px;line-height:16px;color:#909399}
+.feed-editorial-ending h2{font-size:26px;line-height:36px;font-weight:600;color:#131921;margin:0 0 10px}
+.feed-editorial-ending p{font-size:16px;line-height:28px;margin:0}
+.feed-editorial-end{grid-column:1/-1;display:flex;align-items:center;gap:10px;color:#909399;font-size:12px;line-height:16px;padding:10px 0}
+.feed-editorial-end:before,.feed-editorial-end:after{content:'';height:1px;flex:1;background:#e4e7ed}
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .v3-recommendation-article>.feed-story-meta{grid-column:1/-1;grid-row:1}
+ .personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>h2{grid-row:2}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-image{grid-row:2/span 2}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-article-reason{grid-row:3}
+ .personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>p{grid-row:4}
+ .personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-footer{grid-row:5}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto auto 1fr auto}
+ .personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation.feed-editor-feature:not(.v3-recommendation-article):nth-child(2)>.feed-story-meta{grid-column:1/-1;grid-row:1}
+ .personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation.feed-editor-feature:not(.v3-recommendation-article):nth-child(2)>.v3-resource{grid-row:2/span 2}
+}
+@media(max-width:760px){
+ body.home-v3.personal-feed-page .intro h1{font-size:44px;line-height:54px;font-weight:600}
+ body.home-v3.personal-feed-page .intro-copy{font-size:14px;line-height:20px}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation{padding:24px 16px 16px;gap:20px;border-radius:16px;box-shadow:0 2px 6px #0000001a}
+ body.home-v3.personal-feed-page #personal-feed .editor-feature-copy>h2{font-size:26px;line-height:36px;font-weight:600}
+ body.home-v3.personal-feed-page #personal-feed .editor-feature-copy>p{font-size:14px;line-height:24px;max-height:96px;-webkit-line-clamp:4}
+ body.home-v3.personal-feed-page #personal-feed .v3-resource{padding:10px;gap:10px;border-radius:18px}
+ body.home-v3.personal-feed-page #personal-feed .v3-resource h3[data-v3-field=resourceTitle]{font-size:18px;line-height:26px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=resourceMeta]{font-size:11px;line-height:16px;margin-top:4px}
+ body.home-v3.personal-feed-page #personal-feed .v3-resource blockquote{border-left:4px solid #131921;padding-left:8px}
+ body.home-v3.personal-feed-page #personal-feed .v3-resource blockquote strong{font-size:14px;line-height:20px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=guide]{font-size:13px;line-height:20px;max-height:40px;-webkit-line-clamp:2;color:#686e62}
+ body.home-v3.personal-feed-page #personal-feed .v3-reason{padding:12px 14px;border-radius:12px}
+ body.home-v3.personal-feed-page #personal-feed .v3-reason h3{font-size:14px;line-height:20px;font-weight:600}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=why]{font-size:13px;line-height:20px;margin-top:4px;max-height:40px;-webkit-line-clamp:2}
+ body.home-v3.personal-feed-page #personal-feed .v3-cover-link{border-radius:8px}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article{grid-template-rows:auto auto auto auto auto}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article>.feed-story-meta{grid-column:1/-1;grid-row:1}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>h2{grid-row:2;font-size:18px;line-height:26px}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-image{grid-row:2/span 2;border-radius:4px}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article .v3-article-reason{grid-row:3}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article .editor-feature-copy>p{grid-row:4}
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation-article .v3-recommendation-footer{grid-row:5}
+ body.home-v3.personal-feed-page #personal-feed .v3-article-reason strong{font-size:14px;line-height:20px}
+ body.home-v3.personal-feed-page #personal-feed [data-v3-field=articleWhy]{font-size:12px;line-height:16px;max-height:32px;-webkit-line-clamp:2;color:#686e62}
+ .personal-feed-page #personal-feed .feed-podcast-footer .editor-share-button{background:#fff;color:#131921;padding:13px 20px}
+ .personal-feed-page #personal-feed .feed-podcast-card:before{background:rgba(0,0,0,.4)}
+ .feed-editorial-transition{display:flex;flex-direction:column;align-items:center;gap:0;text-align:center;padding:40px;color:#606266}
+ .feed-editorial-transition:before,.feed-editorial-transition:after{content:'';display:block;width:24px;height:2px;background:#131921}
+ .feed-editorial-transition:before{margin-bottom:20px}.feed-editorial-transition:after{margin-top:20px}
+ .feed-editorial-transition>span{font-size:12px;line-height:16px;color:#909399}
+ .feed-editorial-transition h2{font-size:26px;line-height:36px;font-weight:600;color:#131921;margin:4px 0 10px}
+ .feed-editorial-transition p{font-size:14px;line-height:20px;margin:0}
+}
+@media(max-width:760px){
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation:not(.v3-recommendation-article)>.v3-resource{display:flex;flex-direction:column;align-items:stretch}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-top{display:flex;align-items:center;gap:10px;width:100%}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-copy{display:flex;flex-direction:column;gap:10px;flex:1;min-width:0}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-identity{min-width:0}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-top .v3-cover-link{flex:none;width:88px;height:132px;align-self:center}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-top .v3-cover-link.magazine{height:119.422px}
+ body.home-v3.personal-feed-page #personal-feed .editor-resource-copy blockquote{align-self:stretch}
+}
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation.feed-editor-feature:not(.v3-recommendation-article):nth-child(2)>.v3-recommendation-copy{grid-column:1;grid-row:2/span 2;min-width:0}
+}
+@media(min-width:761px){
+ body.home-v3.personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation.feed-editor-feature:not(.v3-recommendation-article):nth-child(2){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);grid-template-rows:auto auto;align-items:center}
+ .personal-feed-page #personal-feed .daily-batch:first-child>.v3-recommendation.feed-editor-feature:not(.v3-recommendation-article):nth-child(2)>.v3-resource{width:100%}
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-story-meta{grid-column:2/-1;grid-row:1;align-self:start}
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-reason{grid-column:2/-1;grid-row:2}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio,.personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{grid-row:3}
+}
