@@ -88,3 +88,8 @@
  body.home-v3.personal-feed-page #personal-feed .feed-semantic-title{display:block;overflow:visible;max-height:none;-webkit-line-clamp:unset;white-space:normal;overflow-wrap:normal;word-break:normal;text-wrap:pretty}
  .personal-feed-page .feed-title-phrase{display:inline-block;max-width:100%;white-space:nowrap;vertical-align:top}
 }
+
+/* Recommendation preview: allow a fuller introduction before the resource panel. */
+@media(max-width:760px){
+ body.home-v3.personal-feed-page #personal-feed .editor-feature-copy>p{max-height:192px;-webkit-line-clamp:8}
+}
