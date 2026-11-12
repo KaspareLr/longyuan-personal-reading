@@ -112,3 +112,13 @@
  .feed-editorial-ending{gap:16px}
  .feed-editorial-ending h2{margin-bottom:8px}
 }
+/* Podcast shares the recommendation introduction field with other resource types. */
+.personal-feed-page #personal-feed .feed-podcast-intro{margin:0;font-size:14px;line-height:24px;color:#e4e7ed;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:8;max-height:192px;overflow:hidden}
+@media(min-width:761px){
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-intro{grid-column:2/-1;grid-row:2}
+ .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-reason{grid-row:3}
+ .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio,.personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{grid-row:4}
+}
+@media(max-width:760px){
+ body.home-v3.personal-feed-page #personal-feed .feed-unified-card.v3-recommendation-article .editor-feature-copy>p{max-height:192px;-webkit-line-clamp:8}
+}
