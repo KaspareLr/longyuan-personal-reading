@@ -79,3 +79,12 @@
  .personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-reason{grid-column:2/-1;grid-row:2}
  .personal-feed-page #personal-feed .feed-podcast-wide .v3-audio,.personal-feed-page #personal-feed .feed-podcast-wide .feed-podcast-footer{grid-row:3}
 }
+/* Figma 586:7390 revision: card inset, resource badge, semantic title wrapping. */
+.personal-feed-page .feed-story-type{background:#f5f7fa;padding:2px 6px;border-radius:5px;font-weight:600;line-height:16px}
+.personal-feed-page .feed-podcast-card .feed-story-type{color:#909399}
+@media(max-width:760px){
+ body.home-v3.personal-feed-page #personal-feed .v3-recommendation,
+ .personal-feed-page #personal-feed .feed-podcast-card{padding:20px}
+ body.home-v3.personal-feed-page #personal-feed .feed-semantic-title{display:block;overflow:visible;max-height:none;-webkit-line-clamp:unset;white-space:normal;overflow-wrap:normal;word-break:normal;text-wrap:pretty}
+ .personal-feed-page .feed-title-phrase{display:inline-block;max-width:100%;white-space:nowrap;vertical-align:top}
+}

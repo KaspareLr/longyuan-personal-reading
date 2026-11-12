@@ -1,6 +1,19 @@
 /* Original feed only. Figma 586:7380; preserve shared data and existing detail routes. */
 (()=>{
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const titlePhrases={
+  '今年双十一，有些订单不需要等快递':['今年双十一，','有些订单','不需要等快递'],
+  '我们为什么愿意为一种“可能”买单？':['我们为什么','愿意为一种','“可能”买单？'],
+  '买下它，和随时能用它，是两回事':['买下它，','和随时能用它，','是两回事'],
+  '订了那么多工具，工作真的变轻了吗？':['订了那么多工具，','工作真的','变轻了吗？'],
+  '额度囤下来了，事情开始做了吗？':['额度囤下来了，','事情','开始做了吗？'],
+  '订阅会到期，哪些能力能留下来？':['订阅会到期，','哪些能力','能留下来？']
+ };
+ function semanticTitle(heading){
+  if(!heading)return;const text=heading.title||heading.textContent;let phrases=titlePhrases[text];
+  if(!phrases){phrases=[];const words=typeof Intl.Segmenter==='function'?[...new Intl.Segmenter('zh-CN',{granularity:'word'}).segment(text)].map(x=>x.segment):[...text];for(const word of words){if(phrases.length&&/^[，。！？、；：”’）了的吗呢]+$/.test(word))phrases[phrases.length-1]+=word;else phrases.push(word)}}
+  heading.classList.add('feed-semantic-title');heading.replaceChildren(...phrases.map(text=>{const span=document.createElement('span');span.className='feed-title-phrase';span.textContent=text;return span}));
+ }
  window.decorateFigmaFeed=function(batch,edition){
   const nodes=[...batch.children].filter(n=>n.matches('.v3-recommendation,.personal-podcast-entry')&&!n.classList.contains('feed-last-extra'));
   const stories=edition.stories,issue=window.readingIssue;
@@ -14,6 +27,7 @@
    if(story?.audio){const why=document.createElement('blockquote');why.className='feed-podcast-reason';why.innerHTML='<strong>为什么选它？</strong><p>'+esc(story.recommendationReason)+'</p>';card.querySelector('.v3-audio').before(why)}
    // Display clipping preserves full fields in the existing full-text dialog and details.
    node.querySelectorAll('[data-v3-field]').forEach(f=>{if(f.title)f.textContent=f.title});
+   semanticTitle(node.querySelector('[data-v3-field=recommendationTitle],.v3-podcast-copy h3'));
   });
   if(!edition.themeId||edition.themeId!==issue?.id)return;
   const transitions={
