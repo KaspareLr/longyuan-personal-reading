@@ -19,7 +19,7 @@ window.readingIssue={
       "type": "article",
       "title": "今年双十一，有些订单不需要等快递",
       "originalTitle": "本期事件阅读",
-      "byline": "本刊编辑室 · 事件阅读",
+      "byline": "阅读编辑室 · 事件阅读",
       "source": "https://www.cnstock.com/commonDetail/806406",
       "sourceTitle": "上海证券报·中国证券网：天猫双11首日及Token品类报道",
       "intro": "购物车里多了AI会员和使用额度。没有包裹需要签收，我们究竟买到了什么？",
@@ -41,8 +41,8 @@ window.readingIssue={
       ],
       "visual": "原创概念插图：打开的购物袋里不是实物，而是文档、时间与工具的抽象形态；不冒充平台海报或新闻现场。",
       "facts": [],
-      "bodyLabel": "本期原创阅读",
-      "cover": "https://kasparelr.github.io/agentui-shared-images/objects/50/50b6043d933a7f646bf8f1bcf4a4f79c95a3a0101dea1664d322011b4793c151.png"
+      "bodyLabel": "原创阅读",
+      "cover": "https://kasparelr.github.io/agentui-shared-images/objects/16/161efde56b9da6a4d88b73699164026f101cd72f4658ab45af6d595b411db6bf.png"
     },
     {
       "id": "02",
@@ -52,12 +52,12 @@ window.readingIssue={
       "publication": "第一财经",
       "issue": "2026年第10期",
       "coverTitle": "重塑消费存在度",
-      "byline": "《第一财经》2026年第10期 · 本期读刊札记",
+      "byline": "《第一财经》2026年第10期 · 读刊札记",
       "source": "https://www.yicai.com/vip/news/103394820.html",
       "intro": "人们为商品付款，也为便利、信任和期待付款。回到消费选择，看看一个新商品是怎样变得值得购买的。",
       "body": [
         "AI额度为什么能摆进购物车？除了技术是否可用，还有一个更熟悉的商业问题：人们怎样注意到一种商品，为什么愿意试一次，又凭什么继续购买。",
-        "《第一财经》2026年第10期的《碎片化时代的消费向心力》，从媒介与渠道分散的变化观察品牌和消费者的关系。它提供的是理解消费选择的背景，而本期关于AI付费的讨论，是由此展开的编辑延伸。",
+        "《第一财经》2026年第10期的《碎片化时代的消费向心力》，从媒介与渠道分散的变化观察品牌和消费者的关系。它提供的是理解消费选择的背景，而这里关于AI付费的讨论，是由此展开的编辑延伸。",
         "把这组问题带到AI商品上，可以先分清购买理由。你可能因为某位使用者的演示而被吸引，也可能因为一个熟悉的平台而觉得安心，还可能只是希望有人替自己处理一件麻烦事。理由不同，判断商品是否值得的标准也不同。",
         "如果买的是便利，就要看看它是否减少了步骤；如果买的是帮助，就要看看它是否完成了任务；如果买的是学习机会，就要给真正的练习留下时间。促销让第一次尝试更容易，却不会替我们决定它是否适合自己的日常。",
         "带着这种区分再看购物车，购买就不只是“便宜了多少”。还可以补问一句：我期待它改变的，究竟是哪一件具体的事？"
@@ -67,7 +67,7 @@ window.readingIssue={
       "visual": "复用已核对真实封面，完整14:19展示刊名、期次与“重塑消费存在度”；不改绘成AI专题。",
       "localCover": "onboarding/assets/finance/yicai-202610.jpg",
       "facts": [],
-      "bodyLabel": "本期读刊札记",
+      "bodyLabel": "读刊札记",
       "cover": "https://kasparelr.github.io/agentui-shared-images/objects/66/66ed38ed57494500baa5dc614483f6e3a37766afbcbd647aa4cf494bd4319fc4.jpg",
       "resourceCaption": "从消费选择，理解为服务付费。",
       "readingPrompt": "你期待这次购买，改变哪一件具体的事？"
@@ -93,7 +93,7 @@ window.readingIssue={
       "why": "提供所有权与服务接入的长期视角，解释一次购买背后的持续关系。",
       "visual": "使用所选版本出版社真实书封，2:3展示，不自造中文译本书封。",
       "facts": [],
-      "bodyLabel": "本期读书笔记",
+      "bodyLabel": "读书笔记",
       "cover": "https://kasparelr.github.io/agentui-shared-images/objects/1a/1a3b592d5b51ffa39fb76178d6c803a12c1f086e99b9db978a7e2b21692e3b0e.jpg",
       "bookLabel": "从拥有到接入",
       "bookQuestion": "我买下了什么？谁控制接入？停止付费后留下些什么？"
@@ -114,7 +114,7 @@ window.readingIssue={
       "intro": "从商品说明回到使用者。听一段真实的工具实践：开通之后，怎样让散落的工具进入自己的工作？",
       "body": [
         "付费的那一刻，很容易想象自己将拥有怎样的效率。真正困难的部分，常常发生在账号开通之后：资料放在哪里，结果怎样接着修改，一项任务做到哪一步，以及下次能不能重新用起来。",
-        "《提钱退休》这期节目围绕真实AI支出、订阅策略与个人工作台展开。节目介绍把工具堆积、产出散乱和工作流程联系起来，适合放在这期关于“购买能力”的讨论之后，听听能力怎样实际进入工作。",
+        "《提钱退休》这期节目围绕真实AI支出、订阅策略与个人工作台展开。节目介绍把工具堆积、产出散乱和工作流程联系起来，适合放在关于“购买能力”的讨论之后，听听能力怎样实际进入工作。",
         "听的时候，可以关注三个转折：一个工具最初为什么被加入；它在什么地方增加了负担；使用者又怎样把它收进一套能够反复使用的流程。这比照着别人的订阅清单逐项购买更有参考价值。",
         "本期不把某位使用者的配置当作标准答案。工作任务、预算和精力各不相同，同一套安排对一个人顺手，对另一个人可能只是多了一层需要维护的东西。",
         "也不用急着把全部工作都交出去。可以先选一件经常发生的小事，完成一次，从结果回到过程，再决定是否值得继续。使用经验的价值，在于帮我们形成自己的判断。"
@@ -136,7 +136,7 @@ window.readingIssue={
       "sourceBoundary": "依据节目公开简介与时间轴策划听读札记，未声称完整听完或逐字转写；节目早于本次双十一，不改写为购物节特别节目。",
       "visual": "优先使用节目真实封面；原节目入口保留。站内如延用静音交互，不复制或伪造节目音频。",
       "facts": [],
-      "bodyLabel": "本期听读札记",
+      "bodyLabel": "听读札记",
       "cover": "https://kasparelr.github.io/agentui-shared-images/objects/91/912fc9a232120301765a6d49808be3ff7877d709ac67973c525983ca62a4adcb.png",
       "meta": "约55分钟 · 中文对谈",
       "playerSeconds": 3300,
@@ -148,7 +148,7 @@ window.readingIssue={
       "type": "article",
       "title": "额度囤下来了，事情开始做了吗？",
       "originalTitle": "本期生活观察",
-      "byline": "本刊编辑室 · 生活观察",
+      "byline": "阅读编辑室 · 生活观察",
       "source": "https://www.aliyun.com/product/bailian/pricing",
       "intro": "购物车有时装着眼前的任务，有时装着一个更高效的自己。付款之后，怎样让期待落到一件实际的事上？",
       "body": [
@@ -162,8 +162,8 @@ window.readingIssue={
       "sourceBoundary": "原创编辑观察，不虚构采访对象、用户比例、心理诊断或效果数据；并列场景为建议，不冒充真人个案。",
       "visual": "与首篇同系列概念插图：使用额度的界面旁，一页真正完成的文档；不仿造品牌产品界面。",
       "facts": [],
-      "bodyLabel": "本期原创阅读",
-      "cover": "https://kasparelr.github.io/agentui-shared-images/objects/d0/d07b0267aafb5ef8735337e7253061c0f9cd6e5da806bf55134106d171c025a2.png"
+      "bodyLabel": "原创阅读",
+      "cover": "https://kasparelr.github.io/agentui-shared-images/objects/da/dadb0c236a6331b5923709e60cb7111baa4d95abfd2bddb6e20fc3b13256e0b5.png"
     },
     {
       "id": "06",
@@ -183,10 +183,10 @@ window.readingIssue={
         "这并不意味着使用经验会让人不再依赖工具。它意味着，当服务、价格或模型发生变化时，你仍然知道自己要解决什么问题，并有办法重新寻找合适的协作方式。"
       ],
       "guide": "每读完一个例子，记下“AI做了什么、使用者判断了什么、下一次能复用什么”。",
-      "why": "把本期从购买方式引向协作与学习，避免用一份优惠清单结束。",
+      "why": "把阅读从购买方式引向协作与学习，避免用一份优惠清单结束。",
       "visual": "使用出版社真实书封，2:3展示。",
       "facts": [],
-      "bodyLabel": "本期读书笔记",
+      "bodyLabel": "读书笔记",
       "cover": "https://kasparelr.github.io/agentui-shared-images/objects/39/393d7d98c6199c07d057be887515b85f2da96f395f3a18b352c700bf61f30744.jpg",
       "bookLabel": "从使用到协作",
       "bookQuestion": "AI做了什么？我判断了什么？下次能复用什么？"

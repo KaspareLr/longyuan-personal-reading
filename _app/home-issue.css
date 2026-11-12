@@ -26,9 +26,9 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
 .editorial-issue .issue-actions .feed-share-icon{display:block;width:24px;height:24px}
 .issue-actions .editor-share-button:disabled{opacity:.45;cursor:default}
 /* The first story is the cover, not another stop after a cover. */
-.issue-piece-article:first-of-type{padding:40px;background:#fff;border-radius:40px;box-shadow:var(--issue-shadow);display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
-.issue-piece-article:first-of-type .issue-piece-top{grid-column:1/-1}
-.issue-piece-article:first-of-type .issue-headline{grid-column:1;grid-row:2}
+.issue-piece-lead{padding:40px;background:#fff;border-radius:40px;box-shadow:var(--issue-shadow);display:grid;grid-template-columns:1fr 1fr;column-gap:40px}
+.issue-piece-lead .issue-piece-top{grid-column:1/-1}
+.issue-piece-lead .issue-headline{grid-column:1;grid-row:2}
 .issue-lead-art{position:relative;display:block;grid-column:2;grid-row:2/6;overflow:hidden;border-radius:24px;min-height:340px;align-self:stretch}
 .issue-lead-art>img{width:100%;height:100%;object-fit:cover}
 .issue-lead-art>span{position:absolute;bottom:20px;left:20px;right:20px;display:flex;gap:12px;justify-content:center;align-items:center;padding:12px 16px;border-radius:100px;background:#fff;color:var(--issue-ink);font-size:13px;line-height:20px}
@@ -36,8 +36,8 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
 .issue-lead-copy{grid-column:1;grid-row:3}
 .issue-lead-copy .issue-deck{margin-top:20px}
 .issue-key-question{font-size:24px;line-height:36px;font-weight:600;color:var(--issue-ink);margin:24px 0 0}
-.issue-piece-article:first-of-type>.issue-byline{grid-column:1;grid-row:4}
-.issue-piece-article:first-of-type>.issue-actions{grid-column:1;grid-row:5}
+.issue-piece-lead>.issue-byline{grid-column:1;grid-row:4}
+.issue-piece-lead>.issue-actions{grid-column:1;grid-row:5}
 /* Transitions offer a new question rather than repeating a card footer. */
 /* Quiet editorial transitions sit between stories, separate from reading actions. */
 .issue-bridge{display:flex;flex-direction:column;align-items:center;gap:10px;max-width:560px;margin:0 auto;padding:48px 24px;text-align:center;color:var(--issue-body)}
@@ -126,8 +126,8 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
  .editorial-issue .issue-actions .editor-share-button{order:1;width:auto;max-width:calc(100% - 64px);padding:12px 24px;border:0;background:var(--issue-ink);color:#fff;font-size:14px;line-height:24px;font-weight:500;box-shadow:0 2px 6px #0000001a}
  .editorial-issue .issue-actions .feed-share-label{display:block}
  .editorial-issue .issue-actions .feed-share-icon{display:none}
- .issue-piece-article:first-of-type{display:block;padding:20px;border-radius:24px}
- .issue-piece-article:first-of-type .issue-headline h2{font-size:28px;line-height:38px}
+ .issue-piece-lead{display:block;padding:20px;border-radius:24px}
+ .issue-piece-lead .issue-headline h2{font-size:28px;line-height:38px}
  .issue-lead-art{min-height:0;height:auto;margin:20px -20px 0;border-radius:0;aspect-ratio:1.8}
  .issue-lead-art>img{height:100%;object-position:center 56%}
  .issue-lead-art>span{left:20px;right:20px;bottom:12px;width:max-content;max-width:calc(100% - 40px);margin:auto;padding:8px 16px;font-size:11px;line-height:18px;gap:12px}
@@ -163,7 +163,7 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
  .issue-podcast-note{font-size:14px;line-height:26px;margin-top:20px}
  .issue-piece-podcast .issue-read-link{background:#fff;color:var(--issue-ink);border:0}
  .editorial-issue .issue-piece-podcast .issue-actions .editor-share-button{background:#ffffff1a;color:#fff;box-shadow:none}
- .issue-piece-article:not(:first-of-type){padding:0 4px}
+ .issue-piece-article:not(.issue-piece-lead){padding:0 4px}
  .issue-question-heading{grid-template-columns:minmax(0,1fr) 76px;gap:16px}
  .issue-question-heading .issue-headline h2{font-size:26px;line-height:36px}
  .issue-context-art{border-radius:16px}
@@ -179,7 +179,7 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
 }
 @media(max-width:350px){
  .issue-front h1{font-size:40px;line-height:50px}
- .issue-headline h2,.issue-piece-article:first-of-type .issue-headline h2,.issue-piece-magazine .issue-headline h2{font-size:24px;line-height:34px}
+ .issue-headline h2,.issue-piece-lead .issue-headline h2,.issue-piece-magazine .issue-headline h2{font-size:24px;line-height:34px}
  .issue-piece-book .issue-book{grid-template-columns:88px minmax(0,1fr);gap:16px}
  .issue-book-stage img{width:88px;height:132px}
  .issue-book-copy h3{font-size:18px;line-height:26px}
@@ -215,3 +215,68 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
 .issue-magazine-caption{font-size:12px;line-height:22px;margin-top:16px}
 }
 @media(max-width:350px){.issue-magazine{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px}.issue-magazine-cover img{width:112px;height:152px}.issue-magazine-identity h3{font-size:20px;line-height:28px}.issue-magazine-topic{margin-top:14px}.issue-magazine-topic strong{font-size:16px;line-height:24px}}
+
+/* Same resource frames as the original feed; narrative grouping remains exploratory. */
+.issue-data-reason{border-left:3px solid var(--issue-ink);padding-left:14px;margin-top:24px;color:var(--issue-body)}
+.issue-data-reason strong{font-size:14px;line-height:24px;font-weight:600;color:var(--issue-ink)}
+.issue-data-reason p{font-size:14px;line-height:26px;margin:4px 0 0}
+.issue-piece-podcast .issue-data-reason{border-color:#fff;color:#ffffffb3}
+.issue-piece-podcast .issue-data-reason strong{color:#fff}
+.issue-piece-book .issue-book{grid-template-columns:88px minmax(0,1fr)}
+.issue-book-stage img{width:88px;height:132px;aspect-ratio:2/3;object-fit:cover}
+.issue-magazine{grid-template-columns:97.263px minmax(0,1fr)}
+.issue-magazine-cover img{width:97.263px;height:132px;aspect-ratio:14/19;object-fit:cover}
+.issue-question-heading{grid-template-columns:minmax(0,1fr) 112px}
+.issue-context-art{width:112px;height:168px;aspect-ratio:2/3}
+.issue-context-art img{width:112px;height:168px;aspect-ratio:2/3;object-fit:cover}
+.issue-lead-art{width:112px;height:168px;aspect-ratio:2/3;min-height:0;align-self:start;justify-self:end;border-radius:12px}
+.issue-lead-art>img{width:112px;height:168px;aspect-ratio:2/3;object-fit:cover}
+.issue-piece-lead{grid-template-columns:minmax(0,1fr) 112px}
+.issue-piece-lead .issue-headline{grid-column:1;grid-row:2}
+.issue-piece-lead .issue-lead-art{grid-column:2;grid-row:2/4}
+.issue-piece-lead .issue-lead-copy{grid-column:1;grid-row:3}
+.issue-piece-lead>.issue-data-reason{grid-column:1/-1;grid-row:4}
+.issue-piece-lead>.issue-byline{grid-column:1/-1;grid-row:5}
+.issue-piece-lead>.issue-actions{grid-column:1/-1;grid-row:6}
+.issue-podcast-cover{width:440px;height:440px;aspect-ratio:1}
+.issue-player{grid-template-columns:440px minmax(0,1fr)}
+@media(min-width:1400px){
+ .issue-piece-book[data-story="03"] .issue-book{grid-template-columns:253.333px minmax(0,1fr)}
+ .issue-piece-book[data-story="03"] .issue-book-stage img{width:253.333px;height:380px}
+}
+@media(min-width:761px) and (max-width:1399px){
+ .issue-player{grid-template-columns:calc(36vw - 57.6px) minmax(0,1fr)}
+ .issue-podcast-cover{width:calc(36vw - 57.6px);height:auto}
+}
+@media(min-width:761px) and (max-width:1050px){
+ .issue-piece-podcast{padding:24px}
+ .issue-player{grid-template-columns:calc(30vw - 38.4px) minmax(0,1fr)}
+ .issue-podcast-cover{width:calc(30vw - 38.4px);height:auto}
+}
+@media(max-width:760px){
+ .issue-piece-book .issue-book{grid-template-columns:88px minmax(0,1fr);gap:16px}
+ .issue-book-stage img{width:88px;height:132px}
+ .issue-magazine{grid-template-columns:88px minmax(0,1fr);gap:16px;padding:16px}
+ .issue-magazine-cover img{width:88px;height:119.429px}
+ .issue-magazine-caption{font-size:12px;line-height:22px}
+ .issue-piece-lead{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px}
+ .issue-piece-lead .issue-piece-top{grid-column:1/-1;grid-row:1;margin-bottom:0}
+ .issue-piece-lead .issue-headline{grid-column:2;grid-row:2}
+ .issue-piece-lead .issue-lead-art{grid-column:1;grid-row:2;align-self:start;justify-self:start;width:88px;height:132px;aspect-ratio:2/3;margin:0;border-radius:12px}
+ .issue-lead-art>img{width:88px;height:132px}
+ .issue-piece-lead .issue-lead-copy{grid-column:1/-1;grid-row:3}
+ .issue-piece-lead .issue-lead-copy .issue-deck{margin-top:0}
+ .issue-piece-lead>.issue-data-reason{grid-column:1/-1;grid-row:4;margin-top:4px}
+ .issue-piece-lead>.issue-byline{grid-column:1/-1;grid-row:5;margin-top:0}
+ .issue-piece-lead>.issue-actions{grid-column:1/-1;grid-row:6;margin-top:0}
+ .issue-question-heading{grid-template-columns:minmax(0,1fr) 88px}
+ .issue-context-art{width:88px;height:132px;aspect-ratio:2/3}
+ .issue-context-art img{width:88px;height:132px}
+ .issue-player{grid-template-columns:80px minmax(0,1fr)}
+ .issue-podcast-cover{width:80px;height:80px}
+ .issue-data-reason{margin-top:20px}
+}
+.issue-magazine-guide{border-left:2px solid var(--issue-ink);padding-left:12px;margin-top:20px}
+.issue-magazine-guide strong{font-size:14px;line-height:24px;font-weight:600}
+.issue-magazine-guide p{font-size:14px;line-height:26px;color:var(--issue-body);margin:4px 0 0}
+@media(max-width:760px){.issue-magazine-guide{margin-top:16px;padding-left:10px}.issue-magazine-guide strong{font-size:13px;line-height:22px}.issue-magazine-guide p{font-size:12px;line-height:22px}}
