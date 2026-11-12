@@ -2,7 +2,7 @@
  const data=clubPortalData,session=clubSession,main=document.querySelector('#portal-main');
  if(session.read('articleComments',null)===null)session.write('articleComments',session.read('notes',[]));
  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
- const href=(route)=>(window.issueDetailMode?'issue-detail.html':'portal.html')+'#/'+route;
+ const href=(route)=>(window.issueDetailMode?(window.issueDetailBase||'issue-detail.html'):'portal.html')+'#/'+route;
  const resource=(page,id)=>'pages/index.html?nav=club#/magazine/'+encodeURIComponent('南风窗')+'?claimed=1&page='+page+'&id='+encodeURIComponent(id);
  const book=id=>data.books.find(b=>String(b.id)===String(id))||data.books[0];
  const chapterNames=b=>clubBookContents.flatten(b).map(item=>item.title);
