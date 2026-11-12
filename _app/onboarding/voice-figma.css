@@ -37,24 +37,20 @@
 .initialize-conversation.voice-answer-step #work-area{translate:none!important;transform:none!important}
 .initialize-conversation.voice-answer-step #work-area .voice-recording-layer p{color:#fff;font-size:14px;font-weight:700;line-height:20px}
 .voice-reply img{transform:rotate(-90deg)}
-/* AI opens the conversation, then hands the turn to the voice answer. */
-.initialize-conversation.voice-answer-step .guide-heading{gap:12px;margin-bottom:28px}
-.initialize-conversation.voice-answer-step .guide-heading .guide-identity{display:flex!important;align-items:center;gap:8px;margin:0;color:#606266;font-size:12px;line-height:20px}
-.voice-answer-step .guide-identity .guide-icon{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#f5f7fa;color:#131921;font-size:20px;line-height:1}
-.initialize-conversation.voice-answer-step #question .system-title-line{display:block}
-.initialize-conversation.voice-answer-step #description{padding-top:4px;max-width:36em;line-height:24px}
-.voice-ai-entering .guide-heading .guide-identity{animation:voice-ai-arrive 240ms cubic-bezier(.23,1,.32,1) both}
-.voice-ai-entering #step-eyebrow{animation:voice-ai-arrive 240ms 90ms cubic-bezier(.23,1,.32,1) both}
-.voice-ai-entering #question .system-title-line{animation:voice-ai-question 280ms cubic-bezier(.23,1,.32,1) both}
-.voice-ai-entering #question .system-title-line:nth-child(1){animation-delay:200ms}
-.voice-ai-entering #question .system-title-line:nth-child(2){animation-delay:320ms}
-.voice-ai-entering #question .system-title-line:nth-child(3){animation-delay:440ms}
-.voice-ai-entering #description{animation:voice-ai-arrive 240ms 600ms cubic-bezier(.23,1,.32,1) both}
-.voice-ai-entering .voice-controls{animation:voice-ai-controls 240ms 760ms cubic-bezier(.23,1,.32,1) both}
-@keyframes voice-ai-arrive{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
-@keyframes voice-ai-question{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
-/* Do not transform fixed-control ancestors or interfere with their centering transform. */
-@keyframes voice-ai-controls{from{opacity:0}to{opacity:1}}
+/* Figma 590:8091: portrait first, pause, then the centered question fades in. */
+.initialize-conversation.voice-answer-step .guide-heading{gap:0;align-items:center;margin-bottom:28px}
+.initialize-conversation.voice-answer-step .guide-heading .guide-identity,
+.initialize-conversation.voice-answer-step #step-eyebrow{display:none!important}
+.voice-answer-step .voice-ai-portrait{display:block;flex:none;width:180px;height:180px;max-width:none;border-radius:100px;object-fit:cover;filter:blur(3px);align-self:center}
+.initialize-conversation.voice-answer-step #question{margin-top:56px;color:#000;font-size:24px;font-weight:400;line-height:32px;text-align:center;white-space:normal;word-break:normal;overflow-wrap:break-word;text-wrap:pretty}
+.initialize-conversation.voice-answer-step #description{padding:0;margin-top:10px;max-width:none;line-height:24px;text-align:center;text-wrap:pretty}
+.voice-answer-step .voice-status{font-size:14px}
+.voice-ai-loading .voice-ai-portrait,.voice-ai-loading #question,.voice-ai-loading #description,.voice-ai-loading .voice-controls{opacity:0}
+.voice-ai-entering .voice-ai-portrait{animation:voice-ai-fade 400ms ease-out both}
+.voice-ai-entering #question,.voice-ai-entering #description{animation:voice-ai-fade 400ms 1200ms ease-out both}
+.voice-ai-entering .voice-controls{animation:voice-ai-fade 240ms 1640ms ease-out both}
+@keyframes voice-ai-fade{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){
- .voice-ai-entering .guide-heading .guide-identity,.voice-ai-entering #step-eyebrow,.voice-ai-entering #question .system-title-line,.voice-ai-entering #description,.voice-ai-entering .voice-controls{animation:none}
+ .voice-ai-entering .voice-ai-portrait,.voice-ai-entering #question,.voice-ai-entering #description,.voice-ai-entering .voice-controls{animation:none;opacity:1}
+ .voice-ai-loading .voice-ai-portrait,.voice-ai-loading #question,.voice-ai-loading #description,.voice-ai-loading .voice-controls{opacity:1}
 }
