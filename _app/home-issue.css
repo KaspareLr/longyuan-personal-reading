@@ -197,3 +197,28 @@ body.home-v3.personal-feed-page.editorial-issue main#home{max-width:1000px;paddi
  .issue-comparison strong{font-size:15px;line-height:24px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* Real periodical identity: full cover, publication and matching issue. */
+.issue-piece-magazine{display:block}
+.issue-magazine{display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px;align-items:center;background:#fff;border-radius:24px;padding:32px;color:inherit;text-decoration:none;box-shadow:var(--issue-shadow);margin-bottom:28px}
+.issue-magazine-cover{min-width:0}
+.issue-magazine-cover img{display:block;width:210px;height:285px;aspect-ratio:14/19;object-fit:contain;border-radius:4px;box-shadow:0 4px 10px #0003}
+.issue-magazine-identity{min-width:0}
+.issue-magazine-identity h3{font-size:32px;line-height:44px;font-weight:600;margin:10px 0 6px}
+.issue-magazine-identity>p{font-size:14px;line-height:24px;color:var(--issue-muted);margin:0}
+.issue-magazine-topic{margin-top:28px}
+.issue-magazine-topic>span{display:block;font-size:12px;line-height:20px;color:var(--issue-muted)}
+.issue-magazine-topic strong{display:block;font-size:24px;line-height:36px;font-weight:500;margin-top:6px}
+.issue-magazine-caption{display:block;font-size:14px;line-height:26px;color:var(--issue-body);margin-top:20px}
+.issue-piece-magazine>.issue-headline{max-width:720px}
+.issue-piece-magazine>.issue-deck{max-width:720px}
+@media(max-width:760px){
+.issue-magazine{grid-template-columns:140px minmax(0,1fr);gap:20px;padding:20px;border-radius:24px;margin-bottom:24px}
+.issue-magazine-cover img{width:140px;height:190px}
+.issue-magazine-identity h3{font-size:22px;line-height:32px;margin:6px 0}
+.issue-magazine-identity>p{font-size:12px;line-height:20px}
+.issue-magazine-topic{margin-top:20px}
+.issue-magazine-topic>span{font-size:11px;line-height:18px}
+.issue-magazine-topic strong{font-size:18px;line-height:28px;margin-top:4px}
+.issue-magazine-caption{font-size:12px;line-height:22px;margin-top:16px}
+}
+@media(max-width:350px){.issue-magazine{grid-template-columns:112px minmax(0,1fr);gap:16px;padding:16px}.issue-magazine-cover img{width:112px;height:152px}.issue-magazine-identity h3{font-size:20px;line-height:28px}.issue-magazine-topic{margin-top:14px}.issue-magazine-topic strong{font-size:16px;line-height:24px}}
