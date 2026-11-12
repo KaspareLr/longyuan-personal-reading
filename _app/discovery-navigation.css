@@ -1,0 +1,10 @@
+.discovery-tabs{display:none}
+@media(min-width:761px){.site-header .nav-shell>nav{gap:28px}.site-header .nav-shell>.brand{margin-right:48px}}
+@media(max-width:760px){
+ body.discovery-shell.mobile-navigation-ready{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))!important;--mobile-nav-height:88px!important}
+ .discovery-tabs{position:fixed;z-index:70;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:calc(100% - 32px);max-width:440px;padding:6px;border:1px solid #ffffffd9;border-radius:100px;background:#ffffffed;backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:0 7px 30px #252a3512}
+ .discovery-tabs a{display:flex;align-items:center;justify-content:center;min-width:0;min-height:46px;border-radius:100px;font-size:12px;line-height:20px;font-weight:600;white-space:nowrap;color:#606266;text-decoration:none}
+ .discovery-tabs a[aria-current=page]{background:#131921;color:#fff}
+ .discovery-tabs a:focus-visible{outline:2px solid #131921;outline-offset:2px}
+ .personal-feed-page .feed-future-state{padding-bottom:32px}
+}

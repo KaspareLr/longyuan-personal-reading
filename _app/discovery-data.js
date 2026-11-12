@@ -1,0 +1,6 @@
+/* Discovery composes the existing lecturer roster, catalogue and detail routes. */
+(()=>{const books=clubCatalogData.books,mags=clubCatalogData.magazines,articles=clubSharedContent.articles;const configs=[
+ {pick:'从一个故事开始',note:'走进人物的生活，看见成长的另一面。',book:[1,2,0,3],mag:[2,3],article:[0,1,2],focus:'book',message:'如果你是故事中的主人公，会做出怎样的选择？',intro:'从人物、故事与日常里的细节出发，一起读文学，也一起谈成长。'},
+ {pick:'像编辑一样读杂志',note:'从一篇文章的细节，读出一本杂志的心意。',book:[2,3,1,0],mag:[2,0],article:[3,4,0],focus:'magazine',message:'读完之后，哪一个细节让你愿意再停留一会儿？',intro:'带着编辑的目光读文章，留意叙事、语言与那些不经意的细节。'},
+ {pick:'把诗读给日常',note:'慢一点，用声音发现文字的节奏。',book:[3,1,0,2],mag:[2,4],article:[4,2,1],focus:'book',message:'试着读出声来，你听到了怎样的节奏？',intro:'从一段文字开始，把阅读放回声音、想象与日常生活。'}
+ ];window.discoveryLeaders=clubPeopleProfiles.map((p,i)=>{const c=configs[i%configs.length];return {...p,...c,books:c.book.map(i=>books[i]).filter(Boolean),magazines:c.mag.map(i=>mags[i]).filter(Boolean),articles:c.article.map(i=>({...articles[i],index:i})).filter(Boolean),podcast:{title:['十一红：传承家乡戏勇敢挑战自我','勇敢的种子：探讨鼓励的力量与教育智慧','青石街有龙出没'][i%3],cover:'assets/podcast-'+(i%3+1)+'.png',href:'podcast.html?episode='+i,summary:['在声音里听见故事，也听见一个人怎样理解自己的家乡。','从教育与成长的具体情境里，听听鼓励怎样发生。','听故事里的相遇，让阅读在声音中继续。'][i%3]}}});})();
