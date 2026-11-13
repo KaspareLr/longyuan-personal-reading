@@ -1,11 +1,11 @@
 (()=>{
  const base=new URL('.',document.currentScript.src),path=location.pathname,name=path.slice(base.pathname.length)||'index.html',primary=['index.html','feed.html','club.html','me.html'].includes(name);
- const items=[['index.html','新首页','icon-Home'],['feed.html','信息流','icon-Book'],['club.html','读书会','icon-Book'],['me.html','我的','icon-user_s']];
+ const items=[['index.html','新首页','icon-Home'],['feed.html','信息流','icon-All'],['club.html','读书会','icon-Read'],['me.html','我的','icon-user_s']];
  const links=items.map(([url,label])=>`<a href="${new URL(url,base).href}" ${name===url?'aria-current="page"':''}>${label}</a>`).join('');
  const nav=document.querySelector('.site-header .nav-shell>nav,.club-demo-topbar .nav-island>nav,.club-demo-topbar nav');if(nav)nav.innerHTML=links;
  document.querySelectorAll('a.brand').forEach(a=>a.href=new URL('index.html',base).href);
  const style=document.createElement('link');style.rel='stylesheet';style.href=new URL('discovery-navigation.css',base);document.head.append(style);
- if(primary){document.body.classList.add('discovery-shell');const tabs=document.createElement('nav');tabs.className='discovery-tabs';tabs.setAttribute('aria-label','主导航');tabs.innerHTML=links;document.body.append(tabs)}
+ if(primary){document.body.classList.add('discovery-shell');const tabs=document.createElement('nav');tabs.className='discovery-tabs';tabs.setAttribute('aria-label','主导航');tabs.innerHTML='<div class="club-mobile-nav-shell">'+items.map(([url,label,icon])=>`<a class="club-mobile-nav-item ${name===url?'is-active':''}" href="${new URL(url,base).href}" ${name===url?'aria-current="page"':''}><span class="club-mobile-nav-icon" aria-hidden="true"><i class="iconfont font_family ${icon}"></i></span><span>${label}</span></a>`).join('')+'</div>';document.body.append(tabs)}
  document.querySelector('#preview .dialog-close')?.addEventListener('click',()=>document.querySelector('#preview').close());
 })();
 
