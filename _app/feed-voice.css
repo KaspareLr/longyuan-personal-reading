@@ -19,3 +19,13 @@
 @media(max-width:760px){.feed-voice-conversation{bottom:calc(210px + env(safe-area-inset-bottom,0px));padding:16px}.feed-voice-messages{max-height: min(340px,calc(100dvh - 330px))}}
 .feed-voice-backdrop{position:fixed;inset:0;z-index:82;background:#f5f7fa99;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .feed-voice-backdrop[hidden]{display:none!important}
+/* Feed navigation follows scroll direction; other tabs keep their navigation. */
+@media(max-width:760px){
+ body.personal-feed-page{--feed-nav-space:0px}
+ body.personal-feed-page.feed-nav-visible{--feed-nav-space:100px}
+ body.personal-feed-page .discovery-tabs{transform:translateY(100%);opacity:0;visibility:hidden;transition:transform 240ms ease-out,opacity 180ms ease-out,visibility 240ms}
+ body.personal-feed-page.feed-nav-visible .discovery-tabs{transform:translateY(0);opacity:1;visibility:visible}
+ .feed-voice .voice-controls,.feed-voice .voice-recording-layer{bottom:calc(var(--feed-nav-space,0px) + env(safe-area-inset-bottom,0px));transition:bottom 240ms ease-out}
+ .feed-voice-conversation{bottom:calc(110px + var(--feed-nav-space,0px) + env(safe-area-inset-bottom,0px));transition:bottom 240ms ease-out}
+}
+@media(prefers-reduced-motion:reduce){body.personal-feed-page .discovery-tabs,.feed-voice .voice-controls,.feed-voice .voice-recording-layer,.feed-voice-conversation{transition:none}}
