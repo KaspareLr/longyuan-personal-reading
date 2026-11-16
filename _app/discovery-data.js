@@ -1,6 +1,14 @@
-/* Discovery composes the existing lecturer roster, catalogue and detail routes. */
-(()=>{const books=clubCatalogData.books,mags=clubCatalogData.magazines,articles=clubSharedContent.articles;const configs=[
- {pick:'从一个故事开始',note:'走进人物的生活，看见成长的另一面。',book:[1,2,0,3],mag:[2,3],article:[0,1,2],focus:'book',message:'如果你是故事中的主人公，会做出怎样的选择？',intro:'从人物、故事与日常里的细节出发，一起读文学，也一起谈成长。'},
- {pick:'像编辑一样读杂志',note:'从一篇文章的细节，读出一本杂志的心意。',book:[2,3,1,0],mag:[2,0],article:[3,4,0],focus:'magazine',message:'读完之后，哪一个细节让你愿意再停留一会儿？',intro:'带着编辑的目光读文章，留意叙事、语言与那些不经意的细节。'},
- {pick:'把诗读给日常',note:'慢一点，用声音发现文字的节奏。',book:[3,1,0,2],mag:[2,4],article:[4,2,1],focus:'book',message:'试着读出声来，你听到了怎样的节奏？',intro:'从一段文字开始，把阅读放回声音、想象与日常生活。'}
- ];window.discoveryLeaders=clubPeopleProfiles.map((p,i)=>{const c=configs[i%configs.length];return {...p,...c,books:c.book.map(i=>books[i]).filter(Boolean),magazines:c.mag.map(i=>mags[i]).filter(Boolean),articles:c.article.map(i=>({...articles[i],index:i})).filter(Boolean),podcast:{title:['十一红：传承家乡戏勇敢挑战自我','勇敢的种子：探讨鼓励的力量与教育智慧','青石街有龙出没'][i%3],cover:'assets/podcast-'+(i%3+1)+'.png',href:'podcast.html?episode='+i,summary:['在声音里听见故事，也听见一个人怎样理解自己的家乡。','从教育与成长的具体情境里，听听鼓励怎样发生。','听故事里的相遇，让阅读在声音中继续。'][i%3]}}});})();
+/* People-first discovery. Reuse existing profiles, demo people and portrait assets. */
+(()=>{
+ const summaries=[
+  {role:'作家 · 文学与成长',intro:'从人物的命运与日常细节里，看见成长的另一种可能。',tags:['文学与成长']},
+  {role:'文学编辑 · 阅读推广',intro:'带着编辑的目光看文字，留意叙事、语言与不经意的细节。',tags:['文学与成长','编辑与写作']},
+  {role:'诗人 · 童诗与想象',intro:'把心里的话念出声来，在童诗里留住一点自由的想象。',tags:['童诗与想象','文学与成长']}
+ ];
+ window.discoveryLeaders=clubPeopleProfiles.map((p,i)=>({...p,...summaries[i],profileHref:'pages/index.html?nav=club#/magazine/'+encodeURIComponent('南风窗')+'?claimed=1&page=lecturer&id='+encodeURIComponent(p.id)})).concat([
+  {id:'lin-zhixia',name:'林知夏',role:'文学编辑 · 日常观察',portrait:'assets/home-template/guide-1.webp',intro:'相信文字能让人重新看见日常，也想听听你的生活里发生了什么。',bio:'相信文字能让人重新看见日常，和你一起读文学、聊生活。',tags:['文学与成长','编辑与写作']},
+  {id:'chen-yu',name:'陈屿',role:'旅行写作者 · 城市观察',portrait:'assets/home-template/guide-2.webp',intro:'喜欢走进城市与山野，在行走和交谈中理解不同的生活。',bio:'以行走丈量世界，用阅读理解人与城市、人与自然的关系。',tags:['城市与日常','编辑与写作']},
+  {id:'su-wan',name:'苏皖',role:'编辑 · 细节观察',portrait:'assets/guide-su.png',intro:'留意容易被忽略的细节，一起把一个问题想得更具体。',bio:'从编辑的日常出发，分享观察、提问与理解文字的方法。',tags:['编辑与写作','城市与日常']},
+  {id:'zhou-qin',name:'周芹',role:'小学语文教师 · 成长陪伴',portrait:'assets/guide-zhou.png',intro:'关心孩子怎样理解文字，也关心大人怎样学会倾听。',bio:'从课堂与日常交流中，寻找和孩子一起理解文字、表达想法的方式。',tags:['文学与成长','童诗与想象']}
+ ]);
+})();
