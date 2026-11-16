@@ -4,8 +4,8 @@
  const host=document.createElement('aside');host.className='feed-voice';host.setAttribute('aria-label','语音调整信息流');
  host.innerHTML='<section class="feed-voice-conversation" aria-labelledby="feed-voice-heading" hidden><header><strong id="feed-voice-heading">这次想读什么</strong><button type="button" aria-label="收起语音对话">×</button></header><div class="feed-voice-messages" role="log" aria-live="polite"></div></section>';
  document.body.append(host);const panel=host.querySelector('section'),messages=host.querySelector('.feed-voice-messages');let timers=[];
- const profile={},control=readingVoiceControl.mount(host,profile,()=>{}, {question:'想调整哪些阅读内容？',onStart(){dismiss();clear()},onSend:respond});
- const hold=control.wrap.querySelector('.voice-record');control.state('idle');
+ const profile={},control=readingVoiceControl.mount(host,profile,()=>{}, {holdLabel:'描述想法，调整推荐',question:'想调整哪些阅读内容？',onStart(){dismiss();clear()},onSend:respond});
+ const hold=control.wrap.querySelector('.voice-record');hold.setAttribute('aria-label','描述想法，调整推荐，按住说话');control.state('idle');
  function clear(){timers.forEach(clearTimeout);timers=[];document.querySelector('#personal-feed')?.classList.remove('feed-voice-refreshing')}
  function later(fn,ms){timers.push(setTimeout(fn,ms))}
  function message(who,text,cls=''){const item=document.createElement('div');item.className='feed-voice-message is-'+who+' '+cls;const label=document.createElement('span'),body=document.createElement('p');label.textContent=who==='user'?'你':'领读';body.textContent=text;item.append(label,body);messages.append(item);messages.scrollTop=messages.scrollHeight;return item}
