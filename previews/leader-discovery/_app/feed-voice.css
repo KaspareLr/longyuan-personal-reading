@@ -1,0 +1,21 @@
+/* Only placement changes; all visual states come from voice-control.css. */
+.feed-voice .voice-controls{bottom:28px;z-index:85}
+.feed-voice .voice-recording-layer{bottom:28px;z-index:84}
+.feed-voice .voice-reply-row{position:fixed;right:max(20px,calc((100vw - 740px)/2));bottom:200px;z-index:85;width:auto;height:auto;padding:0}
+.feed-voice .voice-status:empty{display:none}
+.feed-voice button{font-family:inherit;cursor:pointer}.feed-voice button:focus-visible{outline:2px solid #131921;outline-offset:4px}
+.feed-voice .voice-continue:disabled{opacity:.6;cursor:wait}
+.personal-feed-page main.personal-main{padding-bottom:230px}
+.feed-voice-refreshing{animation:feed-voice-refresh 1200ms ease-in-out}
+@keyframes feed-voice-refresh{50%{opacity:.35}}
+@media(max-width:760px){.feed-voice .voice-controls{bottom:calc(100px + env(safe-area-inset-bottom,0px))}.feed-voice .voice-recording-layer{bottom:calc(100px + env(safe-area-inset-bottom,0px))}.feed-voice .voice-reply-row{right:20px;bottom:calc(280px + env(safe-area-inset-bottom,0px))}.personal-feed-page main.personal-main{padding-bottom:330px}}
+@media(prefers-reduced-motion:reduce){.feed-voice-refreshing{animation:none}}
+/* Sending in the feed is automatic; onboarding keeps its original next action. */
+.feed-voice .voice-reply-row,.feed-voice .voice-continue{display:none!important}
+.feed-voice .voice-record:disabled{cursor:wait}
+.feed-voice-conversation{position:fixed;z-index:85;bottom:130px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:720px;box-sizing:border-box;background:#fff;border:1px solid #e4e7ed;border-radius:24px;padding:20px;box-shadow:0 8px 32px #13192114;color:#131921}
+.feed-voice-conversation[hidden]{display:none!important}.feed-voice-conversation header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.feed-voice-conversation header strong{font-size:16px;line-height:24px;font-weight:600}.feed-voice-conversation header button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#f5f7fa;color:#606266;font-size:24px}
+.feed-voice-messages{max-height: min(380px,calc(100dvh - 350px));overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column;gap:16px}.feed-voice-message{max-width:90%;box-sizing:border-box}.feed-voice-message>span{display:block;font-size:12px;line-height:20px;color:#909399;margin-bottom:6px}.feed-voice-message p{margin:0;font-size:15px;line-height:26px;overflow-wrap:break-word}.feed-voice-message.is-user{align-self:flex-end;border-radius:20px 20px 4px 20px;background:#f5f7fa;padding:12px 16px}.feed-voice-message.is-assistant{align-self:flex-start;padding:0 4px}.feed-voice-message.is-adjusting p{color:#909399}.feed-voice-message.is-complete p{font-weight:500}.feed-voice-message.is-complete{border-top:1px solid #e4e7ed;padding-top:12px;width:100%;max-width:100%}
+@media(max-width:760px){.feed-voice-conversation{bottom:calc(210px + env(safe-area-inset-bottom,0px));padding:16px}.feed-voice-messages{max-height: min(340px,calc(100dvh - 330px))}}
+.feed-voice-backdrop{position:fixed;inset:0;z-index:82;background:#f5f7fa99;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.feed-voice-backdrop[hidden]{display:none!important}

@@ -1,0 +1,21 @@
+/* Shared original Figma 564:4144 / 4230 / 4608 voice control. */
+:is(.voice-answer-step,.feed-voice) .voice-answer{display:block;margin:0;padding:0;text-align:left}
+:is(.voice-answer-step,.feed-voice) .voice-reply-row{display:flex;justify-content:flex-end;align-items:flex-start;width:100%;height:74px;padding-top:30px}
+:is(.voice-answer-step,.feed-voice) .voice-reply{display:flex;align-items:center;gap:0;box-sizing:border-box;height:44px;min-height:44px;margin:0;padding:10px 20px;border:0;border-radius:24px;background:#f5f7fa;color:#606266;font-size:14px;font-weight:400;line-height:24px}
+.voice-reply img{display:block;width:24px;height:24px;flex:0 0 24px}.voice-reply.is-playing img{animation:voice-play-pulse .8s ease-in-out infinite}
+:is(.voice-answer-step,.feed-voice) .voice-controls{position:fixed;bottom:env(safe-area-inset-bottom,0px);left:50%;transform:translateX(-50%);z-index:30;display:flex;flex-direction:column;align-items:center;gap:10px;box-sizing:border-box;width:100%;max-width:760px;padding:10px 10px 20px}
+:is(.voice-answer-step,.feed-voice) .voice-record{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:100%;height:70px;min-height:70px;margin:0;padding:20px;border:1px solid #ffffffd9;border-radius:100px;background:#ffffffcc;backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:0 12px 42px #22263212,inset 0 1px 0 #fff;color:#131921;font-size:16px;font-weight:700;line-height:28px;touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+:is(.voice-answer-step,.feed-voice) .voice-continue{display:flex;align-items:center;justify-content:center;box-sizing:border-box;width:calc(100% - 22px);height:48px;min-height:48px;margin:0;padding:12px 16px;border:0;border-radius:100px;background:#131921;color:#fff;font-size:14px;font-weight:700;line-height:20px;box-shadow:0 2px 6px #0000001a}
+:is(.voice-answer-step,.feed-voice) .voice-status{max-width:100%;margin:0;text-align:center;font-size:12px;line-height:20px;color:#909399}:is(.voice-answer-step,.feed-voice) .voice-status:empty{display:none}
+:is(.voice-answer-step,.feed-voice) .voice-upload{min-height:32px;font-size:12px;line-height:24px;color:#606266}
+:is(.voice-answer-step,.feed-voice) .voice-recording-layer{position:fixed;bottom:0;left:calc(50% + 5px);transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:10px;width:440px;height:260px;pointer-events:none}
+.voice-glow-slot{position:relative;flex-shrink:0;width:520px;height:520px}.voice-glow-slot img{position:absolute;top:-80px;left:-80px;display:block;width:680px;height:680px;max-width:none}
+:is(.voice-answer-step,.feed-voice) .voice-recording-layer p{position:absolute;top:100px;left:50%;transform:translateX(-50%);margin:0;color:white;white-space:nowrap;font-size:14px;font-weight:700;line-height:20px}
+.voice-wave{position:absolute;top:130px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;gap:4px;height:12px}.voice-wave span{flex:0 0 4px;width:4px;height:12px;border-radius:10px;background:#fff}
+:is(.voice-answer-step,.feed-voice) .voice-answer[data-state=recording] .voice-controls{opacity:0;pointer-events:none}:is(.voice-answer-step,.feed-voice) .voice-answer[data-state=recording] .voice-record{pointer-events:auto}
+:is(.voice-answer-step,.feed-voice) .is-cancelling .voice-wave{opacity:.45}
+
+@keyframes voice-play-pulse{50%{opacity:.3}}
+@media(prefers-reduced-motion:reduce){.voice-reply.is-playing img{animation:none}}
+.voice-reply img{transform:rotate(-90deg)}
+:is(.voice-answer-step,.feed-voice) [hidden]{display:none!important}
