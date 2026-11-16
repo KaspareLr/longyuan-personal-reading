@@ -1,0 +1,16 @@
+/* Figma 11:2531 — shared site navigation, including the shelf reader clone. */
+.topbar .nav-island{display:flex;align-items:center;flex-wrap:nowrap;gap:80px;min-height:54px;padding:10px;border:1px solid rgba(255,255,255,.79);border-radius:20px;background:rgba(255,255,255,.43);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);box-shadow:0 7px 30px rgba(37,42,53,.03),inset 0 1px 0 rgba(255,255,255,.6);box-sizing:border-box}
+.topbar .brand-logo{width:98px;height:32px;object-fit:contain}
+.topbar .nav-links-group{display:flex;align-items:center;gap:40px;min-width:0}
+.topbar .nav{display:flex;align-items:center;gap:20px;width:auto;order:initial;overflow:visible}
+.topbar .nav a{font-size:14px;font-weight:500;line-height:20px;min-height:32px;padding:0;color:#909399;background:none;box-shadow:none}
+.topbar .nav a.active{color:#131921;font-weight:700;box-shadow:none}
+.topbar .nav a:hover{color:#131921}
+.topbar .nav-login{position:static;display:flex;align-items:center;justify-content:center;min-height:20px;padding:0 10px 0 40px;border:0;border-left:1px solid #d8dadd;background:transparent;font-size:14px;font-weight:500;line-height:20px;color:#131921;white-space:nowrap}
+@media(max-width:760px){.topbar .nav-island{width:100%;flex-wrap:wrap;gap:12px;padding:10px 14px;min-height:100px}.topbar .nav-links-group{width:100%;gap:16px;justify-content:space-between}.topbar .nav{gap:14px;flex-wrap:wrap;justify-content:flex-start}.topbar .nav a{font-size:12px}.topbar .nav-login{padding:0 0 0 16px;min-height:32px}}
+@media(max-width:420px){.topbar .nav{gap:10px}.topbar .nav-links-group{gap:10px}.topbar .nav-login{font-size:12px;padding-left:10px}}
+/* Use the claimed-publication header dimensions consistently across pages. */
+body>.topbar{position:fixed;top:0;left:0;right:0;height:78px;min-height:78px;padding:12px 24px;box-sizing:border-box;justify-content:center;z-index:100}
+body #app{padding-top:78px}
+body>.topbar .nav-island{backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px)}
+@media(max-width:900px){body>.topbar{height:126px;min-height:126px}body #app{padding-top:126px}}

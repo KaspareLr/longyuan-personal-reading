@@ -1,0 +1,71 @@
+/* Figma 217:6599 — header and featured reading task only. */
+.portal-body:has(#portal-main[data-page=reading]){background:#fff}
+.portal-body #portal-main[data-page=reading]{padding-top:168px}
+.reading-home-top{color:#131921}
+.reading-home-heading{display:grid;gap:10px;margin-bottom:40px}
+.reading-home-heading>span{font-size:12px;line-height:16px;color:#909399}
+.reading-home-heading>div{display:grid;grid-template-columns:3fr 1fr;align-items:end}
+.reading-home-heading h1{font-size:80px;line-height:96px;font-weight:700;letter-spacing:0;margin:0}
+.reading-home-heading>div>p{font-size:16px;line-height:24px;color:#606266;margin:0}
+.reading-home-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 270px;gap:30px;height:600px;padding:80px;border-radius:40px;background:#efefef;align-items:center}
+.reading-home-identity{display:flex;flex-direction:column;gap:20px;min-width:0}
+.reading-home-status{display:inline-flex;background:#0008;color:#fff;padding:2px 4px;border-radius:4px;font-size:8px;line-height:12px;font-weight:700;margin-bottom:8px}
+.reading-home-identity h2{font-size:64px;line-height:72px;letter-spacing:0;margin:0;white-space:nowrap}
+.reading-home-issue{font-size:16px;line-height:24px;font-weight:700;margin-top:4px}
+.reading-home-top blockquote{border-left:4px solid #131921;padding-left:10px;margin:0}
+.reading-home-top blockquote strong{display:block;font-size:12px;line-height:16px;font-weight:700}
+.reading-home-top blockquote p{font-size:14px;line-height:20px;color:#606266;margin:0}
+.reading-home-all{display:flex;align-items:center;justify-content:center;align-self:start;background:#131921;color:#fff;padding:14px 32px;margin-top:40px;border-radius:12px;box-shadow:0 2px 3px #0000001a;font-size:14px;line-height:20px;font-weight:500}
+.reading-home-cover.hinged-cover{height:440px;width:auto;aspect-ratio:140/190;justify-self:end;max-width:none;border-radius:4px;box-shadow:0 8px 16px #21212112}
+.reading-home-cover.hinged-cover img{height:100%;width:100%;object-fit:cover;border-radius:4px}
+.reading-home-task{height:100%;background:#fff;padding:0 40px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;min-width:0}
+.reading-home-task>header{width:100%}
+.reading-home-task>header h2{font-size:20px;line-height:32px;font-weight:700;margin:0}
+.reading-home-task>header small{display:block;font-size:11px;line-height:16px;color:#909399}
+.reading-home-task-top{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%}
+.reading-home-clock{position:relative;width:192px;height:192px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.reading-home-clock svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);pointer-events:none}
+.reading-home-clock circle{fill:none;stroke-width:8;stroke-linecap:round}
+.reading-clock-track{stroke:#f0f1f3}.reading-clock-value{stroke:#131921}
+.reading-home-clock>strong{font-size:20px;line-height:24px;font-weight:700;font-variant-numeric:tabular-nums}
+.reading-home-clock>span{font-size:12px;line-height:16px;color:#909399;margin-top:4px}
+.reading-home-clock>button{width:120px;padding:14px 0;margin-top:16px;border-radius:100px;background:#131921;color:#fff;box-shadow:0 2px 3px #0000001a;font-size:14px;line-height:20px}
+.reading-home-clock>button:disabled{background:#e4e7ed;color:#909399;box-shadow:none;cursor:default}
+.reading-home-assignment{display:grid;gap:10px;width:100%}
+.reading-home-assignment>p{display:flex;align-items:center;gap:10px;font-size:14px;line-height:20px;margin:0}
+.reading-home-assignment>p i{width:4px;height:4px;border-radius:50%;background:#cf1322;flex:none}
+@media(min-width:1101px) and (max-width:1536px){.portal-body #portal-main[data-page=reading]{padding-top:120px}.reading-home-heading{margin-bottom:32px}.reading-home-heading h1{font-size:64px;line-height:76px}.reading-home-feature{height:460px;padding:40px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) 260px;gap:24px;border-radius:32px}.reading-home-cover.hinged-cover{height:380px}.reading-home-identity h2{font-size:48px;line-height:60px}.reading-home-identity{gap:16px}.reading-home-progress-wrap{padding-top:24px}.reading-home-task{gap:16px}.reading-home-task-top{gap:12px}.reading-home-clock{width:180px;height:180px}.reading-home-assignment>p,.reading-home-top blockquote p{font-size:13px}}
+@media(max-width:1100px){.portal-body #portal-main[data-page=reading]{padding-top:130px}.reading-home-heading h1{font-size:60px;line-height:76px}.reading-home-heading>div{grid-template-columns:2fr 1fr;gap:30px}.reading-home-feature{height:auto;padding:32px;grid-template-columns:1fr 1fr;gap:28px}.reading-home-identity h2{font-size:48px;line-height:60px}.reading-home-cover.hinged-cover{height:340px}.reading-home-task{grid-column:1/-1;height:auto;gap:24px}.reading-home-task-top{justify-content:start;gap:48px}}
+@media(max-width:760px){.portal-body #portal-main[data-page=reading]{padding-top:146px}.reading-home-heading{gap:10px;margin-bottom:28px}.reading-home-heading>div{grid-template-columns:1fr;gap:20px}.reading-home-heading h1{font-size:44px;line-height:56px}.reading-home-heading>div>p{font-size:14px;line-height:24px}.reading-home-feature{padding:24px 20px;gap:24px 16px;border-radius:24px}.reading-home-identity{gap:16px}.reading-home-identity h2{font-size:27px;line-height:36px}.reading-home-issue{font-size:12px;line-height:20px}.reading-home-top blockquote p{font-size:12px;line-height:18px}.reading-home-all{font-size:12px;padding:10px 20px;margin-top:8px}.reading-home-cover.hinged-cover{height:auto;width:100%;max-width:170px}.reading-home-task{padding:16px;gap:20px}.reading-home-task>header{width:100%}
+.reading-home-task>header h2{font-size:18px;line-height:28px}.reading-home-task-top{flex-direction:column;gap:20px}.reading-home-clock{width:180px;height:180px}.reading-home-assignment>p{font-size:12px;line-height:20px}}
+
+.reading-home-progress-wrap{width:100%;padding-top:40px}
+.reading-home-progress{display:flex;align-items:center;gap:10px;width:100%;padding:10px 10px 10px 16px;border-radius:20px;background:#fff}
+.reading-home-progress-copy{display:flex;flex-direction:column;gap:10px;min-width:0;flex:1;height:56px}
+.reading-home-progress-copy>div:first-child{display:grid;gap:4px}
+.reading-home-progress-copy strong{font-size:12px;line-height:16px;color:#909399;font-weight:700}
+.reading-home-progress-track{height:6px;border-radius:100px;background:#0003;overflow:hidden}
+.reading-home-progress-track>span{display:block;width:40%;height:100%;border-radius:inherit;background:#131921}
+.reading-home-participants{display:flex;align-items:center;gap:8px}
+.reading-home-participants>span{display:flex;align-items:center}
+.reading-home-participants img{width:20px;height:20px;object-fit:cover;border:1px solid #fff;border-radius:50%;box-shadow:0 2px 6px #0000001a}
+.reading-home-participants img+img{margin-left:-4px}
+.reading-home-participants small{font-size:12px;line-height:16px;color:#909399}
+.reading-home-join{display:flex;align-items:center;justify-content:center;flex:none;padding:14px 32px;border-radius:100px;background:#131921;color:#fff;box-shadow:0 2px 3px #0000001a;font-size:14px;line-height:20px}
+@media(min-width:1101px) and (max-width:1536px){.reading-home-task{padding-inline:40px}.reading-home-progress-wrap{padding-top:24px}}
+@media(min-width:761px) and (max-width:1100px){.reading-home-task{display:grid;grid-template-columns:192px 1fr;column-gap:32px;padding:28px 32px}.reading-home-task>header{grid-column:1/-1}.reading-home-task-top{grid-row:2}.reading-home-assignment{grid-row:2}.reading-home-progress-wrap{padding-top:24px}}
+@media(max-width:760px){.reading-home-progress-wrap{padding-top:8px}.reading-home-progress{padding:10px;flex-wrap:wrap}.reading-home-progress-copy{flex-basis:100%}.reading-home-join{width:100%;padding:8px 16px;font-size:12px}.reading-home-task{padding:24px;gap:20px}.reading-home-task>header{text-align:left}.reading-home-assignment{max-width:260px}}
+
+/* Updated task card, Figma 217:7097. Ring remains driven by time until midnight. */
+.reading-home-task{padding-inline:20px;gap:20px}
+.reading-home-task>header h2{font-size:20px;line-height:32px}
+.reading-home-task-description{text-wrap:balance;font-size:14px;line-height:20px;font-weight:400;color:#131921;margin:0}
+.reading-home-task .reading-home-clock{width:214px;height:214px;max-width:100%;aspect-ratio:1}
+.reading-home-task .reading-home-clock circle{stroke-width:20;stroke-linecap:round}
+.reading-home-task .reading-home-assignment{display:block;width:100%}
+.reading-home-task .reading-home-assignment blockquote{border-left:4px solid #131921;padding-left:10px}
+.reading-home-task .reading-home-assignment strong{font-size:14px;line-height:20px;font-weight:700}
+.reading-home-task .reading-home-assignment p{font-size:14px;line-height:20px;color:#606266}
+@media(min-width:1101px) and (max-width:1536px){.reading-home-task .reading-home-clock{width:192px;height:192px}}
+@media(min-width:761px) and (max-width:1100px){.reading-home-task{padding:28px 20px;grid-template-columns:214px minmax(0,1fr)}.reading-home-task>header{grid-column:1/-1}}
+@media(max-width:760px){.reading-home-task{padding:24px 20px;gap:20px}.reading-home-task .reading-home-clock{width:214px;height:214px}.reading-home-task .reading-home-assignment{max-width:none}}

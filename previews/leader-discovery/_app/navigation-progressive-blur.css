@@ -1,0 +1,7 @@
+/* The wrapper must not establish a backdrop root: each layer samples page content. */
+.navigation-progressive-blur{position:absolute;inset:0 0 auto;height:calc(100% + 24px);z-index:-1;pointer-events:none;user-select:none}
+.navigation-progressive-blur>span{position:absolute;inset:0;pointer-events:none;backdrop-filter:blur(var(--nav-blur));-webkit-backdrop-filter:blur(var(--nav-blur));mask-image:var(--nav-blur-mask);-webkit-mask-image:var(--nav-blur-mask)}
+@media(max-width:760px){.navigation-progressive-blur{height:calc(100% + 16px)}}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.navigation-progressive-blur{background:linear-gradient(to bottom,rgba(255,255,255,.96),rgba(255,255,255,.75) 60%,transparent)}}
+/* Reading assistants float above the page scrim in either presentation. */
+html body :is(.rd-periodical,.demo-reading-widget) :is(.pe-chat,.pe-chat-reopen){z-index:120!important}

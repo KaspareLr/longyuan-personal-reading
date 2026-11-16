@@ -1,0 +1,15 @@
+.club-site-footer{display:block;width:100%;margin:96px 0 0;padding:0;border-top:1px solid #d8dadd;background:#f3f4f5;color:#606266;font-family:Figtree,"PingFang SC","Microsoft YaHei",sans-serif;box-sizing:border-box}
+.club-footer-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;max-width:1280px;margin:0 auto;padding:48px 32px;box-sizing:border-box}
+.club-footer-brand img{display:block;width:125px;height:32px;object-fit:contain}
+.club-footer-brand p{margin:16px 0 0;max-width:320px;font-size:13px;line-height:24px}
+.club-site-footer h2{font-size:12px;line-height:16px;letter-spacing:.12em;font-weight:500;color:#909399;margin:0 0 12px}
+.club-site-footer ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin:0;padding:0}
+.club-site-footer li,.club-footer-about p,.club-footer-service{font-size:13px;line-height:24px}
+.club-footer-about p{margin:0;max-width:320px}
+.club-footer-service{display:flex;flex-wrap:wrap;gap:16px;margin-top:12px}
+.club-site-footer a{color:inherit;text-decoration:none}
+.club-site-footer a:hover{text-decoration:underline;text-underline-offset:4px;color:#131921}
+.club-site-footer a:focus-visible{outline:2px solid #131921;outline-offset:4px;border-radius:2px}
+.club-footer-bottom{padding:16px 24px;border-top:1px solid #e1e3e6;text-align:center;font-size:12px;line-height:20px;letter-spacing:.15em;color:#909399}
+@media(min-width:761px) and (max-width:1536px){.club-footer-columns{width:calc(100% - 2 * clamp(64px,6.6667vw,104px));padding-inline:0}}
+@media(max-width:760px){.club-site-footer{margin-top:64px}.club-footer-columns{grid-template-columns:1fr;gap:32px;padding:36px 24px}.club-site-footer nav ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.club-footer-bottom{letter-spacing:.08em}}

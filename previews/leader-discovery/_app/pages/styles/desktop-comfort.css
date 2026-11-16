@@ -1,0 +1,78 @@
+/* Compact desktop: retain the composition while fitting 1280–1536px screens. */
+@media (min-width:1101px) and (max-width:1536px){
+ :root{--desktop-gutter:clamp(64px,6.6667vw,104px)}
+ body>main{padding-inline:var(--desktop-gutter)}
+ .books-home-hero,.magazines-home-hero{height:100svh;min-height:680px;padding:78px var(--desktop-gutter) 0}
+ .books-home-feature,.magazines-home-feature{max-width:1248px;padding-block:40px;gap:28px}
+ .books-home-copy{padding:12px 0;gap:14px}
+ .books-home-thumbnails{height:244px;max-height:244px}
+ .books-home-thumbnails button{width:76px;height:76px;padding:12px;border-radius:16px}
+ .books-home-thumbnails img{height:52px;max-width:52px}
+ .books-home-center{padding:30px 0}
+ .books-home-center .oc-book-stage{height:min(46svh,440px);max-width:68%}
+ .books-home-actions{padding:12px 0;gap:24px}
+ .books-home-description{gap:18px}
+ .books-home-reason p{font-size:18px;line-height:26px}
+ .books-home-join{gap:8px;padding:10px}
+ .books-home-join .oc-button{padding-inline:20px}
+ .books-library{max-width:1248px;padding-block:64px}
+ .magazines-home-feature{grid-template-columns:minmax(0,4fr) minmax(0,6fr) 80px}
+ .magazines-home-cover{padding-block:28px}
+ .magazines-home-cover .oc-book-stage{height:min(62svh,580px);max-width:100%}
+ .magazines-home-thumbnails{gap:14px}
+ .magazines-home-thumbnails button{width:80px;height:80px;padding:14px;border-radius:16px}
+ .magazines-home-thumbnails img{height:52px}
+ .magazines-home-progress{gap:12px;padding:12px}
+ .magazines-home-progress .magazines-home-ring{width:64px;height:64px}
+ .magazines-home-join{padding:12px 24px}
+ .magazines-home-body{width:min(1248px,calc(100vw - 2 * var(--desktop-gutter)));padding-block:64px;gap:64px}
+ .magazines-stories-grid{height:360px}
+ /* The original assistant still reserves space; the club copy keeps its overlay. */
+ #view-magazine.active .rd-periodical.pe-figma-detail:not(.pe-chat-collapsed){--pe-reserved-chat:336px;--oc-chat:336px}
+ #view-magazine.active .rd-periodical.pe-figma-detail .pe-chat{width:316px}
+ #view-magazine .rd-periodical.pe-figma-detail{--pe-gutter:var(--desktop-gutter);padding-inline:0}
+ #view-magazine.active .rd-periodical.pe-figma-detail :is(.pe-layout,.pe-edition,.pe-bottom-section,.pe-source){margin-left:var(--desktop-gutter);margin-right:calc(var(--pe-reserved-chat) + var(--desktop-gutter))}
+ .rd-periodical.pe-figma-detail .pe-identity{min-height:0;height:calc(100svh - 112px);padding-inline:24px;justify-content:flex-start}
+ .rd-periodical.pe-figma-detail .pe-identity>.pe-identity-top{margin-bottom:16px}
+ .rd-periodical.pe-figma-detail .pe-identity>.pe-column-edition{padding-block:20px;margin-bottom:16px}
+ .rd-periodical.pe-figma-detail .pe-identity h1{font-size:56px;line-height:68px}
+ .rd-periodical.pe-figma-detail .pe-purchase{margin:0;padding:0;flex:none}
+ .rd-periodical.pe-figma-detail .pe-plan-row{padding-block:0}
+ .rd-periodical.pe-figma-detail .pe-plan{padding:16px}
+ .rd-periodical.pe-figma-detail .pe-reading>.pe-intro,.rd-periodical.pe-figma-detail .pe-directory{padding-inline:12px}
+ /* Fixed left overview fits above the bottom navigation; the plan scrolls normally. */
+ #view-magazine .rd-periodical.oc-guided-page{padding-top:36px}
+ #view-magazine .oc-publication .oc-main{width:auto;max-width:none;margin-left:var(--desktop-gutter);margin-right:calc(var(--oc-chat) + var(--desktop-gutter))}
+ .oc-guided-page .oc-guided-overview{gap:40px;padding-bottom:56px}
+ .oc-guided-page .oc-guided-sidebar{padding-inline:16px;gap:18px;top:104px}
+ .oc-guided-sidebar>.oc-book-stage{width:min(240px,calc((100svh - 480px) * 14 / 19));margin-block:4px 8px}
+ .oc-guided-page .oc-guided-information{padding-inline:16px;gap:56px}
+ .oc-guided-page .oc-guided-title h1{font-size:28px;line-height:36px}
+ .oc-guided-page .oc-guided-title p{font-size:14px;line-height:22px}
+ .oc-guided-page .oc-guided-join{padding:16px;gap:12px}
+ .oc-guided-page .oc-guided-join .oc-button{padding-inline:20px}
+ .oc-guided-page .oc-guided-guide{padding-block:6px}
+ .oc-guided-page .oc-guided-calendar-row{flex-wrap:wrap;justify-content:center;gap:24px}
+ .oc-guided-page .oc-guided-article .oc-guided-sidebar{min-height:calc(100svh - 230px)}
+ .oc-guided-page .oc-guided-article .oc-guided-title h1{font-size:clamp(56px,4.5vw,68px);line-height:1.2}
+ #view-magazine .oc-publication.oc-lecturer-profile{padding-top:40px}
+ .oc-lecturer-profile .oc-profile-first{gap:32px;align-items:center}
+ .oc-lecturer-profile .oc-profile-primary{gap:32px;align-items:center}
+ .oc-lecturer-profile .oc-profile-identity{gap:24px}
+ .oc-lecturer-profile .oc-profile-identity h1{font-size:56px;line-height:68px}
+ .oc-lecturer-profile .oc-profile-identity>p{line-height:24px}
+ .oc-lecturer-profile .oc-profile-introduction{gap:24px}
+ .oc-lecturer-profile .oc-profile-introduction h2{font-size:18px;line-height:26px}
+ .oc-lecturer-profile .oc-profile-stats{gap:16px;font-size:14px}
+ .oc-lecturer-profile .oc-profile-opinions{padding:56px 32px}
+ .rd-page.rd-book{padding-inline:var(--desktop-gutter)}
+}
+@media(min-width:1101px) and (max-width:1536px) and (max-height:820px){
+ .books-home-feature,.magazines-home-feature{padding-block:28px}
+ .books-home-copy p{font-size:13px;line-height:19px}
+ .books-home-actions{gap:18px}
+ .books-home-description{gap:14px}
+ .magazines-home-cover .oc-book-stage{height:57svh}
+ .oc-guided-sidebar>.oc-book-stage{width:min(220px,calc((100svh - 480px) * 14 / 19))}
+ .oc-guided-page .oc-guided-sidebar{gap:14px}
+}

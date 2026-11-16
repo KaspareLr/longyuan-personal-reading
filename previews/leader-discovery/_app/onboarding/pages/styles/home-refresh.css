@@ -1,0 +1,131 @@
+/* Neutral home finish and the shared minimum icon size. */
+body{background:radial-gradient(ellipse at 50% 3%,#fafafa 0,#eeeeef 48%,#e4e5e7 100%);background-attachment:fixed}
+body:has(#view-home.active){background:radial-gradient(ellipse at 50% 10%,#fafafa 0,#efeff0 46%,#e3e4e6 100%)}
+.topbar{justify-content:center;padding-inline:24px;background:transparent}
+.nav-island{margin-inline:auto;gap:32px;background:rgba(255,255,255,.43);border:1px solid #ffffffc9;box-shadow:0 7px 30px #252a3508,inset 0 1px 0 #fff9;backdrop-filter:blur(28px) saturate(130%);-webkit-backdrop-filter:blur(28px) saturate(130%)}
+.nav-login{border:0;border-left:1px solid #d8dadd;padding:10px 0 10px 24px;background:transparent;font-size:13px;color:#202124;min-height:44px;cursor:pointer;white-space:nowrap}
+.nav-login:hover{color:#6b6b70}
+#view-home .hero-break{background:transparent}
+.home-title{position:absolute;top:28px;left:24px;right:24px;text-align:center;z-index:3;pointer-events:none}
+.home-title h1{font-family:var(--sans),sans-serif;font-size:clamp(28px,3.2vw,46px);font-weight:550;letter-spacing:.055em;line-height:1.3;margin:0;color:#202126}
+.home-title p{font-size:13px;color:#72737a;letter-spacing:.12em;margin:14px 0 0}
+#view-home .shelf-stage{top:max(150px,calc(35svh - 86px))}
+#view-home .hero-search .composer{background:rgba(255,255,255,.62);border:1px solid #ffffffd9;backdrop-filter:blur(32px) saturate(115%);-webkit-backdrop-filter:blur(32px) saturate(115%);box-shadow:0 12px 42px #22263212,inset 0 1px 0 #fff}
+#view-home .composer textarea{color:#22252c;background:transparent}
+#view-home .composer textarea::placeholder{color:#626773;opacity:1}
+.switch[aria-checked=true] .switch-track{background:#17191d}
+.home-compose-actions{display:flex;gap:10px;align-items:center;margin-left:auto}
+.home-add-content{display:grid;place-items:center;width:44px;height:44px;flex:none;border:1px solid #d9dce1;border-radius:50%;background:#ffffff63;color:#272a30;cursor:pointer}
+.home-add-content:hover{background:#fff}
+#home-attachments{display:flex;gap:8px;flex-wrap:wrap;padding-inline:12px}#home-attachments:empty{display:none}
+.home-file-chip{display:flex;align-items:center;gap:6px;max-width:100%;padding:4px 6px 4px 12px;border-radius:10px;background:#ffffffa8;border:1px solid #dfe1e4;font-size:12px;margin-bottom:8px}
+.home-file-chip>span{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.home-file-chip button{display:grid;place-items:center;width:32px;height:32px;border:0;background:transparent;border-radius:8px;color:#626872;cursor:pointer}
+.home-attachment-note{width:100%;font-size:11px;color:#656b75;margin:0 0 8px}
+.home-login-dialog{width:min(410px,calc(100vw - 32px));padding:28px;border:1px solid #fff;border-radius:24px;background:#f6f6f7eb;backdrop-filter:blur(30px);color:#252a31;box-shadow:0 24px 70px #1112}
+.home-login-dialog::backdrop{background:#24273155;backdrop-filter:blur(8px)}
+.home-login-head{display:flex;justify-content:space-between;align-items:center}.home-login-head img{width:116px;height:auto}.home-login-head button{display:grid;place-items:center;width:40px;height:40px;border:0;border-radius:50%;background:#e9eaed;cursor:pointer}
+.home-login-dialog h2{font-size:24px;margin-top:30px}.home-login-dialog p{font-size:14px;line-height:1.8;color:#67707a}.home-login-dialog .btn{width:100%;justify-content:center;margin-top:12px}
+/* All local iconfont glyphs have a minimum 24px visual size, across every route and dialog. */
+html body .iconfont,html body #app .iconfont.iconfont.iconfont,html body .topbar .iconfont,html body dialog .iconfont.iconfont.iconfont{font-size:24px!important;min-width:24px!important;min-height:24px!important;line-height:1!important;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+html body .iconfont::before{font-size:inherit!important}
+@media(max-width:850px){.nav-island{gap:20px;padding-inline:18px}.topbar .nav{gap:16px}}
+@media(max-width:760px){.topbar{height:126px;min-height:126px;padding:12px 16px}.nav-island{position:relative;gap:4px;width:100%;min-height:100px;padding:10px 16px}.nav-login{position:absolute;right:16px;top:10px;min-height:36px;border-left:0;padding:8px 14px}.topbar .nav{order:2;width:100%;gap:14px}.home-title{top:22px}.home-title h1{font-size:28px}.home-title p{font-size:11px;margin-top:10px}#view-home .shelf-stage{top:max(136px,calc(35svh - 126px))}}
+@media(max-height:680px) and (min-width:761px){.home-title{top:18px}.home-title h1{font-size:32px}.home-title p{margin-top:8px}#view-home .shelf-stage{top:140px}}
+
+/* One shared interval keeps the heading centered between navigation and shelf. */
+#view-home .hero-break{--shelf-start:max(208px,calc(41svh - 86px))}
+#view-home .home-title{top:0;height:var(--shelf-start);display:flex;flex-direction:column;justify-content:center;align-items:center}
+#view-home .home-title h1{font-size:clamp(38px,4.5vw,64px);line-height:1.22;letter-spacing:.035em}
+#view-home .home-title p{margin-top:16px;font-size:14px}
+#view-home .shelf-stage{top:var(--shelf-start)}
+#view-home .shelf-cover{height:92svh;aspect-ratio:14/19}
+#view-home .hero-search{width:min(720px,calc(100% - 36px));padding-inline:0}
+@media(max-width:760px){
+ #view-home .hero-break{--shelf-start:max(172px,calc(41svh - 126px))}
+ #view-home .home-title{left:18px;right:18px}
+ #view-home .home-title h1{font-size:clamp(28px,6.8vw,42px)}
+ #view-home .home-title p{font-size:11px;margin-top:12px}
+}
+@media(max-height:680px) and (min-width:761px){
+ #view-home .hero-break{--shelf-start:184px}
+ #view-home .home-title h1{font-size:46px}
+}
+
+/* Neutral tonal depth with fine static grain behind the reading surfaces. */
+body:has(#view-home.active){
+ background-color:#e5e5e7;
+ background-image:radial-gradient(ellipse at 48% 8%,#fafafa 0%,#f3f3f4 24%,transparent 64%),radial-gradient(ellipse at 96% 72%,#d6d7da80 0%,transparent 62%),linear-gradient(155deg,#ececee 0%,#e6e6e8 46%,#dcdde0 100%);
+ background-attachment:fixed;
+ isolation:isolate;
+}
+body:has(#view-home.active)::before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='grain' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Cpath fill='%23808080' filter='url(%23grain)' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
+ background-repeat:repeat;background-size:180px 180px;opacity:.065;mix-blend-mode:multiply;
+}
+
+/* Separate shadow planes retain soft edges outside each fading cover. */
+#view-home .shelf-contact-shadow{position:absolute;inset:-56px;pointer-events:none;backface-visibility:hidden;mask-image:linear-gradient(to right,#000 0%,#000 38%,#0008 65%,transparent 94%);-webkit-mask-image:linear-gradient(to right,#000 0%,#000 38%,#0008 65%,transparent 94%)}
+#view-home .shelf-contact-shadow::before{content:"";position:absolute;inset:56px;box-shadow:5px 2px 12px #171a202b,14px 6px 28px #171a2017,1px 0 3px #10131838;border-radius:1px}
+#view-home .shelf-contact-front{transform:translateZ(calc(var(--half-thickness) - 1px))}
+#view-home .shelf-contact-back{transform:rotateY(180deg) translateZ(calc(var(--half-thickness) - 1px));mask-image:linear-gradient(to left,#000 0%,#000 38%,#0008 65%,transparent 94%);-webkit-mask-image:linear-gradient(to left,#000 0%,#000 38%,#0008 65%,transparent 94%)}
+#view-home .shelf-contact-back::before{box-shadow:-5px 2px 12px #171a202b,-14px 6px 28px #171a2017,-1px 0 3px #10131838}
+
+#view-home .home-title h1,#view-home .home-title p{font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",STSong,serif}
+#view-home .home-title p{margin:0 0 14px;letter-spacing:.14em}
+#view-home .home-title h1{margin:0;font-weight:600}
+@media(max-width:760px){#view-home .home-title p{margin:0 0 12px}}
+
+/* A book has no header; site navigation enters only in the full-screen reading state. */
+.ly-book-open-dialog .ly-open-volume.ly-unified-detail{height:100%}
+.ly-book-open-dialog .ly-unified-detail>.rd-page{padding-top:calc(40px + 86px * var(--nav-space,0))}
+.ly-book-open-dialog .ly-book-close{z-index:90;background:#f0f1f2d9;backdrop-filter:blur(12px)}
+.ly-book-open-dialog .ly-reader-nav{position:absolute;inset:0 0 auto;width:100%;height:86px;padding:12px 64px;z-index:60;opacity:0;transform:translateY(-28px);visibility:hidden;pointer-events:none;transition:transform .38s cubic-bezier(.22,.65,.22,1),opacity .28s ease,visibility .38s}
+.ly-book-open-dialog.has-site-nav .ly-reader-nav{transform:translateY(0);opacity:1;visibility:visible;pointer-events:auto}
+.ly-reader-nav .nav-island{max-width:100%}
+@media(max-width:760px){.ly-book-open-dialog .ly-reader-nav{height:126px;padding:10px 54px 10px 12px}.ly-book-open-dialog .ly-unified-detail>.rd-page{padding-top:calc(42px + 126px * var(--nav-space,0))}}
+@media(prefers-reduced-motion:reduce){.ly-book-open-dialog .ly-reader-nav{transition:none}}
+
+/* Dedicated close row, outside the content viewport, also mirrored during the turn. */
+.ly-book-open-dialog .ly-detail-surface,.ly-book-open-dialog .ly-page-mirror{display:flex;flex-direction:column}
+.ly-close-row{display:flex;justify-content:flex-end;align-items:center;flex:0 0 56px;padding:10px 16px;box-sizing:border-box;margin-top:calc(86px * var(--nav-space,0));background:#f6f9fc}
+.ly-book-open-dialog .ly-close-row .ly-book-close{position:static;flex:none;width:36px;height:36px}
+.ly-book-open-dialog .ly-open-volume.ly-unified-detail{flex:1;min-height:0;height:auto}
+.ly-book-open-dialog .ly-unified-detail>.rd-page{padding-top:8px}
+@media(max-width:760px){.ly-close-row{margin-top:calc(126px * var(--nav-space,0))}}
+
+/* Rounded spread, with matching outside corners on the turning left leaf. */
+.ly-book-open-dialog{--spread-radius:calc(18px * (1 - var(--expand-progress,0)))}
+.ly-book-open-dialog .ly-detail-surface{border-radius:var(--spread-radius)}
+.ly-book-open-dialog .ly-page-back{border-radius:var(--spread-radius) 0 0 var(--spread-radius)}
+.ly-book-open-dialog .ly-opening-front{border-radius:2px var(--spread-radius) var(--spread-radius) 2px}
+
+/* Content scrolls directly beneath the navigation, with no fixed close-row mask. */
+.ly-book-open-dialog .ly-detail-surface,.ly-book-open-dialog .ly-page-mirror{box-sizing:border-box;padding-top:calc(86px * var(--nav-space,0))}
+.ly-book-open-dialog .ly-close-row{margin-top:0;min-height:56px;flex:none}
+@media(max-width:760px){.ly-book-open-dialog .ly-detail-surface,.ly-book-open-dialog .ly-page-mirror{padding-top:calc(126px * var(--nav-space,0))}}
+/* Figma Form 7:6 — homepage composer. Icons remain the local iconfont. */
+#view-home .hero-search .composer{box-sizing:border-box;padding:10px;border:1px solid rgba(255,255,255,.85);border-radius:24px;position:relative;background:rgba(255,255,255,.8);backdrop-filter:blur(64px) saturate(85%);-webkit-backdrop-filter:blur(64px) saturate(85%);box-shadow:0 12px 42px rgba(34,38,50,.07),inset 0 1px 0 #fff}
+#view-home .hero-search .composer:focus-within{border-color:rgba(255,255,255,.85);box-shadow:0 12px 42px rgba(34,38,50,.07),inset 0 1px 0 #fff}
+#view-home .composer textarea{box-sizing:border-box;padding:10px;min-height:76px;max-height:170px;font-family:inherit;font-weight:400;font-size:16px;line-height:28px;background:transparent;color:#22252c}
+#view-home .composer textarea::placeholder{color:#606266;opacity:1}
+#view-home .composer-row{justify-content:space-between;padding:0;gap:10px;min-height:32px}
+#view-home .composer .switch{display:inline-flex;align-items:center;gap:4px;min-height:32px;padding:6px 14px 6px 6px;border:0;border-radius:100px;background:rgba(0,0,0,.05);color:#606266;font-size:12px;line-height:18px}
+#view-home .composer .switch-track{position:relative;display:block;flex:0 0 34px;width:34px;height:20px;border-radius:999px;background:#d9dce1}
+#view-home .composer .switch[aria-checked=true] .switch-track{background:#17191d}
+#view-home .composer .switch-track::before{width:14px;height:14px;top:3px;left:3px;border-radius:7px;box-shadow:0 1px 3px rgba(15,23,42,.16);transform:none}
+#view-home .composer .switch[aria-checked=true] .switch-track::before{left:17px;transform:none}
+#view-home .home-compose-actions{display:flex;align-items:center;gap:10px;margin-left:auto}
+#view-home .home-add-content,#view-home .composer .round-send{display:grid;place-items:center;box-sizing:border-box;width:32px;height:32px;min-width:32px;min-height:32px;flex:0 0 32px;padding:4px;border:0;border-radius:12px;box-shadow:none}
+#view-home .home-add-content{background:rgba(255,255,255,.1);color:#303133}
+#view-home .composer .round-send{background:#020617;color:#fff}
+#view-home .home-add-content:hover{background:rgba(255,255,255,.7)}
+#view-home .composer .round-send:hover{background:#202533}
+#view-home .home-add-content .iconfont,#view-home .composer .round-send .iconfont{display:block;width:24px;height:24px;font-size:24px!important;line-height:24px}
+#view-home #home-attachments:empty{display:none}
+
+/* Apply backdrop sampling directly to the visible glass surface. */
+#view-home .hero-search .composer::before{content:none}
+#view-home .hero-search .composer>textarea,#view-home .hero-search .composer>.composer-row,#view-home .hero-search .composer>#home-attachments{position:relative;z-index:1}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){#view-home .hero-search .composer{background:rgba(255,255,255,.96)}}

@@ -1,0 +1,73 @@
+@font-face{font-family:reading-guide-icons;src:url(assets/reading-guide-icons.woff) format("woff")}
+
+.demo-reading-widget .iconfont{font-family:reading-guide-icons!important;font-size:24px;line-height:24px;font-style:normal;font-weight:400;-webkit-font-smoothing:antialiased}
+
+.demo-reading-widget .icon-Arrow_Forward-2:before{content:"\e751"}
+.demo-reading-widget .icon-Slider:before{content:"\e6ec"}
+.demo-reading-widget .icon-Link:before{content:"\e6d6"}
+
+.demo-reading-widget .pe-chat{position:fixed;display:flex;flex-direction:column;width:360px;max-width:calc(100vw - 20px);top:88px;right:10px;bottom:10px;height:calc(100dvh - 98px);padding:0;gap:0;border-radius:24px;background:#ffffffd1;border:1px solid #ffffffd9;box-shadow:0 2px 6px #0000001a;backdrop-filter:blur(30px);overflow:hidden;color:#131921;transform-origin:right top;z-index:90}
+
+.demo-reading-widget .pe-chat[hidden]{display:none}
+
+.demo-reading-widget .pe-guide-heading{display:flex;align-items:center;gap:14px;padding:10px;height:64px;min-height:64px;flex:none;width:100%;background:#ffffff80;box-shadow:0 2px 6px #0000001a;position:relative}
+
+.demo-reading-widget .pe-guide-avatar{width:44px;height:44px;min-width:44px;border-radius:24px;object-fit:cover;flex:none}
+
+.demo-reading-widget .pe-guide-heading>div{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:0}
+
+.demo-reading-widget .pe-guide-heading h2{margin:0;font-size:16px;line-height:28px;font-weight:700}
+
+.demo-reading-widget .pe-guide-heading p{margin:0;font-size:12px;line-height:16px;color:#909399;white-space:nowrap}
+
+.demo-reading-widget .pe-chat-toggle{flex:none;display:inline-flex;align-items:center;justify-content:center;padding:4px;width:32px;height:32px;min-width:32px;border:0;border-radius:12px;background:#ffffff1a;color:#303133;position:relative}
+
+.demo-reading-widget .pe-chat-messages{flex:1 1 0;min-height:0;padding:40px 10px 0;overflow:auto;font-size:14px;line-height:24px}
+
+.demo-reading-widget .pe-guide-welcome h3{font-size:24px;line-height:32px;font-weight:400}
+
+.demo-reading-widget .pe-guide-welcome>p{font-size:16px;line-height:28px;color:#909399;margin-bottom:20px}
+
+.demo-reading-widget .pe-guide-prompt{width:100%;height:70px;padding:12px;margin-bottom:10px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;border-radius:14px;border:1px solid #ddd;background:#ffffffb3;text-align:left}
+
+.demo-reading-widget .pe-guide-prompt:last-child{margin-bottom:0}
+
+.demo-reading-widget .pe-guide-prompt strong{display:block;font-size:16px;line-height:28px;font-weight:700}
+
+.demo-reading-widget .pe-guide-prompt small{display:block;font-size:12px;line-height:16px;color:#909399}
+
+.demo-reading-widget .pe-chat-messages>p{margin:16px 0}
+
+.demo-reading-widget .pe-user-message{padding:12px 16px;background:#edf0f4;border-radius:16px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+.demo-reading-widget .pe-chat-form-wrap{padding:10px;flex:none;width:100%}
+
+.demo-reading-widget .pe-chat-form{padding:10px;height:130px;width:100%;border:1px solid #ffffffd9;border-radius:24px;background:#ffffffcc;backdrop-filter:blur(32px);box-shadow:0 12px 42px #22263212,inset 0 1px #fff}
+
+.demo-reading-widget textarea{display:block;height:76px;min-height:76px;max-height:76px;width:100%;padding:10px;margin:0;font:400 16px/28px Figtree,"PingFang SC",sans-serif;color:#606266;resize:none;background:transparent;border:0}
+
+.demo-reading-widget textarea::placeholder{color:#606266;opacity:1}
+
+.demo-reading-widget .pe-chat-tools{height:32px;display:flex;justify-content:flex-end;gap:10px}
+
+.demo-reading-widget .pe-chat-tools :is(button,.pe-chat-attach){flex:none;display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:4px;border:0;border-radius:12px;cursor:pointer;background:#ffffff1a;color:#303133}
+
+.demo-reading-widget .pe-chat-tools button{background:#020617;color:#fff}
+
+.demo-reading-widget .pe-chat-reopen{display:none;position:fixed;top:17px;right:20px;width:44px;height:44px;padding:0;border:0;border-radius:24px;box-shadow:0 4px 10px #0003;z-index:95;background:transparent}
+
+.demo-reading-widget.pe-chat-collapsed .pe-chat-reopen{display:inline-flex}
+
+.demo-reading-widget .pe-chat-reopen img{width:44px;height:44px;border-radius:24px}
+
+.demo-reading-widget .pe-tooltip{display:none;position:absolute;right:0;top:calc(100% + 8px);padding:6px 10px;border-radius:6px;background:#131921;color:white;font:400 12px/16px Figtree,"PingFang SC",sans-serif;white-space:nowrap;pointer-events:none}
+
+.demo-reading-widget .pe-icon-button:is(:hover,:focus-visible) .pe-tooltip{display:block}
+.demo-reading-widget .pe-chat{top:136px;height:calc(100dvh - 146px)}
+.demo-reading-widget .pe-chat-reopen{top:41px}
+body:not([data-setup-view=feed]) .demo-reading-widget{display:none}
+@media(max-width:760px){.demo-reading-widget{display:none!important}}
+@media(min-width:761px){#edition-assistant{display:none!important}}
+
+/* Keep the composer surface unchanged when typing. */
+.demo-reading-widget textarea:is(:focus,:focus-visible){outline:none;border:0;box-shadow:none}

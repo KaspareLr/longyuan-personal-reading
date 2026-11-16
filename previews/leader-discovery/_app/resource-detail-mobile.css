@@ -1,0 +1,142 @@
+/* Cover-led resource identities are enabled only on mobile detail pages. */
+.book-sidebar-mobile-cover,.pe-mobile-resource-cover{display:none;}
+.resource-excerpt-toggle[hidden]{display:none!important;}
+.resource-excerpt-toggle{display:none;}
+@media(max-width:760px){
+ /* Book detail. Its desktop sidebar and reading workspaces keep their layout. */
+ body #portal-main[data-page=book] .portal-book-layout{gap:24px;}
+ body #portal-main[data-page=book] .book-sidebar-refined{gap:16px;padding-bottom:20px;border-bottom:1px solid #e4e7ed;}
+ body #portal-main[data-page=book] .book-sidebar-category{padding:0;font-size:11px;line-height:16px;}
+ body #portal-main[data-page=book] .book-sidebar-heading{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px 14px;align-items:start;}
+ body #portal-main[data-page=book] .book-sidebar-mobile-cover{display:block;grid-column:1;grid-row:1/3;width:88px;height:auto;aspect-ratio:14/19;object-fit:contain;align-self:start;border-radius:5px;background:#f5f7fa;box-shadow:3px 6px 16px #13192114;outline:1px solid #0000000d;}
+ body #portal-main[data-page=book] .book-sidebar-heading h1{grid-column:2;grid-row:1;display:block;align-self:end;margin:0;font-size:28px;line-height:36px;white-space:normal;overflow:visible;overflow-wrap:anywhere;-webkit-line-clamp:unset;}
+ body #portal-main[data-page=book] .book-sidebar-meta{grid-column:2;grid-row:2;display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:6px 10px;min-width:0;padding:0;font-size:13px;line-height:21px;font-weight:400;}
+ body #portal-main[data-page=book] .book-sidebar-social{width:100%;gap:8px;margin-top:0;}
+ body #portal-main[data-page=book] .book-sidebar-icon{width:40px;height:40px;padding:8px;}
+ body #portal-main[data-page=book] .book-capabilities{display:none;}
+ body #portal-main[data-page=book] .book-sidebar-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+ body #portal-main[data-page=book] .book-sidebar-actions>a,body #portal-main[data-page=book] .book-sidebar-actions>button{min-width:0;min-height:44px;padding:10px 12px;font-size:14px;line-height:22px;}
+ body #portal-main[data-page=book] .book-sidebar-guide-slot{min-height:0;flex:none;padding:0;}
+ body #portal-main[data-page=book] .book-sidebar-guide{width:100%;min-width:0;padding:10px 12px;}
+ body #portal-main[data-page=book] .book-sidebar-guide>img{width:32px;height:32px;}
+ body #portal-main[data-page=book] .book-sidebar-guide-name strong{font-size:14px;line-height:22px;}
+ body #portal-main[data-page=book] .book-sidebar-guide small{font-size:12px;line-height:18px;}
+ body #portal-main[data-page=book] .book-detail-byline{display:none;}
+ body #portal-main[data-page=book] .portal-book-content.book-detail-refined{gap:28px;}
+ body #portal-main[data-page=book] .book-detail-introduction{gap:16px;}
+ body #portal-main[data-page=book] .book-detail-about{gap:8px;}
+ body #portal-main[data-page=book] .book-detail-introduction p{font-size:15px;line-height:26px;}
+ body #portal-main[data-page=book] .book-detail-quote{gap:6px;padding:12px 14px;}
+ body #portal-main[data-page=book] .book-detail-divider{display:none;}
+ body #portal-main[data-page=book] .club-overline{font-size:11px;line-height:16px;}
+ body #portal-main[data-page=book] .book-detail-tools{gap:12px;}
+ body #portal-main[data-page=book] .book-detail-tools h2{font-size:20px;line-height:28px;}
+ body #portal-main[data-page=book] .portal-tool-grid{gap:10px;}
+ body #portal-main[data-page=book] .portal-tool{display:grid;grid-template-columns:32px minmax(0,1fr);gap:10px;align-items:start;min-height:84px;padding:14px 12px;}
+ body #portal-main[data-page=book] .portal-tool:last-child:nth-child(odd){grid-column:1/-1;min-height:72px;}
+ body #portal-main[data-page=book] .book-tool-art{width:32px;height:32px;}
+ body #portal-main[data-page=book] .portal-tool>span{min-width:0;}
+ body #portal-main[data-page=book] .portal-tool strong{font-size:14px;line-height:21px;}
+ body #portal-main[data-page=book] .portal-tool small{font-size:12px;line-height:18px;}
+ body #portal-main[data-page=book] .book-contents{padding:0 0 20px;}
+ body #portal-main[data-page=book] .book-contents-cover{display:none;}
+ body #portal-main[data-page=book] .book-contents-header{align-items:center;flex-wrap:nowrap;gap:12px;margin-bottom:12px;padding-bottom:14px;border-color:#e4e7ed;}
+ body #portal-main[data-page=book] .book-contents-header h2{font-size:20px;line-height:28px;}
+ body #portal-main[data-page=book] .book-contents-header>div>div{gap:4px;}
+ body #portal-main[data-page=book] .book-contents-groups{gap:8px;}
+ body #portal-main[data-page=book] .book-contents-group>summary{gap:10px;min-height:44px;padding:12px 0;}
+ body #portal-main[data-page=book] .book-contents-group>summary>strong{font-size:14px;line-height:22px;font-weight:500;}
+ body #portal-main[data-page=book] .book-contents-item{gap:10px;padding:12px 0;}
+ body #portal-main[data-page=book] .book-contents-item>span{font-size:11px;line-height:24px;min-width:22px;}
+ body #portal-main[data-page=book] .book-contents-summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:start;}
+ body #portal-main[data-page=book] .book-contents-title{font-size:15px;line-height:24px;font-weight:600;}
+ body #portal-main[data-page=book] .book-contents-actions{width:auto;}
+ body #portal-main[data-page=book] .book-contents-read{align-self:start;min-height:44px;padding:0;margin:0;font-size:12px;line-height:20px;}
+ /* Journal detail: override the legacy sidebar gutters and 96px edition rows. */
+ body.club-demo-context.mobile-navigation-ready:has(#view-magazine.active .pe-resource-detail)>.club-demo-topbar{height:auto;min-height:0;}
+ body.club-demo-context:has(#view-magazine.active .pe-resource-detail) #app{padding-top:var(--mobile-header-offset,90px);}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail{--pe-gutter:0px;width:100%;max-width:none;margin:0;padding:0 16px 32px;box-sizing:border-box;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;width:100%;min-width:0;margin:0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity{position:static;height:auto;min-height:0;gap:16px;padding:0 0 20px;border-bottom:1px solid #e4e7ed;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-column-edition{min-height:0;height:auto;margin:0;padding:0;font-size:11px;line-height:16px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-column-edition-right{display:none;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-top{display:grid;grid-template-columns:88px minmax(0,1fr);align-items:start;gap:8px 14px;margin:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-mobile-resource-cover{display:block;grid-column:1;grid-row:1/3;width:88px;height:auto;aspect-ratio:14/19;object-fit:contain;align-self:start;border-radius:5px;background:#f5f7fa;box-shadow:3px 6px 16px #13192114;outline:1px solid #0000000d;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-top h1{grid-column:2;grid-row:1;align-self:end;display:block;min-width:0;font-size:28px;line-height:36px;white-space:normal;overflow:visible;overflow-wrap:anywhere;-webkit-line-clamp:unset;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-metadata{grid-column:2;grid-row:2;min-height:0;display:flex;align-items:center;gap:6px 10px;margin:0;padding:0;font-size:13px;line-height:21px;font-weight:400;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-issue-picker summary{min-height:32px;padding:2px 0;font-size:13px;line-height:22px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-social{width:100%;gap:8px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-social .pe-icon-button{width:40px;height:40px;min-width:40px;min-height:40px;padding:8px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-resource-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-resource-actions>a,body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-resource-actions>button{min-width:0;min-height:44px;padding:10px 12px;font-size:14px;line-height:22px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-guide-slot{min-height:0;flex:none;margin:0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-guide-card{width:100%;min-width:0;padding:10px 12px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-guide-card>img{width:32px;height:32px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-guide-name strong{font-size:14px;line-height:22px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-reading{display:flex;flex-direction:column;gap:24px;min-width:0;width:100%;margin:0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-intro{gap:12px;margin:0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-intro-copy{gap:8px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-intro-copy p{font-size:15px;line-height:26px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-intro-rule{margin:0;background:#e4e7ed;width:100%;height:1px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-directory{gap:16px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-directory>.pe-section-heading{align-items:center;gap:12px;margin:0 0 16px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-directory-cover{display:none;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-directory-title{gap:4px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-directory-title h2{font-size:20px;line-height:28px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-categories{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:12px 0;border-color:#e4e7ed;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-categories button{display:inline-flex;align-items:center;gap:4px;min-height:36px;max-width:100%;padding:7px 10px;border-radius:100px;background:#f0f1f3;font-size:12px;line-height:20px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-group h3{gap:10px;margin:20px 0 0;font-size:18px;line-height:28px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-article{gap:10px;padding:16px 0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-article>div{min-width:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-article h4{font-size:16px;line-height:25px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-article p{font-size:14px;line-height:24px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-article-cover{max-height:240px;width:100%;object-fit:contain;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-read-link{min-height:36px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-bottom-section{width:100%;margin:28px 0 0;padding:0;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-bottom-section h2{font-size:20px;line-height:28px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-related-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-related-grid strong{font-size:14px;line-height:22px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-purchase{margin:0;padding:0;gap:16px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-plan-row{gap:10px;padding:12px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-plan-copy strong{font-size:14px;line-height:22px;}
+ body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-plan-price strong{font-size:20px;line-height:28px;}
+ /* Collapse only long introductions; preserve their complete text in the DOM. */
+ body #portal-main[data-page=book] p.resource-excerpt-collapsed,body #view-magazine.active .pe-resource-detail p.resource-excerpt-collapsed{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--resource-excerpt-lines,6);overflow:hidden;}
+ body #portal-main[data-page=book] .resource-excerpt-toggle,body #view-magazine.active .pe-resource-detail .resource-excerpt-toggle{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:36px;margin:0;padding:6px 12px;border:0;border-radius:100px;background:#f0f1f3;color:#131921;font-size:13px;line-height:22px;cursor:pointer;}
+ body .resource-excerpt-toggle:focus-visible{outline:2px solid #131921;outline-offset:3px;}
+}
+@media(max-width:360px){
+ body #portal-main[data-page=book] .book-sidebar-heading,body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-top{grid-template-columns:76px minmax(0,1fr);gap:8px 12px;}
+ body #portal-main[data-page=book] .book-sidebar-mobile-cover,body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-mobile-resource-cover{width:76px;}
+ body #portal-main[data-page=book] .book-sidebar-heading h1,body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-top h1{font-size:25px;line-height:34px;}
+ body #portal-main[data-page=book] .portal-tool{grid-template-columns:28px minmax(0,1fr);padding:12px 10px;gap:8px;}
+ body #portal-main[data-page=book] .book-tool-art{width:28px;height:28px;}
+}
+
+/* V3 magazines expose archive and article reading, without facsimile actions. */
+body #view-magazine.active .pe-resource-detail .pe-identity-resource-actions{grid-template-columns:minmax(0,1fr)}
+@media(max-width:760px){
+ body #view-magazines .magazines-home-read{grid-row:2}
+ body #view-magazines .magazines-home-thumbnails{grid-row:3}
+}
+/* V3 magazine library: only the complete catalogue, without recommendation or filters. */
+body #view-magazines :is(.magazines-home-hero,.magazines-stories,.magazines-category-filters){display:none!important}
+body #view-magazines .magazines-all-heading h1{font-size:32px;line-height:40px;font-weight:700}
+@media(max-width:760px){
+ body #view-magazines .magazines-home-body{padding-top:24px}
+ body #view-magazines .magazines-all-heading h1{font-size:22px;line-height:30px}
+}
+
+.pe-mobile-inline-archive{display:none}
+@media(max-width:760px){
+ html body #view-magazine.active .pe-resource-detail .pe-social{display:flex;flex-wrap:nowrap;align-items:center;width:100%;gap:4px}
+ html body #view-magazine.active .pe-resource-detail .pe-mobile-inline-archive{display:inline-flex;align-items:center;justify-content:center;flex:1;min-width:80px;min-height:40px;padding:8px 6px;border:1px solid #c0c4cc;border-radius:10px;background:#fff;color:#131921;font:500 12px/20px Figtree,"PingFang SC",sans-serif;white-space:nowrap;cursor:pointer}
+ html body #view-magazine.active .rd-periodical.pe-figma-detail.pe-resource-detail .pe-identity-resource-actions{display:none!important}
+}
+@media(max-width:760px){
+ html body #view-magazine.active .rd-periodical.pe-resource-detail .pe-mobile-inline-archive{flex:0 0 auto;min-width:80px;width:auto;padding-inline:12px}
+ html body #view-magazine.active .rd-periodical.pe-resource-detail .pe-issue-picker summary{pointer-events:none;cursor:default;list-style:none}
+ html body #view-magazine.active .rd-periodical.pe-resource-detail .pe-issue-picker summary::-webkit-details-marker{display:none}
+ html body #view-magazine.active .rd-periodical.pe-resource-detail .pe-issue-picker summary :is(i,.pe-refined-issue-arrow),
+ html body #view-magazine.active .rd-periodical.pe-resource-detail .pe-issue-picker>div{display:none!important}
+}

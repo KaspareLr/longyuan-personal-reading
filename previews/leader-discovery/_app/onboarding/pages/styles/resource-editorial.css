@@ -1,0 +1,72 @@
+/* Unified editorial resource system. See docs/资源详情页设计规范.md. */
+:root{--resource-ink:#131921;--resource-muted:#909399;--resource-paper:#fafafa;--resource-gap:80px;--resource-chat:380px}
+/* Navigation belongs to the viewport, never to the chat/content grid. */
+body:has(.view.active .rd-periodical)>.topbar,.ly-book-open-dialog:has(.rd-periodical) .ly-reader-nav{width:100%!important;right:0!important;left:0;visibility:visible;pointer-events:none}
+body:has(.view.active .rd-periodical)>.topbar .nav-island,.ly-book-open-dialog:has(.rd-periodical) .ly-reader-nav .nav-island{pointer-events:auto}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-page.rd-periodical{max-width:none;width:100%;padding:10px;margin:0;background:var(--resource-paper);box-sizing:border-box}
+main:has(>.view.active .rd-periodical){max-width:none;width:100%;padding:0;margin:0}
+body:has(.view.active .rd-periodical){background:var(--resource-paper)}
+body:has(.view.active .rd-periodical)>.site-footer{display:none}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical .pe-chat{display:flex;position:fixed;top:88px;right:10px;bottom:10px;height:calc(100dvh - 98px);width:380px;z-index:65;flex-direction:column}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical.pe-chat-collapsed .pe-chat{display:none}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical .pe-edition,:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical .pe-layout,:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical .rd-editorial-layout,:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical .reader-layout{margin-right:400px}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .rd-periodical.pe-chat-collapsed :is(.pe-edition,.pe-layout,.rd-editorial-layout,.reader-layout,.pe-subscription,.pe-bottom-section,.pe-source){margin-right:0}
+:is(.ly-book-open-dialog.has-site-nav,.view.active) .pe-chat-collapsed .pe-chat-reopen{display:inline-flex;position:fixed;right:24px;bottom:24px;width:52px;height:52px;border-radius:50%;background:var(--resource-ink);color:#fff;z-index:70}
+.rd-periodical .pe-directory>.pe-section-heading{font-family:Figtree,"PingFang SC",sans-serif;display:flex;align-items:flex-end;margin:0 0 20px;gap:20px}
+.rd-periodical .pe-directory>.pe-section-heading>div{display:flex;flex-direction:column;gap:10px}
+.rd-periodical .pe-directory>.pe-section-heading h2{font:700 32px/40px Figtree,"PingFang SC",sans-serif;margin:0;letter-spacing:0;color:var(--resource-ink)}
+.rd-periodical .pe-directory>.pe-section-heading :is(.pe-kicker,span){font-size:12px;line-height:16px;color:var(--resource-muted)}
+.rd-periodical .pe-directory>.pe-categories{gap:20px;padding:20px 0;border-block:1px solid var(--resource-ink)}
+.rd-periodical .pe-directory>.pe-categories button{font-size:12px;line-height:16px;padding:0;display:flex;gap:4px;align-items:flex-start}
+.rd-periodical .pe-directory>.pe-categories sup{font-size:12px;position:static;color:var(--resource-muted);margin:0}
+/* All resource types share identity / reading / floating guide hierarchy. */
+.rd-editorial{font-family:Figtree,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--resource-ink)}
+.rd-editorial-layout,.rd-editorial-article .reader-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:80px;padding:0 80px 80px;align-items:start}
+.rd-editorial .rd-hero{display:flex;flex-direction:column;align-items:stretch;position:sticky;top:30px;background:none;border:0;border-radius:0;padding:0;min-height:0;gap:40px}
+.rd-editorial .rd-cover{order:2;padding:0;text-align:left}
+.rd-editorial .rd-cover img{width:100px;height:auto;max-height:none;object-fit:contain;filter:none;box-shadow:0 10px 24px #00000012}
+.rd-editorial .rd-heading h1{font:700 clamp(40px,4.2vw,72px)/1.2 Figtree,"PingFang SC",sans-serif;letter-spacing:0;margin:20px 0 30px;overflow-wrap:anywhere}
+.rd-editorial :is(.rd-eyebrow,.rd-note){font-size:12px;line-height:20px;letter-spacing:0;color:var(--resource-muted)}
+.rd-editorial :is(.rd-meta,.rd-summary,.rd-section p){font-size:14px;line-height:24px;color:var(--resource-ink)}
+.rd-editorial .rd-actions{margin-top:80px;gap:20px}
+.rd-editorial .rd-button{border-radius:12px;background:#fff;border-color:#c0c4cc;font-size:14px!important;line-height:20px;min-height:48px;padding:13px 24px;box-shadow:none;color:var(--resource-ink)}
+.rd-editorial .rd-button.rd-primary{background:var(--resource-ink);color:#fff;border-color:var(--resource-ink)}
+.rd-editorial .pe-icon-button{min-height:32px;min-width:32px;padding:4px;border:0;background:none}
+.rd-editorial .rd-state{background:#eee;color:#606266;border-radius:6px;font-size:12px}
+.rd-editorial .rd-jump{margin:0 0 40px;padding:0;gap:20px;border-color:#dcdcdc}
+.rd-editorial .rd-jump button{font-size:12px;color:var(--resource-ink);padding:16px 0}
+.rd-editorial .rd-section{padding:0;margin:0 0 80px;scroll-margin-top:30px}
+.rd-editorial .rd-section h2,.rd-claimed .rd-section h2{font:700 32px/40px Figtree,"PingFang SC",sans-serif;margin:0 0 30px}
+.rd-editorial .rd-columns{display:block}
+.rd-editorial .rd-side{position:static;background:none;border:1px solid #ddd;border-radius:0;margin:60px 0 0;padding:24px}
+.rd-editorial :is(.rd-feature-card,.rd-person,.rd-chapter,.rd-tools button){border-radius:0;background:transparent;border:0;border-bottom:1px solid #dcdcdc;box-shadow:none;text-align:left;padding:24px 0;color:var(--resource-ink)}
+.rd-editorial :is(.rd-feature-card,.rd-person):hover{background:#f0f0f0}
+.rd-editorial .rd-card-grid{grid-template-columns:1fr;gap:0}
+.rd-editorial .rd-feature-card h3{font-size:24px;font-weight:700}
+.rd-editorial .rd-tools{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.rd-editorial .rd-tools button{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.rd-editorial .rd-club-feature{background:none;border:0;border-radius:0;padding:0;display:block;margin:0 0 80px}
+.rd-editorial .rd-club-feature h2{font:700 40px/1.3 Figtree,"PingFang SC",sans-serif}
+.rd-editorial .rd-reading-path{margin-top:40px}
+.rd-claimed .rd-section{padding-top:80px}
+.rd-claimed .rd-feature-card{background:none;border:0;border-bottom:1px solid #ddd;border-radius:0;box-shadow:none}
+.rd-claimed .rd-card-grid{grid-template-columns:1fr;gap:0}
+/* Article: persistent issue index, generous text column, shared reading guide. */
+.rd-editorial-article .reader-toc{position:sticky;top:30px;width:auto;background:none;border:0;box-shadow:none;padding:0}
+.rd-editorial-article .toc-head{font-size:24px;line-height:32px;padding:0 0 40px;border:0}
+.rd-editorial-article .toc-head small{display:block;font-size:12px;line-height:20px;margin-top:12px}
+.rd-editorial-article .toc-item{background:none;border:0;border-bottom:1px solid #ddd;border-radius:0;padding:20px 0;font-size:14px}
+.rd-editorial-article .toc-item.active{background:none;color:#131921;font-weight:700}
+.rd-editorial-article .reader-paper{padding:0;background:none;border:0;border-radius:0;box-shadow:none;min-width:0}
+.rd-editorial-article .reader-content{padding:0;max-width:680px;margin:0}
+.rd-editorial-article .reader-content h1{font:700 44px/1.3 Figtree,"PingFang SC",sans-serif;letter-spacing:0;margin:40px 0 24px}
+.rd-editorial-article .reader-content .byline{font-size:12px;line-height:20px;color:#909399;margin:0 0 60px}
+.rd-editorial-article #reader-body p{font-size:inherit;line-height:1.9;margin-bottom:28px;color:#131921}
+.rd-editorial-article .reader-top{padding:0;border:0;font-size:12px;line-height:20px;color:#909399}
+.rd-editorial-article .reader-toolbar{margin-top:80px;padding-top:24px;border-top:1px solid #ddd;flex-wrap:wrap;gap:20px}
+.rd-periodical i.iconfont{font-size:24px!important;min-width:24px;line-height:24px}
+@media(max-width:1200px){.rd-editorial-layout,.rd-editorial-article .reader-layout{padding-inline:30px;gap:40px}.rd-periodical .pe-layout{padding-inline:30px;grid-template-columns:1fr 1fr}.rd-periodical .pe-reading{padding-inline:0}.rd-periodical .pe-identity h1{font-size:48px;line-height:60px}.rd-editorial .rd-heading h1{font-size:40px}.rd-periodical .pe-purchase{padding-block:60px}}
+@media(max-width:900px){:is(.view.active,.ly-book-open-dialog.has-site-nav) .rd-periodical :is(.pe-layout,.pe-edition,.rd-editorial-layout,.reader-layout){margin-right:0}:is(.view.active,.ly-book-open-dialog.has-site-nav) .rd-periodical .pe-chat{width:min(380px,calc(100vw - 20px));top:136px;height:calc(100dvh - 146px)}.rd-periodical .pe-layout,.rd-editorial-layout,.rd-editorial-article .reader-layout{display:block;padding-inline:24px}.rd-periodical .pe-identity,.rd-editorial .rd-hero,.rd-editorial-article .reader-toc{position:static}.rd-periodical .pe-reading,.rd-editorial-content,.rd-editorial-article .reader-paper{margin-top:60px}.rd-periodical .pe-edition{padding-inline:24px}.rd-editorial .rd-tools{grid-template-columns:1fr}.rd-editorial-article .reader-content h1{font-size:32px}}
+
+.rd-editorial-article .reader-content{font-size:18px}
+.rd-periodical .pe-chat-attach:focus-visible{outline:2px solid #131921;outline-offset:2px}

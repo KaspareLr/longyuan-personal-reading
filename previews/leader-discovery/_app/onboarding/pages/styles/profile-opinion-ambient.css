@@ -1,0 +1,12 @@
+/* A slow, diffuse field of colour behind the lecturer's reading notes. */
+body.club-demo-context .oc-lecturer-profile .oc-profile-opinions{position:relative;isolation:isolate;overflow:hidden;background:#f2f5f5}
+body.club-demo-context .oc-profile-opinions::before,body.club-demo-context .oc-profile-opinions::after{content:"";position:absolute;inset:-25%;pointer-events:none;z-index:-1;filter:blur(48px);will-change:transform}
+body.club-demo-context .oc-profile-opinions::before{background:radial-gradient(ellipse at 20% 35%,#b8ded9b3 0,transparent 44%),radial-gradient(ellipse at 78% 30%,#cfcaedbf 0,transparent 43%),radial-gradient(ellipse at 60% 85%,#f1d7bca6 0,transparent 48%);animation:opinion-ambient-drift 24s ease-in-out infinite alternate}
+body.club-demo-context .oc-profile-opinions::after{background:radial-gradient(ellipse at 48% 46%,#ffffffd9 0,transparent 49%),radial-gradient(ellipse at 14% 80%,#ccdfed99 0,transparent 39%),radial-gradient(ellipse at 88% 62%,#f1d5df80 0,transparent 40%);animation:opinion-ambient-breathe 31s ease-in-out infinite alternate}
+body.club-demo-context .oc-profile-opinions>.oc-heading,body.club-demo-context .oc-profile-opinions>.oc-opinion-carousel{position:relative;z-index:1}
+body.club-demo-context .oc-profile-opinions .oc-opinion-dots{background:#ffffffb3;backdrop-filter:blur(12px)}
+@keyframes opinion-ambient-drift{0%{transform:translate3d(-3%,-2%,0) rotate(-5deg) scale(1.03)}50%{transform:translate3d(4%,3%,0) rotate(3deg) scale(1.12)}100%{transform:translate3d(-1%,5%,0) rotate(7deg) scale(1.06)}}
+@keyframes opinion-ambient-breathe{0%{transform:translate3d(4%,3%,0) scale(1.08)}50%{transform:translate3d(-4%,-3%,0) scale(.98)}100%{transform:translate3d(2%,-4%,0) scale(1.15)}}
+.view:not(.active) .oc-profile-opinions::before,.view:not(.active) .oc-profile-opinions::after{animation-play-state:paused}
+@media(max-width:600px){body.club-demo-context .oc-profile-opinions::before,body.club-demo-context .oc-profile-opinions::after{filter:blur(32px)}}
+@media(prefers-reduced-motion:reduce){body.club-demo-context .oc-profile-opinions::before,body.club-demo-context .oc-profile-opinions::after{animation:none;will-change:auto}}

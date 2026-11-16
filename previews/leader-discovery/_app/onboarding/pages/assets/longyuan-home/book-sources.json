@@ -1,0 +1,41 @@
+[
+  {
+    "id": 10,
+    "title": "前线部署工程师",
+    "author": "范冰",
+    "publisher": "西安交通大学出版社",
+    "chapters": 8,
+    "category": "教育学",
+    "summary": "围绕 AI 客户交付，介绍问题发现、项目部署、续约与规模化复制的方法。",
+    "url": "https://ebooks.com.cn/books/10",
+    "cover": "assets/longyuan-home/ebook-10.png",
+    "access": "登录后可读",
+    "retrieved": "2026-09-24"
+  },
+  {
+    "id": 8,
+    "title": "科学的历程",
+    "author": "未知作者",
+    "publisher": "北师大出版社",
+    "chapters": 3,
+    "category": "",
+    "summary": "以科学思想的跨文明传播为线索，串联古典科学、欧洲学术复兴与西学东渐。",
+    "url": "https://ebooks.com.cn/books/8",
+    "cover": "assets/longyuan-home/ebook-8.png",
+    "access": "登录后可读",
+    "retrieved": "2026-09-24"
+  },
+  {
+    "id": 7,
+    "title": "材料力学",
+    "author": "未知作者",
+    "publisher": "西安交通大学出版社",
+    "chapters": 13,
+    "category": "教育学",
+    "summary": "介绍材料力学基础、杆件变形、应力应变，以及强度和刚度计算。",
+    "url": "https://ebooks.com.cn/books/7",
+    "cover": "assets/longyuan-home/ebook-7.png",
+    "access": "登录后可读",
+    "retrieved": "2026-09-24"
+  }
+]

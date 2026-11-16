@@ -1,0 +1,14 @@
+/* Only user-approved product-shell differences from V3. Component CSS stays intact. */
+.demo-reading-widget,.pe-chat,.pe-chat-reopen,[data-pe-chat-toggle]{display:none!important}
+@media(max-width:760px){
+ body.mobile-navigation-ready .site-header .nav-shell,body.mobile-navigation-ready .club-demo-topbar .nav-island,body.podcast-page .site-header .nav-shell{display:none!important}
+ body.mobile-navigation-ready .site-header,body.mobile-navigation-ready>.topbar.club-demo-topbar,body.podcast-page .site-header{padding:8px 12px;min-height:0;pointer-events:none}
+ body.mobile-navigation-ready:not(.mobile-navigation-back) .site-header{display:none}
+ body.mobile-navigation-ready .site-header>.portal-back:not([hidden]),body.mobile-navigation-ready .club-demo-topbar>.club-page-back:not([hidden]),body.podcast-page .site-header>.portal-back{display:grid;pointer-events:auto;margin:0;width:44px;height:44px;min-width:44px;padding:10px;border-radius:100px}
+ body.home-v3 main#home{--mobile-header-offset:24px}
+ body.mobile-navigation-back{--mobile-header-offset:72px!important}
+ body.podcast-page{--mobile-header-offset:72px!important}
+}
+@media(max-width:760px){html body.mobile-navigation-ready .site-header,html body.podcast-page .site-header{justify-content:flex-start}}
+
+.v3-podcast{cursor:pointer}

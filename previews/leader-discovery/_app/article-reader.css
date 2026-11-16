@@ -1,0 +1,183 @@
+/* Figma 227:8665: typography and spacing, retaining resource text. */
+.portal-body:has(#portal-main[data-page=article]){background:#fafafa}
+.portal-body #portal-main[data-page=article]{max-width:1360px;padding-top:168px}
+.portal-reader{--article-serif:"Noto Serif CJK SC","Noto Serif SC","Source Han Serif SC","Songti SC",STSong,SimSun,serif;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:0}
+.portal-reader-content{padding:0 80px;min-width:0}
+.portal-reader.is-standalone{max-width:960px}.portal-reader.is-standalone .portal-reader-content{padding-inline:80px}
+.portal-reader .portal-toc{top:110px;padding:0 40px;max-height:calc(100dvh - 140px);scrollbar-width:none}.portal-toc::-webkit-scrollbar{display:none}
+.portal-toc>.reader-resource{display:flex;align-items:center;gap:10px;padding-bottom:20px;margin:0 0 20px;border-bottom:1px solid #131921;color:#131921}
+.reader-resource>img{width:49px;height:66px;object-fit:cover;flex:none;border-radius:4px;box-shadow:0 8px 16px #21212112}
+.reader-resource>span{display:flex;flex-direction:column;gap:10px;min-width:0}.reader-resource strong{font-size:16px;line-height:28px;font-weight:700}.reader-resource small{font-size:12px;line-height:16px;color:#909399}
+.portal-toc nav{display:flex;flex-direction:column;gap:0}
+.portal-toc .portal-toc-group{display:flex;align-items:start;gap:20px;margin:20px 0;padding:0;font-size:12px;line-height:16px;color:#131921}.portal-toc .portal-toc-group:first-child{margin-top:0}
+.portal-toc nav .reader-toc-article{display:flex;align-items:start;gap:20px;border-radius:0;border-bottom:1px solid #c0c4cc;padding:20px 0;color:#131921}
+.portal-toc-group+.reader-toc-article{border-top:1px solid #c0c4cc}
+.reader-toc-article>span:first-child{font-size:12px;line-height:28px;color:#909399;flex:none}
+.reader-toc-article>span:last-child{display:flex;flex-direction:column;gap:10px;min-width:0}
+.reader-toc-article strong{font-size:16px;line-height:28px;font-weight:700}
+.reader-toc-article small{font-size:14px;line-height:20px;color:#606266;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
+.portal-toc nav .reader-toc-article[aria-current]{background:transparent;color:#131921}.portal-toc nav .reader-toc-article[aria-current]>span:first-child{color:#131921;font-weight:700}
+.portal-article-head{display:flex;flex-direction:column;gap:20px;padding-bottom:40px;border-bottom:1px solid #dcdfe6}
+.portal-article-head>.club-overline{font-size:12px;line-height:16px;color:#909399;letter-spacing:0;margin-bottom:-10px}
+.portal-reader .portal-article-head h1{font-family:var(--article-serif);font-size:80px;line-height:96px;font-weight:700;letter-spacing:0;margin:0;color:#131921;overflow-wrap:anywhere}
+.portal-article-meta{gap:20px;font-size:12px;line-height:16px;color:#909399}
+.portal-prose{--reader-size:16px;padding-top:40px;max-width:720px;font-family:var(--article-serif);font-size:var(--reader-size);line-height:1.75;color:#131921;font-weight:400}
+.portal-prose>*{margin:20px 0 0!important}.portal-prose .lead{font-size:1em;line-height:1.75;font-weight:400;color:inherit}
+.portal-prose h2{font-family:inherit;font-size:1.25em;line-height:1.6;font-weight:700}
+.portal-prose blockquote{font-size:1em;line-height:1.75;font-weight:700;padding:20px;border-left:4px solid #131921;background:#f5f7fa;border-radius:0 16px 16px 0}
+.portal-prose img{display:block;width:auto;max-width:100%;height:auto;max-height:300px;object-fit:contain;object-position:left;border-radius:4px}
+.portal-reader-next{margin-top:48px;padding-top:20px;gap:20px;align-items:start}
+.portal-reader-next a{background:#fff;padding:16px;border-radius:20px;font-size:16px;line-height:28px;font-weight:700;max-width:240px;overflow-wrap:anywhere}
+.portal-reader-next a small{font-size:12px;line-height:16px;font-weight:400}.portal-reader-next a:first-child small{text-align:right}
+.portal-reader-tools{position:fixed;z-index:40;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px;margin:0}
+.portal-reader-tools button{position:relative;display:grid;place-items:center;width:54px;height:54px;padding:14px;border-radius:50%;border:1px solid #ffffffc9;background:#ffffffb3;backdrop-filter:blur(24px);box-shadow:0 7px 30px #252a3508,inset 0 1px #ffffff99;color:#131921;flex:none;transition:background .2s,box-shadow .2s}
+.portal-reader-tools button:hover{background:#fff;box-shadow:0 7px 30px #252a3512}.portal-reader-tools button:focus-visible{outline:2px solid #131921;outline-offset:4px}
+.portal-reader-tools button[aria-pressed=true]{background:#e9ecef;color:#131921}
+.portal-reader-tools button>span:has(img){display:grid;place-items:center;width:24px;height:24px}
+.reader-arrow-up{transform:rotate(-90deg)}.reader-arrow-down{transform:rotate(90deg)}
+.portal-reader-tools .iconfont{display:none}.reader-night-symbol{font-size:24px;line-height:24px}
+.portal-article-notes{margin-top:48px;padding:24px;border-radius:20px}.portal-article-notes h2{font-size:20px;line-height:32px}
+.portal-reader-content>.portal-source-note{font-size:12px;line-height:20px;margin-top:20px}
+.portal-reader.night .portal-article-head,.portal-reader.night .portal-reader-next{border-color:#606266}.portal-reader.night .portal-toc nav .reader-toc-article{color:#eceff2}.portal-reader.night .portal-toc-group,.portal-reader.night .reader-resource{color:#eceff2}.portal-reader.night .portal-reader-next a{background:#343b43}
+@media(min-width:761px) and (max-width:1536px){.portal-reader{grid-template-columns:minmax(0,300px) minmax(0,1fr)}.portal-reader .portal-toc{padding-inline:20px}.portal-reader-content{padding-inline:40px}.portal-reader .portal-article-head h1{font-size:64px;line-height:80px}.portal-reader-tools{right:12px;gap:14px}.portal-reader-tools button{width:48px;height:48px;padding:11px}}
+@media(min-width:761px) and (max-width:1100px){.portal-reader{grid-template-columns:220px minmax(0,1fr)}.portal-reader .portal-toc{padding:0 16px 0 0}.portal-reader-content{padding-inline:24px}.portal-reader .portal-article-head h1{font-size:48px;line-height:64px}.portal-body #portal-main[data-page=article]{width:calc(100% - 120px)}}
+@media(max-width:760px){.portal-body #portal-main[data-page=article]{padding-top:148px;width:calc(100% - 48px)}.portal-reader{grid-template-columns:1fr;gap:40px}.portal-reader .portal-toc{position:static;max-height:260px;padding:0 16px 16px;background:#f5f7fa;border-radius:16px}.portal-toc>.reader-resource{padding-top:16px}.portal-reader-content,.portal-reader.is-standalone .portal-reader-content{padding:0}.portal-reader .portal-article-head h1{font-size:40px;line-height:56px}.portal-article-meta{gap:10px 16px}.portal-article-head{padding-bottom:28px}.portal-prose{padding-top:20px}.portal-reader-tools{position:sticky;top:100px;transform:none;flex-direction:row;justify-content:center;gap:8px;padding:10px 0;background:#fafafae6;backdrop-filter:blur(20px);margin-top:10px}.portal-reader-tools button{width:40px;height:40px;padding:7px}.portal-reader-next a{max-width:46%;font-size:14px;line-height:24px;padding:12px}.portal-reader.night .portal-reader-tools{background:#252a30e6}}
+@media(prefers-reduced-motion:reduce){.portal-reader-tools button{transition:none}}
+.portal-reader.night .portal-article-head h1{color:#eceff2}
+.portal-reader.night .reader-toc-article small,.portal-reader.night .reader-resource small{color:#c1c6ce}
+
+/* Figma 227:9214 controls; fixed to the viewport while reading. */
+.portal-reader-content{position:relative}
+.portal-reader-tools{position:fixed;right:var(--reader-tools-right,24px);top:50%;transform:translateY(-50%);gap:16px;align-items:center;padding:4px;border:1px solid #ffffffcc;border-radius:100px;background:#ffffff33;backdrop-filter:blur(100px);box-shadow:0 7px 30px #252a3508,inset 0 1px #ffffff99}
+.portal-reader-tools .reader-tool-group{display:flex;flex-direction:column;align-items:center;gap:8px;padding:4px;border-radius:100px;background:#00000008;backdrop-filter:blur(100px);box-shadow:0 7px 30px #252a3508,inset 0 1px #ffffff99}
+.portal-reader-tools .reader-tool-section{display:flex;flex-direction:column;align-items:center;gap:8px}
+.portal-reader-tools button{width:40px;height:40px;padding:7px;border:1px solid #ffffffc9;border-radius:100px;background:#ffffffb3;backdrop-filter:blur(100px);box-shadow:0 7px 30px #252a3508,inset 0 1px #ffffff99}
+.portal-reader-tools [data-reader-scroll],.portal-reader-tools [data-save-article]{height:40px}
+.portal-reader-tools button>img{display:block;max-width:none}
+.portal-reader-tools button>span:has(img){display:block;position:relative;flex:none;width:24px;height:24px}
+.portal-reader-tools button>span>img{position:absolute;left:6px;top:7px;max-width:none}
+.portal-reader-tools .reader-arrow-up{transform:rotate(-90deg) scaleY(-1)}
+.portal-reader-tools .reader-arrow-down{transform:rotate(90deg)}
+@media(max-width:760px){.portal-reader-tools{position:fixed;right:auto;left:50%;top:auto;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);margin:0;gap:8px}.portal-reader-tools .reader-tool-group,.portal-reader-tools .reader-tool-section{flex-direction:row}}
+
+@media(max-width:360px){.portal-reader-tools button{width:34px;height:34px;padding:4px}.portal-reader-tools [data-reader-scroll],.portal-reader-tools [data-save-article]{height:34px}}
+
+/* Night reading colors the page, without changing the article geometry. */
+html:has(.portal-body #portal-main[data-page=article] .portal-reader.night){background:#20252b;color-scheme:dark}
+.portal-body:has(#portal-main[data-page=article] .portal-reader.night){background:#20252b;color:#eceff2}
+.portal-reader.night{background:transparent;border-radius:0;padding:0}
+.portal-body:has(.portal-reader.night) :is(.nav-shell,.site-header>.portal-back){background:#292f36ed;color:#eceff2;border-color:#ffffff26;box-shadow:0 7px 30px #0002,inset 0 1px #ffffff12}
+.portal-body:has(.portal-reader.night) .nav-shell :is(a,button){color:#eceff2}
+.portal-body:has(.portal-reader.night) .nav-shell>.login{border-color:#59616b}
+.portal-body:has(.portal-reader.night) :is(.portal-back img,.club-footer-brand img){filter:invert(1) grayscale(1)}
+.portal-body:has(.portal-reader.night) .club-site-footer{background:#252b32;color:#c1c6ce;border-color:#48515c}
+.portal-body:has(.portal-reader.night) .club-footer-bottom{border-color:#48515c;color:#b0b8c3}
+.portal-body:has(.portal-reader.night) .club-site-footer :is(a:hover,a:focus-visible){color:#fff;outline-color:#eceff2}
+.portal-reader.night :is(.portal-article-meta,.club-overline,.portal-source-note,.reader-resource small,.reader-toc-article>span:first-child,.portal-reader-next small){color:#b0b8c3}
+.portal-reader.night .portal-source-note a{color:#d5dae0}
+.portal-reader.night .portal-toc nav .reader-toc-article[aria-current]{background:transparent;color:#fff}
+.portal-reader.night .portal-toc nav .reader-toc-article[aria-current]>span:first-child{color:#fff}
+.portal-reader.night :is(.reader-resource,.reader-toc-article,.portal-article-notes article){border-color:#59616b}
+.portal-reader.night .portal-prose blockquote{border-color:#b0b8c3}
+.portal-reader.night .portal-reader-tools{background:#292f36e6;border-color:#ffffff26;box-shadow:0 7px 30px #0002,inset 0 1px #ffffff12}
+.portal-reader.night .reader-tool-group{background:#ffffff08;box-shadow:inset 0 1px #ffffff12}
+.portal-reader.night .portal-reader-tools button{background:#343c46;color:#eceff2;border-color:#ffffff26;box-shadow:inset 0 1px #ffffff12}
+.portal-reader.night .portal-reader-tools button:hover{background:#485361}
+.portal-reader.night .portal-reader-tools button[aria-pressed=true]{background:#566475;color:#fff}
+.portal-reader.night .portal-reader-tools img{filter:invert(1) grayscale(1)}
+.portal-reader.night :is(button,a,textarea):focus-visible{outline-color:#d5dae0}
+.portal-reader.night textarea{background:#252b32;color:#eceff2;border-color:#59616b}
+.portal-reader.night textarea::placeholder{color:#b0b8c3}
+.portal-reader.night .portal-article-notes .button{background:#e1e5eb;color:#20252b}
+.portal-body:has(.portal-reader.night) .portal-reading-progress{background:#b0b8c3}
+@media(max-width:760px){.portal-reader.night .portal-toc{background:#292f36}.portal-body:has(#portal-main[data-page=article]) .club-site-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}}
+
+.portal-body:has(.portal-reader.night) .demo-reading-widget .pe-chat{background:#292f36ed;color:#eceff2;border-color:#ffffff26}
+.portal-body:has(.portal-reader.night) .demo-reading-widget :is(.pe-guide-heading,.pe-guide-prompt,.pe-chat-form,.pe-user-message){background:#343c46;color:#eceff2;border-color:#59616b;box-shadow:none}
+.portal-body:has(.portal-reader.night) .demo-reading-widget :is(textarea,.pe-chat-toggle,.pe-chat-attach,.pe-guide-heading p,.pe-guide-welcome>p,.pe-guide-prompt small){color:#c1c6ce}
+.portal-body:has(.portal-reader.night) .demo-reading-widget textarea::placeholder{color:#b0b8c3}
+
+/* Keep transitions in both themes so returning to daylight is equally gradual. */
+html:has(.portal-body #portal-main[data-page=article]),
+.portal-body:has(#portal-main[data-page=article]),
+.portal-body:has(#portal-main[data-page=article]) :is(
+  .nav-shell,.nav-shell a,.nav-shell button,.site-header>.portal-back,.portal-back img,
+  .club-site-footer,.club-site-footer h2,.club-site-footer a,.club-footer-bottom,.club-footer-brand img,
+  .portal-reader,.portal-toc,.reader-resource,.reader-resource small,.reader-toc-article,
+  .reader-toc-article>span,.reader-toc-article small,.portal-toc-group,
+  .portal-article-head,.portal-article-head h1,.portal-article-meta,.club-overline,
+  .portal-prose,.portal-prose .lead,.portal-prose blockquote,.portal-source-note,.portal-source-note a,
+  .portal-reader-next,.portal-reader-next a,.portal-reader-next small,
+  .portal-reader-tools,.reader-tool-group,.portal-reader-tools button,.portal-reader-tools img,
+  .portal-article-notes,.portal-article-notes article,.portal-article-notes p,
+  .portal-article-notes textarea,.portal-article-notes .button,
+  .demo-reading-widget .pe-guide-heading,.demo-reading-widget .pe-guide-prompt,
+  .demo-reading-widget .pe-chat-form,.demo-reading-widget .pe-user-message,
+  .demo-reading-widget textarea,.demo-reading-widget .pe-chat-toggle,
+  .demo-reading-widget .pe-chat-attach,.demo-reading-widget .pe-guide-heading p,
+  .demo-reading-widget .pe-guide-welcome>p,.demo-reading-widget .pe-guide-prompt small
+){transition:background-color 180ms ease-out,color 180ms ease-out,border-color 180ms ease-out,box-shadow 180ms ease-out,filter 180ms ease-out}
+.portal-body:has(#portal-main[data-page=article]) textarea::placeholder{transition:color 180ms ease-out}
+/* Preserve the assistant's existing open/close motion. */
+.portal-body:has(#portal-main[data-page=article]) .demo-reading-widget .pe-chat{transition:background-color 180ms ease-out,color 180ms ease-out,border-color 180ms ease-out,transform 240ms ease,opacity 240ms ease}
+@media(prefers-reduced-motion:reduce){
+  html:has(.portal-body #portal-main[data-page=article]),
+  .portal-body:has(#portal-main[data-page=article]),
+  .portal-body:has(#portal-main[data-page=article]) *,
+  .portal-body:has(#portal-main[data-page=article]) textarea::placeholder{transition-duration:0s!important}
+}
+
+/* Reserve the article's right rail for its viewport-fixed reading controls. */
+@media(min-width:761px){
+  .portal-reader-content,.portal-reader.is-standalone .portal-reader-content{padding-right:96px}
+}
+
+/* The rail stays in view until the article's lower boundary reaches it. */
+@media(min-width:761px){
+  .portal-reader-content{display:flow-root}
+  .portal-reader-content>.portal-reader-tools{
+    position:sticky;float:right;top:max(110px,calc(50dvh - 161px));
+    right:auto;left:auto;bottom:auto;transform:none;
+    width:58px;margin:0 -80px 0 22px;
+  }
+}
+
+/* Animate a color once: descendants inherit the already interpolated ink. */
+.portal-body:has(#portal-main[data-page=article]) :is(.portal-reader,.portal-article-head){transition-property:background-color,border-color,box-shadow,filter!important;}
+.portal-body:has(#portal-main[data-page=article]) .portal-prose :is(.lead,blockquote){transition-property:background-color,border-color,box-shadow!important;}
+
+.portal-reader-tools button[data-reader-article]:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+
+/* Reader comments: one avatar column, a readable content column and quiet metadata. */
+.portal-reader .portal-article-notes{padding:28px;border-radius:20px}
+.portal-reader .reader-comments-heading h2{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:700 20px/30px Figtree,"PingFang SC",sans-serif}
+.reader-comments-heading h2>span{font-size:13px;line-height:20px;font-weight:400;color:#909399;font-variant-numeric:tabular-nums}
+.portal-reader .portal-article-notes .reader-comment{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:24px 0;border-bottom:1px solid #e4e7ed}
+.reader-comment-avatar{display:block;width:40px;height:40px;aspect-ratio:1;object-fit:cover;border-radius:50%;background:#f0f1f3}
+.reader-comment-main{min-width:0}
+.reader-comment-meta{display:flex;align-items:center;gap:8px;min-width:0;margin-bottom:8px}
+.reader-comment-meta strong{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:600 14px/22px Figtree,"PingFang SC",sans-serif}
+.reader-comment-demo{flex:none;border-radius:4px;padding:0 5px;background:#f3f4f5;color:#909399;font:400 10px/18px Figtree,"PingFang SC",sans-serif}
+.portal-reader .portal-article-notes .reader-comment-text{margin:0;font:400 15px/26px Figtree,"PingFang SC",sans-serif;color:#303133;white-space:pre-wrap;overflow-wrap:anywhere}
+.reader-comment-text.is-collapsed{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.reader-comment time{display:block;margin-top:10px;color:#909399;font:400 12px/20px Figtree,"PingFang SC",sans-serif;font-variant-numeric:tabular-nums}
+.reader-comment-expand{display:block;min-height:36px;padding:4px 0;background:transparent;border:0;color:inherit;text-decoration:underline;text-underline-offset:4px;cursor:pointer;font:500 13px/22px Figtree,"PingFang SC",sans-serif}
+.reader-comment-expand:focus-visible{outline:2px solid currentColor;outline-offset:4px;border-radius:4px}
+.portal-reader .portal-article-notes form{margin-top:24px}
+.portal-reader.night .reader-comment{border-color:#48515c}
+.portal-reader.night .portal-article-notes .reader-comment-text{color:#d5dae0}
+.portal-reader.night .reader-comment time,.portal-reader.night .reader-comments-heading h2>span{color:#b0b8c3}
+.portal-reader.night .reader-comment-demo{background:#ffffff0d;color:#b0b8c3}
+@media(max-width:760px){
+ .portal-reader .portal-article-notes{padding:20px 16px}
+ .portal-reader .portal-article-notes .reader-comment{grid-template-columns:32px minmax(0,1fr);gap:10px;padding:20px 0}
+ .reader-comment-avatar{width:32px;height:32px}
+ .portal-reader .portal-article-notes .reader-comment-text{font-size:14px;line-height:24px}
+ .reader-comment-expand{min-height:44px}
+}
+
+.portal-reading-progress{width:100%;transform:scaleX(0);transform-origin:left center;transition:none;will-change:transform}
+
+/* Bottom adjacent-article navigation is retained on mobile only. */
+html body .portal-reader .reader-next-mobile-only{display:none}
+@media(max-width:760px){html body .portal-reader .reader-next-mobile-only{display:flex}}

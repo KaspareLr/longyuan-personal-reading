@@ -1,0 +1,25 @@
+/* Figma 223:7922. Book data and existing learning dialogs remain dynamic. */
+.portal-book-content.book-detail-refined{display:flex;flex-direction:column;gap:80px;min-width:0}
+.book-detail-refined>.book-detail-byline{display:flex;justify-content:flex-end;gap:20px;padding:40px 0;font-size:12px;line-height:16px;color:#909399;flex-wrap:wrap}
+.book-detail-refined>section{margin:0;padding:0 60px;border:0}
+.book-detail-refined .club-overline{font-size:12px;line-height:16px;color:#909399;letter-spacing:0;font-weight:400;display:block}
+.book-detail-refined>.book-detail-introduction{display:flex;flex-direction:column;gap:20px}
+.book-detail-about{display:flex;flex-direction:column;gap:10px}
+.book-detail-refined .book-detail-introduction p{font-size:14px;line-height:20px;color:#131921;margin:0}
+.book-detail-quote{margin:0;padding:10px;display:flex;flex-direction:column;gap:4px;border-left:3px solid #131921;background:#f5f7fa;border-radius:0 12px 12px 0}
+.book-detail-refined .book-detail-quote p{font-weight:600}
+.book-detail-divider{display:block;width:24px;height:2px;background:#131921;margin-top:20px}
+.book-detail-refined>.book-detail-tools{display:flex;flex-direction:column;gap:10px}
+.book-detail-tools>.club-overline{line-height:18px;letter-spacing:.72px}
+.book-detail-refined .book-detail-tools h2{font-size:32px;line-height:40px;font-weight:700;color:#131921;margin:0}
+.book-detail-refined .portal-tool-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.book-detail-refined .portal-tool{padding:10px;gap:10px;min-width:0;border-radius:16px;box-shadow:0 2px 3px #0000000a}
+.book-tool-art{width:40px;height:40px;object-fit:cover;border:1px solid #fff;border-radius:50%;box-shadow:0 2px 6px #0000001a;box-sizing:border-box;flex:none}
+.book-detail-refined .portal-tool>span{display:flex;flex-direction:column;gap:4px;width:100%}
+.book-detail-refined .portal-tool strong{font-size:14px;line-height:20px;font-weight:700;color:#131921}
+.book-detail-refined .portal-tool small{font-size:12px;line-height:16px;color:#909399}
+.book-detail-refined .book-contents-actions{display:flex;align-items:center;width:100%}
+.book-detail-refined .book-contents-read{margin-left:0;align-self:center;white-space:nowrap;gap:4px}
+.book-detail-refined .book-contents-note{font-size:11px;line-height:18px}
+@media(max-width:1536px){.book-detail-refined>section{padding-inline:20px}}
+@media(max-width:760px){.portal-book-content.book-detail-refined{gap:48px}.book-detail-refined>section{padding-inline:0}.book-detail-refined>.book-detail-byline{padding:0;justify-content:flex-start}.book-detail-refined .book-detail-tools h2{font-size:28px;line-height:36px}.book-detail-refined .portal-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

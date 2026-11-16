@@ -1,0 +1,46 @@
+/* Figma 207:5817: independent back control and a 40px nav/account gap. */
+.site-header{gap:20px}
+.site-header .nav-shell{column-gap:0;background:rgba(255,255,255,.9);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px)}
+.site-header .nav-shell>.brand{margin-right:80px}
+.site-header .nav-shell>nav{margin-right:40px}
+.site-header .nav-shell>.login{margin:0;border-left:1px solid #d8dadd;padding:0 10px 0 40px;white-space:nowrap;font-weight:500}
+.site-header>.portal-back,.club-demo-topbar>.club-page-back{display:flex;align-items:center;justify-content:center;flex:none;width:54px;height:54px;min-width:54px;padding:14px;margin:0;border:1px solid #ffffffc9;border-radius:100px;background:rgba(255,255,255,.9);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px);box-shadow:0 7px 30px #252a3508,inset 0 1px #ffffff99;pointer-events:auto;cursor:pointer}
+.site-header>.portal-back[hidden],.club-demo-topbar>.club-page-back[hidden]{display:none}
+.site-header>.portal-back img,.club-demo-topbar>.club-page-back img{width:10.5px;height:9.99983px;transform:scaleX(-1);flex:none}
+.site-header>.portal-back:focus-visible,.club-demo-topbar>.club-page-back:focus-visible{outline:2px solid #131921;outline-offset:3px}
+body>.topbar.club-demo-topbar{display:flex;justify-content:center;align-items:flex-start;gap:20px}
+.club-demo-topbar .nav-island{margin:0;flex:none;background:rgba(255,255,255,.9);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px)}
+.club-demo-topbar .nav-links-group{display:flex;gap:40px;align-items:center}
+@media(min-width:761px) and (max-width:1000px){.site-header .nav-shell>.brand{margin-right:24px}.site-header .nav-shell>nav{margin-right:24px}.site-header .nav-shell>.login{padding-left:24px}.club-demo-topbar .nav-links-group{gap:24px}.club-demo-topbar .nav-login{padding-left:24px}}
+@media(max-width:760px){
+ .site-header,body>.topbar.club-demo-topbar{gap:10px}
+ .site-header .nav-shell{gap:14px;min-width:0;flex:1;width:auto}
+ .site-header .nav-shell>.brand{margin-right:0}
+ .site-header .nav-shell>nav{margin-right:0}
+ .site-header .nav-shell>.login{padding:0 0 0 16px}
+ .site-header>.portal-back,.club-demo-topbar>.club-page-back{width:44px;min-width:44px;height:44px;padding:9px}
+ .club-demo-topbar .nav-island{min-width:0;flex:1;width:auto}
+ .club-demo-topbar .nav-links-group{display:contents}
+ .club-demo-topbar .nav{flex-basis:100%}
+}
+
+.site-header .login.is-signed-in,.club-demo-topbar .nav-login.is-signed-in{display:flex;align-items:center;gap:8px;height:32px}
+.club-account-avatar{width:28px;height:28px;object-fit:cover;border-radius:50%;flex:none}
+.club-account-name{max-width:112px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:760px){.club-account-avatar{width:24px;height:24px}.club-account-name{max-width:76px}.site-header .login.is-signed-in,.club-demo-topbar .nav-login.is-signed-in{gap:6px}}
+
+.portal-account-avatar>img{width:72px;height:72px;border-radius:50%;object-fit:cover}
+@media(max-width:760px){.portal-account-panel{min-width:0}.portal-account-panel .portal-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.portal-account-panel .portal-stat-grid article{min-width:0}}
+@media(max-width:760px){.portal-account{grid-template-columns:minmax(0,1fr)}.portal-account-side{min-width:0}}
+
+body.people-home-page .site-header .nav-shell,body.club-demo-context .club-demo-topbar .nav-island{background:rgba(255,255,255,.9)}
+
+/* Demo login can also enter the unconfigured club-owner scenario. */
+.club-account-dialog select{width:100%;padding:14px 16px;border:1px solid #dcdfe6;border-radius:12px;background:#fafafa;color:#131921;font:inherit;font-size:16px}
+
+/* Shared account-name budget: six Chinese-character widths on desktop. */
+@media(min-width:761px){
+ html body :is(.site-header .nav-shell>.login,.club-demo-topbar .nav-login).is-signed-in{display:flex!important;align-items:center;flex:0 0 auto!important;gap:8px;width:auto!important;max-width:none!important;height:32px;overflow:visible;box-sizing:content-box;font-size:14px!important;line-height:22px}
+ html body :is(.site-header,.club-demo-topbar) .club-account-avatar{width:28px;height:28px;flex:none;object-fit:cover}
+ html body :is(.site-header,.club-demo-topbar) .club-account-name{display:block;flex:none;width:6em;max-width:6em;min-width:0;font-size:14px;line-height:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+}

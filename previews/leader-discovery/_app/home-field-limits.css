@@ -1,0 +1,36 @@
+/* Applied only to the original homepage. */
+[data-field-lines]{min-width:0;max-width:100%;overflow-wrap:anywhere;}
+[data-field-lines="1"]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+[data-field-lines]:not([data-field-lines="1"]){display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:var(--field-lines);overflow:hidden;}
+[data-field-lines="2"]{--field-lines:2;}
+[data-field-lines="3"]{--field-lines:3;}
+[data-field-lines="4"]{--field-lines:4;}
+.guide>span,.feature-copy,.podcast-copy>div,.activity-copy,.club-footer-columns>*{min-width:0;}
+.guide-name-text{flex:0 1 auto;min-width:0;}
+.guide b{flex:none;}
+.nav-shell .login{max-width:10em;}
+.feature-copy h2{line-height:1.2;}
+.activity-meta p{overflow-wrap:anywhere;min-width:0;}
+.activity-meta p img{flex-shrink:0;}
+.activity-meta p{align-items:flex-start;}
+.article-copy p[data-field-lines="3"]{-webkit-line-clamp:3;}
+/* Intrinsic widths must not expand cards with maximum-length content. */
+.feature>*,.feature-progress>*,.progress-description,.participants{min-width:0;max-width:100%;}
+.feature-progress{flex-wrap:wrap;}
+.feature-progress p,.participants{overflow-wrap:anywhere;}
+.nav-shell nav{min-width:0;}
+@media(max-width:760px){
+ .feature{grid-template-columns:minmax(0,1fr);}
+ .nav-shell nav{flex-wrap:wrap;justify-content:flex-start;gap:8px 12px;}
+ .nav-shell nav a{max-width:calc(50% - 6px);}
+ .guide>span{overflow:hidden;}
+}
+.podcast-copy>div{width:100%;}
+.title-row>div{min-width:0;flex:1;}
+.title-row>.text-button{flex-shrink:0;}
+@media(max-width:760px){.podcast-side{padding:24px;gap:16px;}.podcast-copy{flex:1;}}
+
+/* Truncation must not stretch names or turn compact status labels into full-width bars. */
+.guide strong{justify-content:flex-start;gap:4px}
+.guide b{flex:none;margin-left:0}
+.badge[data-field-lines]{display:inline-block;width:fit-content;max-width:100%;align-self:flex-start;justify-self:start;vertical-align:middle}

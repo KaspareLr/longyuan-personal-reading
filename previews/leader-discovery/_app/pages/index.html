@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><script src="../system-copy.js"></script><link rel="stylesheet" href="../system-copy.css"><script src="../preview-scenarios.js?v=1"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>龙源期刊网 · 核心流程 Demo</title>
+<link rel="icon" type="image/png" href="assets/longyuan-home/longyuan-logo.png">
+<style>
+:root{
+  --blue:#2f54eb;--blue-dark:#1d39c4;--ink:#192532;--muted:#75808f;--line:#e4e9ef;
+  --paper:#faf9f5;--sky:#edf4fa;--green:#244e46;--sand:#eee7db;--lavender:#e3eaf7;
+  --radius:20px;--serif:"Songti SC",STSong,"Noto Serif CJK SC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;color:var(--ink);background:linear-gradient(180deg,#eef5fc 0,#f7fbff 42%,#edf4fa 100%);font:14px/1.6 var(--sans)}
+body,button,input,textarea{-webkit-tap-highlight-color:transparent}
+button,input,textarea{font:inherit}
+button{cursor:pointer;border:0;color:inherit}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+:focus-visible{outline:3px solid #7298ff;outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.topbar{height:86px;max-width:1440px;margin:0 auto;display:flex;align-items:center;gap:38px;padding:0 48px}
+.brand-logo{display:block;width:146px;height:auto}
+.nav{display:flex;align-items:center;gap:30px;height:100%}
+.nav a{color:#657080;min-height:44px;display:inline-flex;align-items:center}
+.nav a.active{color:var(--blue);font-weight:600}
+.top-actions{margin-left:auto;display:flex;align-items:center;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:42px;padding:10px 18px;border:1px solid transparent;border-radius:10px;background:var(--blue);color:#fff;font-weight:500;transition:transform .18s,background .18s}
+.btn:active{transform:scale(.97)}
+.btn-outline{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-dark{background:#111827}
+.btn-text{background:none;color:#4a5b72;min-width:44px;min-height:44px;padding:8px 10px}
+.btn svg{width:17px;height:17px}
+main{max-width:1440px;margin:0 auto;padding:0 28px 64px}
+.view{display:none}.view.active{display:block}
+.content{background:#fff;border-radius:var(--radius);margin-top:18px;padding:36px 40px}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:22px;margin-bottom:25px}
+.section-head h2{margin:0;font:600 28px/1.35 var(--serif)}
+.section-head h2 span{margin-left:14px;font:10px/1 var(--sans);letter-spacing:2px;color:#8993a1}
+.section-head p{margin:5px 0 0;color:#87909d;font-size:12px}
+.kicker{display:flex;align-items:center;gap:9px;color:var(--blue);font-size:11px;font-weight:600;letter-spacing:1.6px}
+.kicker:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:27px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.two-cols{display:grid;grid-template-columns:1.05fr 1fr;gap:18px}.two-cols .content{margin-top:18px;padding:30px 32px}
+.hero-break{position:relative;left:50%;width:100vw;margin-left:-50vw;height:max(680px,calc(100svh - 86px));min-height:680px;overflow:hidden;background:linear-gradient(180deg,#f5faff 0,#eef5fc 64%,#fff 100%)}
+.hero-shelf{position:absolute;inset:26px 0 105px;isolation:isolate;mask-image:linear-gradient(to bottom,#000 35%,rgba(0,0,0,.9) 48%,rgba(0,0,0,.5) 61%,rgba(0,0,0,.12) 74%,transparent 88%);-webkit-mask-image:linear-gradient(to bottom,#000 35%,rgba(0,0,0,.9) 48%,rgba(0,0,0,.5) 61%,rgba(0,0,0,.12) 74%,transparent 88%)}
+.hero-cover{position:absolute;top:48%;width:clamp(175px,16vw,250px);aspect-ratio:980/1321;object-fit:cover;border-radius:4px;box-shadow:0 18px 30px rgba(24,45,76,.18),0 4px 9px rgba(24,45,76,.07),0 0 0 1px rgba(0,0,0,.06)}
+.hc1{left:3%;transform:translateY(-50%) rotate(-8deg) scale(.82);z-index:2}.hc2{left:12%;transform:translateY(-52%) rotate(5deg) scale(.9);z-index:4}.hc3{left:24%;transform:translateY(-56%) rotate(-3deg) scale(1);z-index:6}
+.hc-center{left:50%;width:clamp(230px,20vw,315px);transform:translate(-50%,-58%) scale(1.12);z-index:9}
+.hc4{right:24%;transform:translateY(-55%) rotate(4deg) scale(1);z-index:6}.hc5{right:12%;transform:translateY(-51%) rotate(-6deg) scale(.9);z-index:4}.hc6{right:3%;transform:translateY(-50%) rotate(8deg) scale(.82);z-index:2}
+.hero-break:after{content:"";position:absolute;inset:auto 0 0;height:210px;background:linear-gradient(0deg,rgba(255,255,255,.96),rgba(255,255,255,.55),transparent);pointer-events:none;z-index:10}
+.hero-search{position:absolute;z-index:20;left:50%;bottom:32px;width:min(900px,calc(100vw - 48px));transform:translateX(-50%)}
+.composer{background:rgba(255,255,255,.84);border:1px solid rgba(220,228,238,.9);border-radius:24px;box-shadow:0 16px 44px rgba(32,60,103,.1),inset 0 1px 0 #fff;backdrop-filter:blur(28px) saturate(115%);-webkit-backdrop-filter:blur(28px) saturate(115%);padding:12px}
+.composer textarea{display:block;width:100%;min-height:78px;max-height:170px;padding:14px 14px 6px;border:0;outline:0;resize:none;background:transparent;color:#202b3b;font-size:16px;line-height:1.6}
+.composer-row{display:flex;align-items:center;gap:10px;padding:4px 10px 6px}
+.switch{display:inline-flex;align-items:center;gap:9px;margin-right:auto;min-height:44px;color:#526176;font-size:13px}
+.switch-track{position:relative;width:34px;height:20px;border-radius:999px;background:#c5cdd8;transition:background .16s}.switch-track:before{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(15,23,42,.16);transition:transform .16s}
+.switch[aria-checked=true] .switch-track{background:var(--blue)}.switch[aria-checked=true] .switch-track:before{transform:translateX(14px)}
+.round-send{width:44px;height:44px;border-radius:12px;background:#111827;color:#fff;display:grid;place-items:center}.round-send svg{width:18px;height:18px}
+.hero-suggestions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px 16px;margin-top:14px;color:#66758a;font-size:12px}.hero-suggestions button{background:none;color:#526176;min-height:32px;padding:4px 2px}
+.mag-card{min-width:0;padding:0;background:none;text-align:left}.cover-stage{position:relative;height:225px;border-radius:10px;background:#f4f5f5;display:flex;align-items:center;justify-content:center;overflow:hidden}.cover-stage img{height:185px;max-width:85%;object-fit:contain;box-shadow:4px 7px 12px rgba(0,0,0,.13);transition:transform .22s}.mag-card:hover .cover-stage img{transform:translateY(-6px) rotate(-1.5deg)}.mag-card:nth-child(2n) .cover-stage{background:#f4f1eb}.mag-card:nth-child(3n) .cover-stage{background:#edf3f5}.cover-badge{position:absolute;left:10px;top:10px;padding:2px 7px;border-radius:5px;background:rgba(255,255,255,.9);font-size:9px;color:#596b7b}.mag-card h3{margin:14px 0 4px;font-size:14px;font-weight:500}.mag-card small{color:#8a94a0}.mag-meta{display:flex;justify-content:space-between;gap:8px;font-size:10px;color:#60768c}
+.academic-item{display:flex;gap:18px;width:100%;padding:18px 0;background:none;text-align:left;border-top:1px solid var(--line)}.num{font:25px Georgia,serif;color:#bdc7d7}.academic-item h3{margin:1px 0 7px;font-size:15px;font-weight:500}.academic-item p{margin:0;color:#8a94a0;font-size:11px}.subject{margin-left:auto;color:var(--blue);font-size:10px;white-space:nowrap}
+.book-mini{width:33%;padding:0;background:none;text-align:left}.book-cover-box{height:184px;padding:8px;border-radius:8px;background:#f5f6f7;display:flex;align-items:center;justify-content:center}.book-cover-box img{height:100%;object-fit:contain;box-shadow:3px 5px 12px rgba(0,0,0,.14)}.book-mini h3{font-size:13px;margin:13px 0 2px}.book-mini p{margin:0;color:#8a94a0;font-size:10px}.book-mini .chapters{display:block;margin-top:5px;color:#788495;font-size:10px}
+.topic-card{position:relative;min-height:260px;padding:27px;border-radius:12px;overflow:hidden;text-align:left;display:flex;flex-direction:column}.topic-card h3{margin:28px 0 10px;font:500 27px/1.45 var(--serif);max-width:260px}.topic-card p{margin:0;font-size:11px;opacity:.72}.topic-card footer{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;font-size:10px}.topic-dark{background:var(--green);color:#fff}.topic-blue{background:var(--lavender);color:#293e6a}.topic-sand{background:var(--sand);color:#685338}.topic-lines,.topic-rings,.topic-sun{position:absolute;pointer-events:none}.topic-lines{right:34px;top:12px;width:145px;height:215px;transform:rotate(12deg);background:repeating-linear-gradient(90deg,transparent 0 16px,rgba(255,255,255,.12) 17px 18px)}.topic-rings{right:24px;bottom:24px;width:160px;height:160px;border:1px solid rgba(123,147,201,.4);border-radius:50%;box-shadow:0 0 0 18px rgba(123,147,201,.07),0 0 0 36px rgba(123,147,201,.04)}.topic-sun{right:28px;top:58px;width:112px;height:112px;border-radius:50%;background:#d8b98c;opacity:.42}
+.generate-strip{display:flex;align-items:center;gap:18px;margin-top:20px;padding:20px 24px;border:1px dashed #ccd8ed;border-radius:12px;background:#f2f6fd}.generate-strip .ai-mark{width:38px;height:38px;border-radius:12px;background:#e9efff;display:grid;place-items:center;color:var(--blue)}.generate-strip strong{display:block;font-size:14px;font-weight:500}.generate-strip p{margin:3px 0 0;color:#8290a5;font-size:11px}.generate-strip form{margin-left:auto;display:flex;gap:10px;width:46%}.generate-strip input{width:100%;min-width:0;border:1px solid #dfe6f1;border-radius:8px;padding:11px;background:#fff}
+.page-hero{padding:42px 0 10px}.page-hero h1{margin:12px 0 12px;font:600 46px/1.35 var(--serif)}.page-hero p{max-width:760px;color:#75808f;margin:0}.answer-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px}.answer-card,.side-card{background:#fff;border-radius:18px;padding:28px}.answer-card h2,.side-card h2{font:600 22px/1.4 var(--serif);margin:0 0 14px}.answer-card p{color:#4e5b6b}.evidence-list{display:grid;gap:10px;margin:18px 0}.source-row{display:block;width:100%;padding:15px;border:1px solid var(--line);border-radius:10px;text-align:left;background:#fff}.source-row b{font-size:13px;font-weight:500}.source-row small{display:block;margin-top:5px;color:#8a94a0}.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.mini-tag{padding:4px 10px;border-radius:999px;background:#f1f4f9;color:#657080;font-size:11px}.lock-note{padding:12px 14px;border-radius:10px;background:#f0f4fb;color:#697789;font-size:12px}.filter-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:22px}.filter-chip{min-height:38px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#657080}.filter-chip.active{background:#edf2ff;color:var(--blue);border-color:#cdd9ff}.rank-list{display:grid;gap:13px}.rank-row{display:grid;grid-template-columns:48px 74px minmax(0,1fr) auto;gap:14px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:left}.rank-row img{width:62px;height:84px;object-fit:cover;box-shadow:2px 4px 8px rgba(0,0,0,.12)}.rank-no{font:26px Georgia;color:#bdc7d7}.price{color:var(--blue);font-weight:600}
+.magazine-hero{display:grid;grid-template-columns:230px minmax(0,1fr);gap:34px;align-items:center}.magazine-hero>img{width:210px;box-shadow:8px 14px 26px rgba(0,0,0,.16)}.magazine-hero h1{font:600 42px/1.35 var(--serif);margin:0 0 10px}.tab-row{display:flex;gap:8px;border-bottom:1px solid var(--line);margin:26px 0 22px}.tab-btn{min-height:44px;padding:10px 16px;background:none;color:#657080;border-bottom:2px solid transparent}.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue)}.tab-panel{display:none}.tab-panel.active{display:block}.issue-list{display:grid;gap:10px}.issue-row{display:grid;grid-template-columns:minmax(0,1fr) 80px 70px;gap:12px;align-items:center;width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:left}.status-free{color:#2f7a4f}.status-lock{color:#a15b28}
+.member-hero{border-radius:22px;padding:38px;background:linear-gradient(135deg,#f4f8ff,#fff);border:1px solid #dce7fb}.member-hero h1{font:600 38px/1.4 var(--serif);margin:10px 0}.member-grid{display:grid;grid-template-columns:1fr 330px;gap:20px}.benefit{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line)}.benefit-no{font:22px Georgia;color:#9eb0d4}.term-card{min-height:116px;padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:left}.term-card.active{border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,84,235,.08)}.term-card b{font-size:24px}.reader-layout{display:grid;grid-template-columns:300px minmax(0,1fr);gap:18px}.reader-toc,.reader-paper{background:#fff;border-radius:18px;overflow:hidden}.toc-head{padding:20px;border-bottom:1px solid var(--line)}.toc-list{padding:10px;max-height:680px;overflow:auto}.toc-item{display:flex;justify-content:space-between;gap:10px;width:100%;padding:12px;border-radius:10px;background:none;text-align:left;font-size:13px}.toc-item.active{background:#f1f5ff;color:var(--blue)}.reader-paper{min-height:720px;display:flex;flex-direction:column}.reader-top{display:flex;justify-content:space-between;gap:14px;padding:20px 28px;border-bottom:1px solid var(--line);font-size:12px;color:#8a94a0}.reader-content{padding:38px 56px;flex:1}.reader-content h1{font:600 34px/1.45 var(--serif);margin:0 0 10px}.reader-content .byline{color:#8a94a0;font-size:12px}.reader-content p{font-size:17px;line-height:2;text-indent:2em}.reader-toolbar{display:flex;justify-content:space-between;padding:16px 24px;border-top:1px solid var(--line)}.tool-btn{min-height:42px;padding:8px 12px;background:#fff;border:1px solid var(--line);border-radius:10px;display:inline-flex;gap:6px;align-items:center}
+.topic-detail-hero{padding:44px;background:var(--green);color:#fff;border-radius:22px}.topic-detail-hero h1{font:600 44px/1.35 var(--serif);margin:14px 0}.topic-section{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:24px 0;border-top:1px solid var(--line)}.topic-section h3{font:600 22px/1.4 var(--serif);margin:0}.generate-state{max-width:780px;margin:40px auto}.step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}.step-dot{width:30px;height:30px;border-radius:50%;background:#dbe4f2;display:grid;place-items:center;color:#75808f}.step.done .step-dot{background:var(--green);color:#fff}.step.active .step-dot{background:var(--blue);color:#fff}
+.book-feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.book-feature{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fff;text-align:left}.book-feature h3{font-size:15px;margin:12px 0 6px}.book-feature p{margin:0;color:#8a94a0;font-size:11px}.book-detail{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px}.book-detail>img{box-shadow:8px 14px 26px rgba(0,0,0,.16)}.chapter-row{display:grid;grid-template-columns:60px minmax(0,1fr) auto;gap:12px;padding:14px 0;border-top:1px solid var(--line);align-items:center}
+.toast{position:fixed;left:50%;bottom:28px;z-index:999;transform:translateX(-50%) translateY(20px);opacity:0;pointer-events:none;background:#172033;color:#fff;border-radius:999px;padding:11px 18px;font-size:13px;transition:.22s}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.site-footer{max-width:1384px;margin:20px auto 0;padding:24px 28px;border-top:1px solid #dae3ee;display:flex;justify-content:space-between;gap:16px;color:#8b97a6;font-size:10px}
+@media(max-width:1000px){.topbar{gap:22px;padding:0 26px}.nav{gap:18px}.grid-6{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(2,1fr)}.answer-layout,.member-grid,.reader-layout{grid-template-columns:1fr}.book-feature-grid{grid-template-columns:repeat(2,1fr)}.magazine-hero,.book-detail{grid-template-columns:1fr}.magazine-hero>img{width:180px}}
+@media(max-width:680px){.topbar{min-height:78px;height:auto;flex-wrap:wrap;padding:16px 18px}.brand-logo{width:122px}.nav{order:3;width:100%;justify-content:space-between;gap:8px;overflow-x:visible}.nav a{min-width:44px;justify-content:center}.top-actions{display:none}main{padding:0 14px 44px}.content{padding:24px 18px}.section-head{align-items:flex-start;flex-direction:column}.hero-break{height:max(590px,calc(100svh - 126px));min-height:590px}.hero-shelf{inset:22px 0 120px}.hero-cover{width:clamp(145px,38vw,190px)}.hc-center{width:clamp(190px,52vw,235px)}.hc1,.hc6{display:none}.hc2{left:4%}.hc3{left:18%}.hc4{right:18%}.hc5{right:4%}.hero-search{bottom:24px;width:calc(100vw - 28px)}.composer textarea{min-height:96px;font-size:16px}.hero-suggestions{font-size:12px}.hero-suggestions button{min-height:44px}input,textarea{font-size:16px}.mag-meta,.academic-item p,.subject,.book-mini p,.book-mini .chapters,.topic-card p,.topic-card footer,.book-feature p{font-size:12px}.cover-badge{font-size:10px}.grid-6,.grid-4,.grid-3{grid-template-columns:1fr}.two-cols{grid-template-columns:1fr}.cover-stage{height:210px}.rank-row{grid-template-columns:42px 58px minmax(0,1fr);}.rank-row .price{display:none}.page-hero h1{font-size:34px}.reader-content{padding:28px 22px}.reader-content p{font-size:16px}.reader-toolbar{flex-wrap:wrap;gap:8px}.topic-detail-hero{padding:30px 22px}.topic-detail-hero h1{font-size:32px}.topic-section{grid-template-columns:1fr;gap:8px}.generate-strip{flex-direction:column;align-items:flex-start}.generate-strip form{width:100%;margin-left:0}.book-feature-grid{grid-template-columns:1fr}.issue-row{grid-template-columns:minmax(0,1fr) auto}.site-footer{flex-direction:column}.btn,.filter-chip,.tab-btn,.tool-btn{min-height:44px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+<link rel="stylesheet" href="assets/font_icon/iconfont.css">
+<link rel="stylesheet" href="styles/component-skin.css">
+<link rel="stylesheet" href="styles/editorial-layout.css">
+<link rel="stylesheet" href="styles/reading-workspace.css">
+<link rel="stylesheet" href="styles/academic.css">
+<link rel="stylesheet" href="styles/home-v2.css">
+<link rel="stylesheet" href="styles/publication-opening.css">
+<link rel="stylesheet" href="styles/navigation.css">
+<link rel="stylesheet" href="styles/resource-details.css">
+<link rel="stylesheet" href="styles/home-refresh.css">
+<link rel="stylesheet" href="styles/periodical-layout.css">
+<link rel="stylesheet" href="styles/navigation-figma.css?v=20261015-unified-header">
+<link rel="stylesheet" href="styles/periodical-top-figma.css">
+<link rel="stylesheet" href="styles/resource-editorial.css">
+<link rel="stylesheet" href="styles/periodical-figma-current.css">
+<link rel="stylesheet" href="styles/claimed-october.css?v=20261105-control-states">
+<link rel="stylesheet" href="styles/books-home.css?v=20261105-control-states">
+<link rel="stylesheet" href="styles/magazines-home.css?v=20261105-control-states">
+<link rel="stylesheet" href="styles/club-demo-navigation.css?v=20261106-whole-volume">
+<link rel="stylesheet" href="styles/desktop-comfort.css?v=20261015-1440">
+<link rel="stylesheet" href="../portal.css?v=20261105-control-states">
+<link rel="stylesheet" href="../shared-navigation.css?v=20261105-account-name"><link rel="stylesheet" href="../book-opening.css?v=20261016"><script src="../book-opening.js?v=20261105-banner-scoped"></script><link rel="stylesheet" href="../reading-guide-nudge.css?v=20261019-launcher-align"><link rel="stylesheet" href="../shared-footer.css?v=20261016"><link rel="stylesheet" href="styles/profile-opinion-ambient.css?v=20261016"><link rel="stylesheet" href="../page-motion.css?v=20261016"><script src="../page-motion.js?v=20261109-mobile-parent-return"></script><link rel="stylesheet" href="../secondary-field-limits.css?v=20261104-composite-labels"><link rel="stylesheet" href="../mobile-adaptation.css?v=20261106-spacing-theme"><link rel="stylesheet" href="../mobile-navigation.css?v=20261105-nav-morph"><link rel="stylesheet" href="../resource-detail-mobile.css?v=20261106-compact-archive"><link rel="stylesheet" href="../book-card-shared.css?v=20261104-1"><link rel="stylesheet" href="../cover-ratios.css?v=20261104-1"><link rel="stylesheet" href="../local-icons.css?v=20261106-action-icons"><link rel="stylesheet" href="../control-states.css?v=20261105-1"><link rel="stylesheet" href="../navigation-progressive-blur.css?v=20261106-guide-layer"><link rel="stylesheet" href="../product-shell.css"><link rel="stylesheet" href="../mobile-reading-header.css"></head>
+<body>
+<header class="topbar">
+  <div class="nav-island">
+  <a class="brand" href="#/home" aria-label="龙源期刊网首页"><img decoding="async" class="brand-logo" src="assets/longyuan-home/longyuan-logo-v2.png" alt="龙源期刊网 qikan.com"></a>
+  <div class="nav-links-group">
+  <nav class="nav" aria-label="主导航">
+    <a href="#/home" data-route="home">发现</a>
+    <a href="#/search" data-route="search">AI 对话</a>
+    <a href="#/magazines" data-route="magazines">期刊</a>
+    <a href="#/academic" data-route="academic">学术</a>
+    <a href="#/books" data-route="books">图书</a>
+    <a href="#/topics" data-route="topics">专题</a>
+  </nav>
+  <button class="nav-login" type="button" data-home-login>登录</button>
+  </div>
+  </div>
+
+</header>
+<main id="app">
+<!-- ===== Home ===== -->
+<section id="view-home" class="view active" data-view="home">
+
+<div class="hero-break">
+  <div class="home-title"><p>好内容，让每一次提问更有深度。</p><h1>翻开世界，读见新知。</h1></div>
+  <div class="hero-shelf" role="region" aria-label="精选杂志书架，可拖动或使用方向键浏览" tabindex="0"><div class="shelf-stage"></div></div>
+  <div class="hero-search">
+    <form class="composer" id="home-search-form">
+      <textarea name="q" aria-label="输入你的问题" placeholder="想深入了解什么？从期刊文章中查找资料、比较观点，找到有出处的答案。" required maxlength="150"></textarea>
+      <div class="composer-row">
+        <button type="button" class="switch" role="switch" aria-checked="true" data-deep-search><span class="switch-track" aria-hidden="true"></span><span>期刊资源</span></button>
+        <div class="home-compose-actions"><button class="home-add-content" type="button" aria-label="添加内容" title="添加内容" id="home-add-content"><i class="iconfont icon-Link" aria-hidden="true"></i></button><button class="round-send" type="submit" aria-label="发送问题"><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></button></div>
+      </div>
+      <input type="file" id="home-content-files" hidden multiple accept=".pdf,.txt,.md,.doc,.docx,image/*">
+      <div id="home-attachments" aria-live="polite"></div>
+    </form>
+  </div>
+</div>
+<div class="resource-gates"><a href="#/magazines"><i class="iconfont icon-Paper2" aria-hidden="true"></i><span><b>期刊</b><small>与好刊相遇，读懂当下</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><a href="#/academic"><i class="iconfont icon-Knowledge" aria-hidden="true"></i><span><b>学术</b><small>从研究出发，找到依据</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><a href="#/books"><i class="iconfont icon-Card" aria-hidden="true"></i><span><b>图书</b><small>翻开一本书，深入一个世界</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div>
+<div class="reading-workspace"><div class="workspace-feed"><section class="editorial-section" id="home-curated"><div class="editorial-heading"><div><span class="section-number">01 / THE READING EDIT</span><h2>留一点时间，给新的发现。</h2></div><p>从一个好问题，走进一段值得读的内容。</p></div>
+<div class="curation-layout"><a class="lead-story" href="#/topic/reading"><div class="story-copy"><span class="eyeline">本次选读 · 阅读与技术</span><h3>当答案越来越快，<br>我们为什么<br>还需要慢慢读？</h3><p>从数字阅读到原文回溯，重新找回与文字相处的时间。</p><span class="story-link">打开阅读专题 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></span></div><div class="story-covers"><img loading="lazy" decoding="async" src="assets/longyuan-home/duzh202220-z.jpg" alt="读者"><img loading="lazy" decoding="async" src="assets/longyuan-home/dycy202111-z.jpg" alt="第一财经"><span class="cover-note">READ / THINK / CONNECT</span></div></a>
+<aside class="time-picker"><span class="eyeline">为阅读，留一个空隙</span><h3>今天，你有多久？</h3><div class="time-options" aria-label="可用阅读时间"><button type="button" data-reading-time="5" aria-pressed="true">5 <small>分钟</small></button><button type="button" data-reading-time="15" aria-pressed="false">15 <small>分钟</small></button><button type="button" data-reading-time="30" aria-pressed="false">30 <small>分钟</small></button></div><div id="reading-pick" aria-live="polite"></div><div class="reading-return" id="reading-return"></div></aside></div></section>
+<section class="editorial-section" id="home-journals"><div class="editorial-heading"><div><span class="section-number">02 / THE PERIODICALS</span><h2>有些好刊，值得一直读。</h2></div><a class="btn-text" href="#/magazines">发现全部期刊 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div><div class="journal-strip">
+    <a class="mag-card" href="#/magazine/第一财经"><span class="cover-stage"><span class="cover-badge">编辑精选</span><img loading="lazy" decoding="async" src="assets/longyuan-home/dycy202111-z.jpg" alt="第一财经封面"></span><h3>第一财经</h3><span class="mag-meta"><small>精选馆藏</small><span>商业 · 趋势</span></span></a>
+    <a class="mag-card" href="#/magazine/读者"><span class="cover-stage"><span class="cover-badge">人文阅读</span><img loading="lazy" decoding="async" src="assets/longyuan-home/duzh202220-z.jpg" alt="读者封面"></span><h3>读者</h3><span class="mag-meta"><small>精选馆藏</small><span>阅读 · 人文</span></span></a>
+    <a class="mag-card" href="#/magazine/南风窗"><span class="cover-stage"><span class="cover-badge">深度观察</span><img loading="lazy" decoding="async" src="assets/longyuan-home/nafc202605-z.jpg" alt="南风窗封面"></span><h3>南风窗</h3><span class="mag-meta"><small>精选馆藏</small><span>社会 · 观察</span></span></a>
+    <a class="mag-card" href="#/magazine/环球人文地理"><span class="cover-stage"><span class="cover-badge">地理发现</span><img loading="lazy" decoding="async" src="assets/longyuan-home/hqdl202203-z.jpeg" alt="环球人文地理封面"></span><h3>环球人文地理</h3><span class="mag-meta"><small>精选馆藏</small><span>地理 · 文化</span></span></a>
+    <a class="mag-card" href="#/magazine/科幻世界"><span class="cover-stage"><span class="cover-badge">科幻阅读</span><img loading="lazy" decoding="async" src="assets/longyuan-home/kxxs202208-z.jpeg" alt="科幻世界封面"></span><h3>科幻世界</h3><span class="mag-meta"><small>精选馆藏</small><span>科幻 · 想象</span></span></a>
+    <a class="mag-card" href="#/magazine/中国新闻周刊"><span class="cover-stage"><span class="cover-badge">新闻精选</span><img loading="lazy" decoding="async" src="assets/longyuan-home/xwzk202606-z.jpg" alt="中国新闻周刊封面"></span><h3>中国新闻周刊</h3><span class="mag-meta"><small>精选馆藏</small><span>新闻 · 深度</span></span></a></div></section>
+<section class="editorial-section knowledge-layout" id="home-knowledge"><div class="research-desk"><span class="section-number">03 / IDEAS & EVIDENCE</span><h2>换一个角度，<br>理解你关心的世界。</h2><p class="quiet-copy">从学术讨论出发，让每一个观点都有迹可循。</p><a class="research-link" href="#/source/1"><span>01</span><div><b>数字时代，阅读方式正在如何改变？</b><small>阅读研究 · 示例选题</small></div><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><a class="research-link" href="#/source/2"><span>02</span><div><b>城市更新中的公共空间与日常生活</b><small>城市与社会 · 示例选题</small></div><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><a class="research-link" href="#/source/3"><span>03</span><div><b>让好奇心成为学习的起点</b><small>教育观察 · 示例选题</small></div><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div>
+<div class="book-desk"><div class="editorial-heading compact"><div><span class="eyeline">更长的阅读，更深的理解</span><h2>从一本书开始。</h2></div><a class="btn-text" href="#/books">图书馆 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div><a class="book-spotlight" href="#/book/8"><div class="book-plinth"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-8.png" alt="科学的历程封面"></div><div><span class="eyeline">科学史 · 数智图书</span><h3>科学的历程</h3><p>沿着科学思想的传播，认识知识如何跨越文明。</p><small>北师大出版社 · 3 章节</small><span class="story-link">翻开这本书 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></span></div></a><div class="small-book-row"><a href="#/book/10"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-10.png" alt="前线部署工程师封面"><span><b>前线部署工程师</b><small>范冰 · 8 章节</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><a href="#/book/7"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-7.png" alt="材料力学封面"><span><b>材料力学</b><small>13 章节 · 工程教材</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div></div></section>
+<section class="editorial-section" id="home-topics"><div class="editorial-heading"><div><span class="section-number">04 / CONNECT THE DOTS</span><h2>一个问题，不止一种视角。</h2></div><a class="btn-text" href="#/topics">浏览专题 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div><div class="discovery-topics"><a class="discovery-topic city" href="#/topic/city"><span class="eyeline">城市 / 空间 / 日常</span><h3>城市的更新，<br>也是生活的更新。</h3><div class="topic-cover-art"><img loading="lazy" decoding="async" src="assets/longyuan-home/ndzk202006-z.jpg" alt="南都周刊"><img loading="lazy" decoding="async" src="assets/longyuan-home/hqdl202203-z.jpeg" alt="环球人文地理"></div><footer><span>从报道到研究，连接不同视角</span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></footer></a><a class="discovery-topic classroom" href="#/topic/ai-class"><span class="eyeline">教育 / 技术 / 成长</span><h3>当 AI 走进课堂，<br>学习会变成什么样？</h3><span class="topic-word" aria-hidden="true">Aa</span><footer><span>用问题打开教育的新可能</span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></footer></a><a class="discovery-topic age" href="#/topic/aging"><span class="eyeline">社会 / 消费 / 生活</span><h3>人生的下半场，<br>还有很多种打开方式。</h3><span class="topic-word" aria-hidden="true">LIFE</span><footer><span>重新认识银发时代</span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></footer></a></div>
+<div class="topic-studio"><span class="studio-icon"><i class="iconfont icon-AI" aria-hidden="true"></i></span><div><span class="eyeline">下一个专题，来自你</span><h3>把你的好奇，整理成阅读路径。</h3></div><form id="home-topic-form"><label class="sr-only" for="new-topic">专题主题</label><input id="new-topic" name="topic" placeholder="例如：年轻人为什么重新走进书店？" required maxlength="100"><button class="btn">生成专题 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></button></form></div></section>
+</div></div>
+</section>
+<!-- ===== AI Search ===== -->
+<section id="view-search" class="view" data-view="search">
+<div class="conversation-shell"><aside class="conversation-nav"><a class="btn btn-outline" href="#/search" id="new-conversation"><i class="iconfont icon-Add" aria-hidden="true"></i> 开启新对话</a><span class="eyeline">从好奇开始</span><button data-search-query="AI如何改变我们的阅读方式？">阅读与人工智能</button><button data-search-query="城市更新如何改变日常生活？">城市与日常生活</button><button data-search-query="如何培养孩子的阅读习惯？">孩子的阅读习惯</button><div class="conversation-note"><i class="iconfont icon-Paper2" aria-hidden="true"></i><b>答案之外，还有原文</b><p>点击回答里的引用，在这里展开文章，读完接着聊。</p><small>本地交互演示 · 未接入大模型<br>回答与刊文均为示例内容</small></div></aside><div class="conversation-main"><header class="conversation-heading"><span><i class="iconfont icon-AI" aria-hidden="true"></i> 龙源 AI</span><small>聊问题，也读原文</small></header><div id="conversation-messages" role="log" aria-label="对话记录" aria-live="polite"></div><form class="composer" id="search-page-form"><textarea id="search-page-input" name="q" aria-label="继续对话" placeholder="继续追问，或说说你想了解的方面…" required maxlength="500"></textarea><div class="composer-row"><button type="button" class="switch" role="switch" aria-checked="true" data-deep-search><span class="switch-track" aria-hidden="true"></span><span>期刊资源</span></button><button class="round-send" type="submit" aria-label="发送问题"><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></button></div></form><p class="chat-disclaimer">AI 回答为演示内容，请以实际期刊原文为准。</p></div><aside id="conversation-reader" class="conversation-reader" aria-label="关联文章阅读" hidden tabindex="-1"></aside></div>
+</section>
+
+<section id="view-academic" class="view" data-view="academic">
+ <div class="academic-masthead"><div class="academic-masthead-copy"><div class="kicker">龙源学术 / RESEARCH & DISCOVERY</div><h1>从一个问题，走向有依据的理解。</h1><p>发现文献、整理线索，让研究和阅读在这里连接。</p></div><a href="https://www.qikan.com.cn/newhome.html" target="_blank" rel="noopener noreferrer" class="btn-text">龙源学术原站 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a>
+ <form id="academic-search-form" class="academic-search-box"><label class="sr-only" for="academic-field">检索字段</label><select id="academic-field"><option value="all">综合检索</option><option value="title">篇名</option><option value="keywords">关键词</option></select><i class="iconfont icon-Search" aria-hidden="true"></i><input id="academic-query" aria-label="学术检索关键词" placeholder="输入篇名、关键词，或你关心的研究方向" maxlength="100"><button class="btn" type="submit">检索文献</button></form>
+ <div class="academic-hot"><span>探索方向</span><button data-ac-query="人工智能">人工智能与教育</button><button data-ac-query="城市">城市与公共空间</button><button data-ac-query="阅读">数字阅读</button><button id="academic-advanced-toggle" aria-expanded="false" aria-controls="academic-advanced">高级筛选</button></div>
+ <div id="academic-advanced" hidden><label>内容类型<select id="academic-type"><option value="all">全部类型</option><option value="综述">研究综述</option><option value="案例">案例研究</option><option value="方法">研究方法</option></select></label><label>示例年份<select id="academic-year"><option value="all">不限年份</option><option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option></select></label><button class="btn btn-outline" id="academic-reset" type="button">重置筛选</button></div>
+ </div>
+ <div class="academic-tools"><a href="#/search?q=数字阅读有哪些值得研究的问题"><i class="iconfont icon-AI" aria-hidden="true"></i><span><b>AI 研读</b><small>梳理问题，比较不同观点</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a><button id="academic-saved-shortcut"><i class="iconfont icon-Knowledge" aria-hidden="true"></i><span><b>我的阅读清单</b><small id="academic-saved-hint">收藏研究线索，稍后接着读</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></button><a href="#/topic-generate?q=数字阅读研究路径"><i class="iconfont icon-Paper2" aria-hidden="true"></i><span><b>专题研读</b><small>从背景、案例到不同视角</small></span><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></div>
+ <div class="academic-library"><aside class="academic-subjects"><div class="academic-panel-title"><h2>学科导航</h2><small>按研究方向探索</small></div><div id="academic-subject-list" aria-label="按学科筛选"></div><div class="academic-source-note"><b>关于这里的文献</b><p>当前展示功能演示数据，篇名、摘要和年份均为示例，不代表真实发表记录。实际文献请访问龙源学术原站。</p></div></aside>
+ <section class="academic-results"><div class="academic-result-head"><div class="academic-tabs" role="group" aria-label="学术内容"><button data-ac-tab="papers" aria-pressed="true">发现文献</button><button data-ac-tab="journals" aria-pressed="false">期刊导航</button><button data-ac-tab="saved" aria-pressed="false">阅读清单 <span id="academic-saved-count">0</span></button></div><label class="academic-sort">排序<select id="academic-sort"><option value="relevance">推荐顺序</option><option value="newest">年份降序</option><option value="oldest">年份升序</option></select></label></div><div class="academic-result-meta"><span id="academic-result-count" role="status"></span><button id="academic-export" class="btn-text">导出阅读清单</button></div><div id="academic-results-list"></div></section>
+ <aside class="academic-insights"><section class="academic-insight-ai"><i class="iconfont icon-AI" aria-hidden="true"></i><span class="eyeline">让阅读更进一步</span><h2>先把问题<br>问清楚。</h2><p>从宽泛的兴趣，到具体的研究问题。和 AI 一起梳理对象、角度与证据。</p><a href="#/search?q=如何把数字阅读兴趣转成一个研究问题" class="btn">开始讨论 <i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></a></section><section class="academic-trails"><div class="academic-panel-title"><h2>专题阅读路径</h2></div><a href="#/topic/reading"><span>01</span><div><b>数字时代的深度阅读</b><small>阅读方式 · 信息与思考</small></div></a><a href="#/topic/ai-class"><span>02</span><div><b>当 AI 走进课堂</b><small>教育技术 · 学习体验</small></div></a><a href="#/topic/city"><span>03</span><div><b>公共空间与城市日常</b><small>社区 · 城市文化</small></div></a></section><section class="academic-reading-tip"><b>留住线索，也保留出处。</b><p>收藏文献后可导出阅读清单，用于整理下一次阅读。</p></section></aside></div>
+ <dialog id="academic-reader-dialog" aria-labelledby="academic-reader-title"><div class="academic-dialog-top"><span>文献研读 · 示例内容</span><button id="academic-reader-close" aria-label="关闭文献阅读"><i class="iconfont icon-Close" aria-hidden="true"></i></button></div><div id="academic-reader-body"></div></dialog>
+</section>
+
+<!-- ===== Source ===== -->
+<section id="view-source" class="view" data-view="source">
+  <section class="content">
+    <div class="kicker">来源原文</div>
+    <h1 style="margin:16px 0">数字时代，阅读方式正在如何改变？</h1>
+    <div class="tag-row"><span class="mini-tag">《读者》</span><span class="mini-tag">2026年18期</span><span class="mini-tag">作者：示例作者</span><span class="mini-tag">页码：12-15</span></div>
+    <p style="color:#4e5b6b;font-size:16px;line-height:1.9">这是来源卡片的本地演示。正式环境中，用户点击 AI 回答中的引用编号后，将定位到具体期刊、期号、文章标题、作者、页码和原文段落，而不是只停留在模型生成的摘要。</p>
+    <blockquote style="margin:24px 0;padding:18px 22px;border-left:3px solid var(--blue);background:#f6f8fc;color:#4e5b6b">原文引用段落将在这里高亮展示，并保留上下文、页码和复制引用入口。</blockquote>
+    <div class="lock-note">当前内容可试读；会员可阅读完整文章并使用 AI 追问、引用复制和阅读设置。</div>
+    <div class="tag-row" style="margin-top:22px"><a class="btn" href="#/reader/1">进入阅读器</a><a class="btn btn-outline" href="#/membership/读者">查看单刊会员</a><button class="btn btn-outline" type="button" data-action="toast" data-toast="引用已复制（本地演示）">复制引用</button></div>
+  </section>
+</section>
+<!-- ===== Magazines ===== -->
+<section id="view-magazines" class="view" data-view="magazines">
+  <div class="page-hero">
+    <div class="kicker">期刊发现</div>
+    <h1>找到值得长期阅读的刊物</h1>
+    <p>熟悉的刊物，未曾读过的世界。按兴趣寻找下一本想长期阅读的杂志。</p>
+  </div>
+  <section class="content magazine-ranking">
+    <h2 style="margin:0 0 18px">畅销排行榜</h2>
+    <div class="rank-list">
+      <a class="rank-row" href="#/magazine/读者"><span class="rank-no">01</span><img loading="lazy" decoding="async" src="assets/longyuan-home/duzh202220-z.jpg" alt="读者封面"><span><b>读者</b><small>2026年18期 · 人文关怀与精品阅读</small></span><span class="price">¥7.00</span></a>
+      <a class="rank-row" href="#/magazine/财经"><span class="rank-no">02</span><img loading="lazy" decoding="async" src="assets/longyuan-home/caij202111-z.jpg" alt="财经封面"><span><b>财经</b><small>2025年27期 · 商业与经济观察</small></span><span class="price">¥18.00</span></a>
+      <a class="rank-row" href="#/magazine/大众科学"><span class="rank-no">03</span><img loading="lazy" decoding="async" src="assets/longyuan-home/dzkx202306-z.jpg" alt="大众科学封面"><span><b>大众科学</b><small>科学新知 · 探索与发现</small></span><span class="price">¥9.00</span></a>
+      <a class="rank-row" href="#/magazine/故事会"><span class="rank-no">04</span><img loading="lazy" decoding="async" src="assets/longyuan-home/gshu202212-z.jpeg" alt="故事会封面"><span><b>故事会</b><small>故事 · 生活 · 大众阅读</small></span><span class="price">¥6.00</span></a>
+      <a class="rank-row" href="#/magazine/第一财经"><span class="rank-no">05</span><img loading="lazy" decoding="async" src="assets/longyuan-home/dycy202111-z.jpg" alt="第一财经封面"><span><b>第一财经</b><small>商业趋势 · 公司与产业观察</small></span><span class="price">¥18.00</span></a>
+      <a class="rank-row" href="#/magazine/南风窗"><span class="rank-no">06</span><img loading="lazy" decoding="async" src="assets/longyuan-home/nafc202605-z.jpg" alt="南风窗封面"><span><b>南风窗</b><small>社会观察 · 深度报道</small></span><span class="price">¥12.00</span></a>
+      <a class="rank-row" href="#/magazine/中国新闻周刊"><span class="rank-no">07</span><img loading="lazy" decoding="async" src="assets/longyuan-home/xwzk202606-z.jpg" alt="中国新闻周刊封面"><span><b>中国新闻周刊</b><small>新闻深度 · 公共议题</small></span><span class="price">¥12.00</span></a>
+      <a class="rank-row" href="#/magazine/环球人物"><span class="rank-no">08</span><img loading="lazy" decoding="async" src="assets/longyuan-home/hqrw202209-z.jpeg" alt="环球人物封面"><span><b>环球人物</b><small>人物报道 · 时代故事</small></span><span class="price">¥10.80</span></a>
+    </div>
+  </section>
+  <section class="content">
+    <div class="catalog-tools"><label class="catalog-search"><i class="iconfont icon-Search" aria-hidden="true"></i><input id="magazine-keyword" type="search" placeholder="搜索刊名或领域" aria-label="搜索刊名或领域"></label><span id="catalog-count" aria-live="polite"></span></div><div class="filter-row">
+      <button class="filter-chip active" type="button" data-filter-category="all">全部</button>
+      <button class="filter-chip" type="button" data-filter-category="商业">商业</button>
+      <button class="filter-chip" type="button" data-filter-category="人文">人文</button>
+      <button class="filter-chip" type="button" data-filter-category="社会">社会</button>
+      <button class="filter-chip" type="button" data-filter-category="地理">地理</button>
+      <button class="filter-chip" type="button" data-filter-category="科幻">科幻</button>
+      <button class="filter-chip" type="button" data-filter-category="生活">生活</button>
+      <button class="filter-chip" type="button" data-filter-category="科学">科学</button><button class="filter-chip" type="button" data-filter-category="新闻">新闻</button><button class="filter-chip" type="button" data-filter-category="人物">人物</button><button class="filter-chip" type="button" data-filter-category="教育">教育</button>
+    </div>
+    <h2 style="margin:0 0 18px">编辑推荐</h2><p id="catalog-empty" hidden>没有找到匹配的刊物，试试其他关键词或分类。</p>
+    <div class="grid-6">
+      <a class="mag-card" data-mag-filter data-category="商业" href="#/magazine/第一财经"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/dycy202111-z.jpg" alt="第一财经封面"></span><h3>第一财经</h3><span class="mag-meta"><small>商业趋势</small><span>2026年09期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="人文" href="#/magazine/读者"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/duzh202220-z.jpg" alt="读者封面"></span><h3>读者</h3><span class="mag-meta"><small>人文阅读</small><span>2026年18期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="社会" href="#/magazine/南风窗"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/nafc202605-z.jpg" alt="南风窗封面"></span><h3>南风窗</h3><span class="mag-meta"><small>社会观察</small><span>2026年05期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="地理" href="#/magazine/环球人文地理"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/hqdl202203-z.jpeg" alt="环球人文地理封面"></span><h3>环球人文地理</h3><span class="mag-meta"><small>地理文化</small><span>2022年03期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="科幻" href="#/magazine/科幻世界"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/kxxs202208-z.jpeg" alt="科幻世界封面"></span><h3>科幻世界</h3><span class="mag-meta"><small>科幻想象</small><span>2022年08期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="新闻" href="#/magazine/中国新闻周刊"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/xwzk202606-z.jpg" alt="中国新闻周刊封面"></span><h3>中国新闻周刊</h3><span class="mag-meta"><small>新闻深度</small><span>2026年06期</span></span></a>
+    </div>
+  </section>
+  <section class="content">
+    <h2 style="margin:0 0 18px">最新上架</h2>
+    <div class="grid-4">
+      <a class="mag-card" data-mag-filter data-category="社会" href="#/magazine/南都周刊"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/ndzk202006-z.jpg" alt="南都周刊封面"></span><h3>南都周刊</h3><span class="mag-meta"><small>城市生活</small><span>2020年06期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="人文" href="#/magazine/世界博览"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/jblz202605-z.jpg" alt="世界博览封面"></span><h3>世界博览</h3><span class="mag-meta"><small>世界文化</small><span>2026年05期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="生活" href="#/magazine/凤凰生活"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/fhsh202603-z.jpg" alt="凤凰生活封面"></span><h3>凤凰生活</h3><span class="mag-meta"><small>生活美学</small><span>2026年03期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="生活" href="#/magazine/美食"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/meis202312-z.jpg" alt="美食封面"></span><h3>美食</h3><span class="mag-meta"><small>美食生活</small><span>2023年12期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="生活" href="#/magazine/世界时装之苑"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/sjsh202310-z.jpg" alt="世界时装之苑封面"></span><h3>世界时装之苑 ELLE</h3><span class="mag-meta"><small>时尚风格</small><span>2023年10期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="地理" href="#/magazine/悦游"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/yycn202306-z.jpg" alt="悦游封面"></span><h3>悦游</h3><span class="mag-meta"><small>旅行发现</small><span>2023年06期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="地理" href="#/magazine/中国国家旅游"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/zggy202105-z.jpg" alt="中国国家旅游封面"></span><h3>中国国家旅游</h3><span class="mag-meta"><small>旅行地理</small><span>2021年05期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="人物" href="#/magazine/智族GQ"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/zzgq202105-z.jpg" alt="智族GQ封面"></span><h3>智族 GQ</h3><span class="mag-meta"><small>人物时尚</small><span>2021年05期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="教育" href="#/magazine/英语世界"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/yysi202107-z.jpg" alt="英语世界封面"></span><h3>英语世界</h3><span class="mag-meta"><small>语言文化</small><span>2021年07期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="科学" href="#/magazine/百科探秘"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/bkhd202312-z.jpg" alt="百科探秘封面"></span><h3>百科探秘</h3><span class="mag-meta"><small>科学新知</small><span>2023年12期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="人物" href="#/magazine/环球人物"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/hqrw202209-z.jpeg" alt="环球人物封面"></span><h3>环球人物</h3><span class="mag-meta"><small>人物时代</small><span>2022年09期</span></span></a>
+      <a class="mag-card" data-mag-filter data-category="科学" href="#/magazine/大众科学"><span class="cover-stage"><img loading="lazy" decoding="async" src="assets/longyuan-home/dzkx202306-z.jpg" alt="大众科学封面"></span><h3>大众科学</h3><span class="mag-meta"><small>科学探索</small><span>2023年06期</span></span></a>
+    </div>
+  </section>
+</section>
+<!-- ===== Magazine Detail ===== -->
+<section id="view-magazine" class="view" data-view="magazine"></section>
+
+<!-- ===== Membership ===== -->
+<section id="view-membership" class="view" data-view="membership">
+  <section class="content">
+    <div class="member-hero">
+      <div class="kicker">单刊会员中心</div>
+      <h1>《读者》阅读相伴会员</h1>
+      <p style="margin:0;color:#75808f">与好作品相遇，让阅读长久相伴。同一套权益，可选择月度或年度期限。</p>
+    </div>
+    <div class="member-grid" style="margin-top:20px">
+      <article class="answer-card">
+        <h2>你的会员权益</h2>
+        <div class="benefit"><span class="benefit-no">01</span><div><b>全刊畅读</b><p style="margin:4px 0 0;color:#7a8493;font-size:12px">权益期内阅读本刊当期及已开放的往期内容。</p></div></div>
+        <div class="benefit"><span class="benefit-no">02</span><div><b>免费参加本刊共读活动</b><p style="margin:4px 0 0;color:#7a8493;font-size:12px">参与线上读书会、主题共读和活动回放。</p></div></div>
+        <div class="benefit"><span class="benefit-no">03</span><div><b>每月精选少年文学读物</b><p style="margin:4px 0 0;color:#7a8493;font-size:12px">由编辑围绕主题挑选文章和延伸阅读。</p></div></div>
+        <div class="benefit"><span class="benefit-no">04</span><div><b>领读人答疑</b><p style="margin:4px 0 0;color:#7a8493;font-size:12px">围绕文章、主题和阅读方法进行答疑。</p></div></div>
+        <div class="benefit"><span class="benefit-no">05</span><div><b>音频与视频内容</b><p style="margin:4px 0 0;color:#7a8493;font-size:12px">覆盖主编导读、作者对谈及读书会音视频。</p></div></div>
+      </article>
+      <aside class="side-card">
+        <h2>选择你的阅读期限</h2>
+        <button class="term-card active" type="button" data-term="月度" data-price="25.00" data-days="30"><b>月度 ¥25.00</b><br><small>有效期 30 天</small></button>
+        <button class="term-card" style="margin-top:12px" type="button" data-term="年度" data-price="199.00" data-days="365"><b>年度 ¥199.00</b><br><small>有效期 365 天</small></button>
+        <p id="term-summary" style="color:#75808f;font-size:12px;margin:18px 0">月度会员 · 25.00 / 月 · 支付成功后生效</p>
+        <button class="btn" style="width:100%" id="open-member-btn" type="button" data-action="toast" data-toast="本地演示不发起支付，也不会产生订单">开通会员 · ¥25.00</button>
+        <p style="color:#9aa4b2;font-size:11px;margin-top:14px">请在支付前确认所选期限及购买须知。当前分支不包含结算页和支付结果页。</p>
+      </aside>
+    </div>
+  </section>
+</section>
+<!-- ===== Reader ===== -->
+<section id="view-reader" class="view" data-view="reader">
+  <div class="rd-page rd-periodical rd-editorial rd-editorial-article"><div class="pe-edition"><span>龙源阅读 / 文章</span><span>ARTICLE / 试读演示</span></div><div class="reader-layout">
+    <aside class="reader-toc">
+      <div class="toc-head"><b>读者 / 2026年18期</b><br><small style="color:#8a94a0">本期 16 篇文章 · 可试读 3 篇，会员可读全部</small></div>
+      <div class="toc-list">
+        <button class="toc-item active" type="button" data-reader-title="数字时代，阅读方式正在如何改变？" data-reader-meta="《读者》2026年18期 · 第12页 · 216字"><span>数字时代，阅读方式正在如何改变？</span><span>试读</span></button>
+        <button class="toc-item" type="button" data-reader-title="每日一读：把阅读放回日常" data-reader-meta="《读者》2026年18期 · 第31页 · 180字"><span>每日一读：把阅读放回日常</span><span>试读</span></button>
+        <button class="toc-item" type="button" data-reader-title="一篇文章的打开方式" data-reader-meta="《读者》2026年18期 · 第42页 · 205字"><span>一篇文章的打开方式</span><span>试读</span></button>
+        <button class="toc-item" type="button" data-action="toast" data-toast="会员内容，开通单刊会员后可阅读完整文章"><span>在信息洪流中保留深度阅读</span><span>会员</span></button>
+        <button class="toc-item" type="button" data-action="toast" data-toast="会员内容，开通单刊会员后可阅读完整文章"><span>人与技术：新的阅读关系</span><span>会员</span></button>
+        <button class="toc-item" type="button" data-action="toast" data-toast="会员内容，开通单刊会员后可阅读完整文章"><span>主编导读：本期文章如何读</span><span>音频</span></button>
+      </div>
+    </aside>
+    <article class="reader-paper">
+      <div class="reader-top"><span id="reader-breadcrumb">读者 / 2026年18期 / 数字时代，阅读方式正在如何改变？</span><span>全文完</span></div>
+      <div class="reader-content" id="reader-content">
+        <h1 id="reader-title">数字时代，阅读方式正在如何改变？</h1>
+        <div class="byline" id="reader-meta">《读者》2026年18期 · 第12页 · 216字</div>
+        <div id="reader-body">
+          <p>数字工具改变了我们寻找文章的方式，也改变了阅读的节奏。过去，读者往往从目录开始，沿着一本刊物的顺序进入文章；现在，问题可以先被提出，系统再从不同刊物中匹配资料。</p>
+          <p>这并不意味着原文不再重要。恰恰相反，当答案可以被快速生成时，出版信息、作者、期号、页码和完整上下文，成为判断答案是否可信的重要依据。</p>
+          <p>因此，更好的阅读体验并不是让技术替代翻阅，而是让技术帮助读者更快找到值得细读的文章，再回到原文中理解观点的来龙去脉。</p>
+        </div>
+      </div>
+      <div class="reader-toolbar">
+        <span><button class="tool-btn" type="button" data-action="toast" data-toast="已经是第一篇">上一篇</button><button class="tool-btn" type="button" data-action="toast" data-toast="本地演示：下一篇为模拟切换">下一篇</button></span>
+        <span><button class="tool-btn" type="button" data-reader-size="-1" aria-label="缩小字号"><i class="iconfont icon-Font-small" aria-hidden="true"></i></button><button class="tool-btn" type="button" data-reader-size="1" aria-label="放大字号"><i class="iconfont icon-Font-big" aria-hidden="true"></i></button><button class="tool-btn" type="button" data-action="toast" data-toast="已收藏本篇（本地演示）">收藏本篇</button><a class="tool-btn" href="#/membership/读者">开通会员</a></span>
+      </div>
+    </article>
+  </div><div id="article-guide-mount"></div></div>
+</section>
+<!-- ===== Topics ===== -->
+<section id="view-topics" class="view" data-view="topics">
+  <div class="page-hero">
+    <div class="kicker">AI 专题与垂直频道</div>
+    <h1>把好奇，读成专题</h1>
+    <p>AI 负责整理线索、聚合文章和生成阅读路径；每个专题都保留期刊来源与原文入口。</p>
+  </div>
+  <section class="content">
+    <a class="topic-card topic-dark" style="min-height:300px" href="#/topic/city"><span class="topic-lines"></span><span>FEATURED / CITY & LIFE</span><h3 style="max-width:420px">城市更新：重新想象我们的生活</h3><p>从街区的新生，到人与空间关系的变化。</p><footer><span>期刊 · 学术 · 图书</span><span>进入专题</span></footer></a>
+    <div class="grid-3" style="margin-top:18px">
+      <a class="topic-card topic-blue" href="#/topic/ai-class"><span class="topic-rings"></span><span>02 / LEARNING</span><h3>当 AI 走进课堂</h3><p>技术、教育与成长的多重视角。</p><footer><span>教育观察</span><span>查看</span></footer></a>
+      <a class="topic-card topic-sand" href="#/topic/aging"><span class="topic-sun"></span><span>03 / LONGER LIFE</span><h3>银发时代的美好日常</h3><p>社会趋势与消费洞察。</p><footer><span>社会趋势</span><span>查看</span></footer></a>
+      <a class="topic-card topic-dark" href="#/topic/reading"><span class="topic-lines"></span><span>04 / READING</span><h3>数字时代的深度阅读</h3><p>在信息洪流中重新理解阅读。</p><footer><span>阅读研究</span><span>查看</span></footer></a>
+      <a class="topic-card topic-blue" href="#/topic/city-culture"><span class="topic-rings"></span><span>05 / CULTURE</span><h3>城市文化与公共空间</h3><p>社区、街道与日常生活。</p><footer><span>城市观察</span><span>查看</span></footer></a>
+      <a class="topic-card topic-sand" href="#/topic/family-reading"><span class="topic-sun"></span><span>06 / FAMILY</span><h3>家庭阅读习惯养成</h3><p>从每日一读开始的亲子陪伴。</p><footer><span>家庭教育</span><span>查看</span></footer></a>
+    </div>
+  </section>
+</section>
+
+<!-- ===== Topic Detail ===== -->
+<section id="view-topic" class="view" data-view="topic">
+  <section class="content">
+    <div class="topic-detail-hero">
+      <span>01 / CONNECTED PERSPECTIVES</span>
+      <h1>城市更新：重新想象我们的生活</h1>
+      <p style="max-width:780px;margin:0;opacity:.82">本专题由 AI 辅助整理阅读路径，聚合期刊报道、学术讨论与图书章节。以下每个判断都保留来源，用户可回到原文继续阅读。</p>
+    </div>
+    <div class="topic-section"><span>01</span><div><h3>理解背景</h3><p style="color:#687585">城市更新不只是建筑翻新，也涉及公共空间、社区关系和日常生活方式的变化。</p><a class="source-row" href="#/reader/1"><b>城市更新中的公共空间与日常生活</b><small>社会观察类期刊文章</small></a></div></div>
+    <div class="topic-section"><span>02</span><div><h3>走进具体案例</h3><p style="color:#687585">通过街区改造、社区服务和公共设施更新，观察城市更新如何影响普通人的日常。</p><a class="source-row" href="#/reader/2"><b>一个街区的新生</b><small>新闻深度报道</small></a></div></div>
+    <div class="topic-section"><span>03</span><div><h3>比较不同视角</h3><p style="color:#687585">规划者、居民、商户和研究者关注的问题不同，专题需要同时呈现这些视角。</p><a class="source-row" href="#/reader/3"><b>谁在使用新的公共空间</b><small>学术讨论与图书章节</small></a></div></div>
+    <div class="tag-row" style="margin-top:24px"><a class="btn" id="topic-ask-link" href="#/search?q=城市更新如何改变日常生活？">继续提问</a><button class="btn btn-outline" type="button" data-action="toast" data-toast="已收藏专题（本地演示）">收藏专题</button><a class="btn btn-outline" href="#/topics">返回专题列表</a></div>
+  </section>
+</section>
+
+<!-- ===== Topic Generation ===== -->
+<section id="view-topic-generate" class="view" data-view="topic-generate">
+  <section class="content">
+    <div class="generate-state">
+      <div class="kicker">实时专题生成</div>
+      <h1 style="">正在整理“<span data-bind="topic-query">一个新主题</span>”</h1>
+      <div id="generate-steps">
+        <div class="step" data-step><span class="step-dot">1</span><div><b>解析主题</b><p style="margin:3px 0 0;color:#8a94a0;font-size:12px">识别关键词、时间范围和内容边界。</p></div></div>
+        <div class="step" data-step><span class="step-dot">2</span><div><b>匹配期刊文章</b><p style="margin:3px 0 0;color:#8a94a0;font-size:12px">从本地期刊资源中查找相关报道与研究。</p></div></div>
+        <div class="step" data-step><span class="step-dot">3</span><div><b>检查证据充分性</b><p style="margin:3px 0 0;color:#8a94a0;font-size:12px">检查来源数量、重复度、敏感内容和观点覆盖。</p></div></div>
+        <div class="step" data-step><span class="step-dot">4</span><div><b>生成阅读路径</b><p style="margin:3px 0 0;color:#8a94a0;font-size:12px">按背景、案例、视角和原文入口组织专题。</p></div></div>
+      </div>
+      <p id="generate-note" style="color:#75808f;margin:22px 0">正在匹配资料，请稍候。</p>
+      <a class="btn" id="topic-ready-link" href="#/topic/city" hidden>查看生成专题</a>
+    </div>
+  </section>
+</section>
+<!-- ===== Books ===== -->
+<section id="view-books" class="view" data-view="books">
+  <div class="page-hero">
+    <div class="kicker">图书与教材</div>
+    <h1>从一本图书进入增强阅读</h1>
+    <p>保留原文本和页码线索，同时提供 AI 对话、重点提炼和间隔复习卡片。</p>
+  </div>
+  <section class="content">
+    <div class="grid-3">
+      <a class="topic-card topic-blue" href="#/book/10"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-10.png" alt="前线部署工程师封面" style="width:130px;align-self:center;box-shadow:5px 9px 18px rgba(0,0,0,.15)"><h3 style="margin-top:20px">前线部署工程师</h3><p>范冰 · 西安交通大学出版社 · 8章</p><footer><span>AI客户交付</span><span>查看</span></footer></a>
+      <a class="topic-card topic-sand" href="#/book/8"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-8.png" alt="科学的历程封面" style="width:130px;align-self:center;box-shadow:5px 9px 18px rgba(0,0,0,.15)"><h3 style="margin-top:20px">科学的历程</h3><p>北师大出版社 · 3章</p><footer><span>科学史</span><span>查看</span></footer></a>
+      <a class="topic-card topic-dark" href="#/book/7"><img loading="lazy" decoding="async" src="assets/longyuan-home/ebook-7.png" alt="材料力学封面" style="width:130px;align-self:center;box-shadow:5px 9px 18px rgba(0,0,0,.15)"><h3 style="margin-top:20px">材料力学</h3><p>西安交通大学出版社 · 13章</p><footer><span>工程教材</span><span>查看</span></footer></a>
+    </div>
+  </section>
+  <section class="content">
+    <h2 style="margin:0 0 18px">增强阅读能力</h2>
+    <div class="book-feature-grid">
+      <div class="book-feature"><i class="iconfont icon-AI" aria-hidden="true"></i><h3>AI 对话</h3><p>围绕章节内容追问概念、案例和操作要点。</p></div>
+      <div class="book-feature"><i class="iconfont icon-Paper2" aria-hidden="true"></i><h3>原文本</h3><p>回到教材原文，保留完整上下文与页码线索。</p></div>
+      <div class="book-feature"><i class="iconfont icon-Knowledge" aria-hidden="true"></i><h3>增强文本</h3><p>自动提炼重点、术语和注意事项。</p></div>
+      <div class="book-feature"><i class="iconfont icon-Card" aria-hidden="true"></i><h3>Anki 卡片</h3><p>把核心知识点转成可间隔复习的闪卡。</p></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===== Book Detail ===== -->
+<section id="view-book" class="view" data-view="book"></section>
+
+<!-- ===== Book Reader ===== -->
+<section id="view-book-reader" class="view" data-view="book-reader">
+  <section class="content">
+    <div class="tab-row" data-tab-group="book-reader">
+      <button class="tab-btn active" type="button" data-tab="original">原文本</button>
+      <button class="tab-btn" type="button" data-tab="ai">AI 对话</button>
+      <button class="tab-btn" type="button" data-tab="enhanced">增强文本</button>
+      <button class="tab-btn" type="button" data-tab="anki">Anki 卡片</button>
+    </div>
+    <div class="tab-panel active" data-tab-panel="original">
+      <h1 style="">第一章 从交付现场发现真实问题</h1>
+      <p style="font-size:16px;line-height:2;color:#4e5b6b">交付现场的问题往往不是一开始就被清楚表达的。工程师需要观察用户如何工作，哪些步骤反复出错，哪些工具没有被真正使用，再把这些现象翻译成可以解决的问题。</p>
+      <p style="font-size:16px;line-height:2;color:#4e5b6b">原文本保留章节结构和页码，AI 能力作为辅助层，不覆盖教材本身。</p>
+    </div>
+    <div class="tab-panel" data-tab-panel="ai">
+      <h2 style="">围绕本章继续提问</h2>
+      <div class="source-row"><b>问题：如何判断客户描述的是解决方案还是真实问题？</b><small>AI 将结合本章原文给出解释和引用</small></div>
+      <form class="composer" id="book-ai-form" style="margin-top:16px"><textarea name="q" placeholder="针对这一章继续追问" required></textarea><div class="composer-row"><button class="round-send" type="submit" aria-label="发送问题"><i class="iconfont icon-Arrow_Forward-2" aria-hidden="true"></i></button></div></form>
+    </div>
+    <div class="tab-panel" data-tab-panel="enhanced">
+      <h2 style="">本章重点</h2>
+      <div class="tag-row"><span class="mini-tag">现场观察</span><span class="mini-tag">问题翻译</span><span class="mini-tag">边界确认</span><span class="mini-tag">证据记录</span></div>
+      <p style="color:#4e5b6b;line-height:1.9">增强文本自动提炼术语、关键步骤和注意事项，并提示对应原文页码。</p>
+    </div>
+    <div class="tab-panel" data-tab-panel="anki">
+      <div class="grid-3">
+        <div class="source-row"><b>什么是交付现场中的“真实问题”？</b><small>点击显示答案（演示）</small></div>
+        <div class="source-row"><b>为什么不能直接接受客户给出的解决方案？</b><small>点击显示答案（演示）</small></div>
+        <div class="source-row"><b>如何记录现场证据？</b><small>点击显示答案（演示）</small></div>
+      </div>
+    </div>
+  </section>
+</section>
+<!-- MORE_VIEWS -->
+<section id="view-club" class="view" data-view="club"></section>
+</main>
+<footer class="site-footer"><span>龙源 LONGYUAN · 让阅读，连接新的可能</span><span>本地流程 Demo · AI 回答、价格与权益均为模拟内容</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const $ = (s, root=document) => root.querySelector(s);
+const $$ = (s, root=document) => Array.from(root.querySelectorAll(s));
+let currentRoute = null;
+let generateTimer = null;
+let toastTimer = null;
+
+function showToast(message){
+  const toast = $('#toast');
+  toast.textContent = message;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+function parseHash(){
+  const raw = location.hash.replace(/^#\/?/, '') || 'home';
+  const [pathPart, queryPart] = raw.split('?');
+  const parts = pathPart.split('/').filter(Boolean);
+  return {
+    name: parts[0] || 'home',
+    parts: parts.slice(1),
+    query: new URLSearchParams(queryPart || '')
+  };
+}
+
+function updateSearch(q){
+  if(window.longyuanConversation) window.longyuanConversation.open(q);
+}
+
+function startTopicGeneration(q){
+  q = (q || '一个新主题').trim();
+  $('[data-bind="topic-query"]').textContent = q;
+  const steps = $$('#generate-steps .step');
+  const note = $('#generate-note');
+  const readyLink = $('#topic-ready-link');
+  steps.forEach(step => step.classList.remove('done', 'active'));
+  readyLink.hidden = true;
+  note.textContent = '正在匹配资料，请稍候。';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){
+    steps.forEach(step => step.classList.add('done'));
+    note.textContent = '专题阅读路径已整理完成。';
+    readyLink.hidden = false;
+    return;
+  }
+  let i = 0;
+  function runNext(){
+    if(i > 0){
+      steps[i - 1].classList.add('done');
+      steps[i - 1].classList.remove('active');
+    }
+    if(i < steps.length){
+      steps[i].classList.add('active');
+      i += 1;
+      generateTimer = setTimeout(runNext, 520);
+    }else{
+      steps[steps.length - 1].classList.add('done');
+      note.textContent = '专题阅读路径已整理完成。';
+      readyLink.hidden = false;
+    }
+  }
+  runNext();
+}
+
+function renderRoute(){
+  if(generateTimer) clearTimeout(generateTimer);
+  const parsed = parseHash();
+  const exists = $(`[data-view="${parsed.name}"]`);
+  const name = exists ? parsed.name : 'home';
+  currentRoute = {...parsed, name};
+  $$('.view').forEach(view => view.classList.toggle('active', view.dataset.view === name));
+  $$('.nav a').forEach(link => link.classList.toggle('active', link.dataset.route === name));
+  window.scrollTo({top:0, behavior:'instant'});
+  if(name === 'search') updateSearch(currentRoute.query.get('q'));
+  if(name === 'topic-generate') startTopicGeneration(currentRoute.query.get('q'));
+}
+
+window.addEventListener('hashchange', renderRoute);
+renderRoute();
+
+document.addEventListener('submit', event => {
+  const form = event.target;
+  if(form.id === 'home-search-form'){
+    event.preventDefault();
+    const q = form.q.value.trim();
+    if(q) location.hash = `#/search?q=${encodeURIComponent(q)}`;
+  }
+  if(form.id === 'home-topic-form'){
+    event.preventDefault();
+    const q = form.topic.value.trim();
+    if(q) location.hash = `#/topic-generate?q=${encodeURIComponent(q)}`;
+  }
+  if(form.id === 'book-ai-form'){
+    event.preventDefault();
+    showToast('本地演示：AI 对话暂未接入真实服务');
+    form.reset();
+  }
+});
+
+document.addEventListener('click', event => {
+  const btn = event.target.closest('button');
+  if(!btn) return;
+
+  if(btn.dataset.fillHome){
+    const form = $('#home-search-form');
+    form.q.value = btn.dataset.fillHome;
+    form.q.focus();
+  }
+
+  if(btn.dataset.searchQuery){
+    const q = btn.dataset.searchQuery;
+    location.hash = `#/search?q=${encodeURIComponent(q)}`;
+  }
+
+  if(btn.matches('[data-filter-category]')){
+    const category = btn.dataset.filterCategory;
+    $$('.filter-chip').forEach(chip => chip.classList.toggle('active', chip === btn));
+    $$('[data-mag-filter]').forEach(card => {
+      card.style.display = category === 'all' || card.dataset.category === category ? '' : 'none';
+    });
+    showToast(category === 'all' ? '已显示全部期刊' : `已按“${category}”模拟筛选`);
+  }
+
+  if(btn.matches('.term-card')){
+    $$('.term-card').forEach(card => card.classList.toggle('active', card === btn));
+    const term = btn.dataset.term;
+    const price = btn.dataset.price;
+    $('#term-summary').textContent = `${term}会员 · ${price} / ${term === '月度' ? '月' : '年'} · 支付成功后生效`;
+    $('#open-member-btn').textContent = `开通会员 · ¥${price}`;
+  }
+
+  if(btn.dataset.tab){
+    const tabGroup = btn.closest('[data-tab-group]');
+    const wrapper = tabGroup.parentElement;
+    const groupName = tabGroup.dataset.tabGroup;
+    wrapper.querySelectorAll(`[data-tab-group="${groupName}"] .tab-btn`).forEach(tab => {
+      tab.classList.toggle('active', tab === btn);
+    });
+    wrapper.querySelectorAll(':scope > .tab-panel').forEach(panel => {
+      panel.classList.toggle('active', panel.dataset.tabPanel === btn.dataset.tab);
+    });
+  }
+
+  if(btn.dataset.readerTitle){
+    $$('.toc-item').forEach(item => item.classList.toggle('active', item === btn));
+    const title = btn.dataset.readerTitle;
+    const meta = btn.dataset.readerMeta;
+    $('#reader-title').textContent = title;
+    $('#reader-meta').textContent = meta;
+    $('#reader-breadcrumb').textContent = `读者 / 2026年18期 / ${title}`;
+    showToast('已切换文章（本地演示）');
+  }
+
+  if(btn.dataset.readerSize){
+    const content = $('#reader-content');
+    const current = parseFloat(getComputedStyle(content).fontSize);
+    const next = Math.min(22, Math.max(14, current + (btn.dataset.readerSize === '1' ? 1 : -1)));
+    content.style.fontSize = `${next}px`;
+  }
+
+  if(btn.dataset.action === 'toast'){
+    showToast(btn.dataset.toast || '本地演示');
+  }
+});
+</script>
+<script src="scripts/shelf.js"></script>
+<script src="scripts/editorial.js"></script>
+<script src="scripts/conversation.js"></script>
+<script src="scripts/academic.js"></script>
+
+<script src="scripts/periodical-data.js"></script>
+<script src="scripts/october-issue-data.js"></script>
+<script src="scripts/periodical-layout.js?v=20261106-inline-archive"></script>
+<script src="scripts/claimed-october-data.js?v=20261106-single-roster"></script>
+<script src="scripts/nanfc-reference.js"></script>
+<script src="scripts/podcast-cover-palette.js"></script>
+<script src="scripts/podcast-cover-colors.js"></script>
+<script src="scripts/claimed-october.js?v=20261105-banner-scoped"></script>
+<script src="scripts/cover-edge-palette.js?v=20261106-remote-edge"></script>
+<script src="scripts/claimed-guided-reading.js?v=20261105-banner-scoped"></script>
+<script src="scripts/claimed-community.js?v=20261106-profile-5343211"></script>
+<script src="scripts/reading-opinions.js?v=20261105-banner-scoped"></script>
+<script src="scripts/claimed-topic-motion.js"></script>
+<script src="scripts/books-resources.js?v=20261105-banner-scoped"></script>
+<script src="scripts/books-guided-plans.js?v=20261105-banner-scoped"></script>
+<script src="scripts/magazines-home-data.js?v=20261105-banner-scoped"></script>
+<script src="scripts/magazines-guided-plans.js?v=20261105-banner-scoped"></script>
+<script src="scripts/home-v3-magazine.js?v=20261105-banner-scoped"></script>
+<script src="scripts/resource-details.js?v=20261106-resource-mark"></script>
+<script src="scripts/home-refresh.js"></script>
+<script src="scripts/resource-editorial.js"></script>
+<script src="scripts/publication-entry.js?v=20261105-banner-scoped"></script>
+<script src="../book-recommendation-fields.js?v=1"></script><script src="scripts/books-home.js?v=20261105-shared-recommendation"></script>
+<script src="scripts/books-library.js?v=20261105-banner-scoped"></script>
+<script src="scripts/magazines-home.js?v=20261105-banner-scoped"></script>
+<script src="../shared-navigation.js?v=20261105-banner-scoped"></script><script src="scripts/club-demo-navigation.js?v=20261105-banner-scoped"></script>
+<script src="../club-state.js?v=20261105-account-name"></script><script src="../club-links.js?v=20261105-banner-scoped"></script>
+<script src="../shared-footer.js?v=20261105-banner-scoped"></script><script src="../secondary-field-limits.js?v=20261105-recommendation-fields"></script><script src="../mobile-adaptation.js?v=20261106-spacing-theme"></script><script src="../personal-navigation.js"></script><script src="../mobile-navigation.js?v=20261106-single-roster"></script><script src="../resource-detail-mobile.js?v=20261105-banner-scoped"></script><script src="../cover-ratios.js?v=20261105-banner-scoped"></script><script src="../navigation-progressive-blur.js?v=2"></script><script src="../mobile-entry-targets.js?v=20261109-1"></script></body>
+</html>

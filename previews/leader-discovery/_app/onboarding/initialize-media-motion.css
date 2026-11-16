@@ -1,0 +1,24 @@
+/* Shared with the original library: cover hinge 450ms, photo zoom 420ms. */
+.initialize-conversation{--media-ease:cubic-bezier(.2,.8,.2,1)}
+.edition-card .motion-hinge{perspective:900px;isolation:isolate;overflow:visible;background:transparent}
+.motion-hinge:before,.initialize-conversation .media-cover-wrap:before{content:'';position:absolute;inset:3px 0 3px 3px;border-radius:2px;background:repeating-linear-gradient(90deg,#fff 0 1px,#e4e2dc 1px 2px);border:1px solid #e4e2dc;box-shadow:2px 3px 8px #1319210d;pointer-events:none;z-index:0}
+.edition-card .motion-hinge>img{position:relative;z-index:1;border-radius:inherit;transform-origin:left center;backface-visibility:hidden;transition:transform 450ms var(--media-ease),box-shadow 450ms var(--media-ease)}
+.edition-card .motion-zoom{overflow:hidden}
+.edition-card .motion-zoom>img:not(.edition-banner-blur){transform:scale(1);transition:transform 420ms var(--media-ease)}
+.edition-small-1>.edition-progressive-blur>span>img{transform:scale(1);transition:transform 420ms var(--media-ease)}
+.edition-small-1>.edition-body{isolation:isolate}
+.edition-small-1>.edition-body:after{content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(transparent,rgba(0,0,0,.12));opacity:0;transition:opacity 180ms ease;z-index:-1;pointer-events:none}
+.initialize-conversation .media-cover-wrap{perspective:900px;isolation:isolate;overflow:visible}
+.initialize-conversation .media-cover-wrap>.shelf-cover{position:relative;z-index:1;transform-origin:left center;backface-visibility:hidden;transition:transform 450ms var(--media-ease),box-shadow 450ms var(--media-ease)}
+.initialize-conversation .media-cover-wrap>.media-edit,.initialize-conversation .media-cover-wrap>.media-remove{z-index:3}
+@media(hover:hover) and (pointer:fine){
+ .edition-card:is(:hover,:focus-within) .motion-hinge>img,.initialize-conversation .media-cover-wrap:is(:hover,:focus-visible,:focus-within)>.shelf-cover{transform:rotateY(-18deg);box-shadow:8px 8px 16px #2121211a}
+ .edition-card:is(:hover,:focus-within) .motion-zoom>img:not(.edition-banner-blur),.edition-small-1:is(:hover,:focus-within)>.edition-progressive-blur>span>img{transform:scale(1.06)}
+ .edition-small-1:is(:hover,:focus-within)>.edition-body:after{opacity:1}
+}
+/* Coarse pointers keep a stable image and visible actions; no sticky touch hover. */
+@media(hover:none),(pointer:coarse){.edition-card .edition-push{opacity:1;pointer-events:auto}}
+@media(prefers-reduced-motion:reduce){
+ .edition-card .motion-hinge>img,.edition-card .motion-zoom>img:not(.edition-banner-blur),.edition-small-1>.edition-progressive-blur>span>img,.initialize-conversation .media-cover-wrap>.shelf-cover{transform:none!important;transition:none!important}
+ .edition-small-1>.edition-body:after{transition:none}
+}

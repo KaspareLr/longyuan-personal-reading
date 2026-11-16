@@ -1,0 +1,98 @@
+/* Latest Figma 179:3159. The cover volume is shared with guided reading. */
+#view-books>.page-hero{display:none}
+.books-home-hero{width:100vw;margin-inline:calc((100% - 100vw)/2);margin-top:calc(-1 * var(--books-nav-offset,86px));height:960px;box-sizing:border-box;padding:80px 40px 0;background:#efefef;color:#131921}
+.books-home-feature{max-width:1360px;margin:auto;height:100%;padding:100px 0;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.books-home-left{display:flex;flex-direction:column;min-width:0;gap:8px;align-items:flex-start}
+.books-home-thumbnails{display:flex;flex-direction:column;gap:8px}
+.books-home-thumbnails button{display:grid;place-items:center;width:100px;height:100px;box-sizing:border-box;padding:20px;border:0;border-radius:20px;background:#ffffff80;cursor:pointer;transition:background-color 180ms ease}
+.books-home-thumbnails button:hover{background:#ffffffc0}
+.books-home-thumbnails img{display:block;width:auto;height:60px;max-width:60px;object-fit:contain;border-radius:4px;box-shadow:0 8px 16px #21212112}
+.books-home-hero :is(button,a):focus-visible{outline:2px solid #131921;outline-offset:4px}
+.books-home-copy{flex:1;min-height:0;justify-content:flex-end;padding:40px 0;display:flex;flex-direction:column;gap:20px;width:100%;box-sizing:border-box}
+.books-home-identity{display:flex;flex-direction:column;gap:4px}
+.books-home-kicker{display:flex;align-items:center;gap:4px;font:700 16px/24px "Noto Serif SC","Songti SC",serif}
+.books-home-kicker img:last-child{transform:scaleX(-1)}
+.books-home-copy h1{font:700 32px/40px Figtree,"PingFang SC",sans-serif;margin:0}
+.books-home-copy p{font:400 14px/20px Figtree,"PingFang SC",sans-serif;color:#606266;margin:0}
+.books-home-identity>strong{font:700 16px/24px Figtree,"PingFang SC",sans-serif;color:#606266}
+.books-home-center{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0;padding:90px 0;box-sizing:border-box}
+.books-home-center .oc-book-stage{height:100%;width:auto;max-width:60%;margin:0;aspect-ratio:14/19}
+.books-home-actions{display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-end;padding:40px 0;gap:40px;min-width:0}
+.books-home-description{display:flex;flex-direction:column;gap:20px;width:100%}
+.books-home-club{display:flex;flex-direction:column;gap:10px;padding:10px;background:#ffffff80;border-radius:30px;box-shadow:0 2px 6px #0000001a}
+.books-home-guide{display:flex;gap:10px;align-items:center}
+.books-home-guide>img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.books-home-guide-name{display:flex;gap:4px;align-items:center}
+.books-home-guide-name strong{font:700 16px/28px Figtree,"PingFang SC",sans-serif}
+.books-home-guide-name>span{padding:2px 4px;border-radius:4px;background:#d4380d;color:#fff;font:700 8px/12px Figtree,"PingFang SC",sans-serif}
+.books-home-guide small{display:block;color:#909399;font:400 12px/16px Figtree,"PingFang SC",sans-serif}
+.books-home-join{display:flex;gap:10px;align-items:center;padding:10px 10px 10px 16px;border-radius:20px;background:#fff}
+.books-home-progress{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px}
+.books-home-progress>strong{font:700 12px/16px Figtree,"PingFang SC",sans-serif;color:#909399}
+.books-home-progress .oc-reading-progress{height:6px;background:#0003;border-radius:100px}
+.books-home-progress .oc-reading-participants{margin-top:6px}
+.books-home-actions .oc-button{font:500 14px/20px Figtree,"PingFang SC",sans-serif;white-space:nowrap;box-shadow:0 2px 3px #0000001a;border:0}
+.books-home-join .oc-button{padding:14px 32px;border-radius:100px}
+.books-home-join .oc-button:disabled{color:#fff;opacity:.65;cursor:default}
+.books-home-description section{display:flex;flex-direction:column;gap:10px}
+.books-home-description h2{margin:0;font:400 12px/16px Figtree,"PingFang SC",sans-serif;color:#909399}
+.books-home-description p{margin:0}
+.books-home-reason p{font:700 20px/28px Figtree,"PingFang SC",sans-serif;color:#131921}
+.books-home-about p{font:400 14px/20px Figtree,"PingFang SC",sans-serif;color:#606266}
+.books-home-actions .books-home-read{width:160px;box-sizing:border-box;padding:14px 40px;border-radius:12px;background:#fff;color:#131921}
+#view-books>.books-home-hero~.content{margin-top:40px}
+@media(max-width:1100px){.books-home-hero{height:auto;min-height:960px;padding-inline:24px}.books-home-feature{padding:80px 0;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:32px}.books-home-center{padding:40px 0}.books-home-center .oc-book-stage{width:60%;height:auto;max-width:320px}.books-home-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr auto;align-items:end;padding:0}.books-home-description{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}.books-home-join{flex-wrap:wrap}.books-home-join .oc-button{padding:12px 24px}}
+@media(max-width:600px){.books-home-feature{grid-template-columns:1fr;padding:100px 0 20px;gap:32px}.books-home-center{grid-row:1;padding:0}.books-home-center .oc-book-stage{width:60%;height:auto;max-width:280px}.books-home-left{align-items:center}.books-home-thumbnails{flex-direction:row;gap:8px}.books-home-thumbnails button{width:88px;height:88px;padding:14px}.books-home-copy{max-width:400px;padding:16px 0}.books-home-actions{grid-column:1;display:flex;align-items:stretch;gap:32px}.books-home-description{display:flex}.books-home-read{align-self:flex-end}}
+@media(prefers-reduced-motion:reduce){.books-home-thumbnails button{transition:none}}
+
+/* Keep the navigation visible without changing its document-flow footprint. */
+.books-home-hero{overflow-x:clip}
+
+.books-home-thumbnails button{border:1px solid transparent;transition:background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}
+.books-home-thumbnails button[aria-pressed=true]{background:#fff;border-color:#131921;box-shadow:0 4px 14px #1319211a}
+body:has(#view-books.active),#view-books{background:#fff}
+
+/* Circular three-slot window; only selection advances the thumbnails. */
+.books-home-thumbnails{height:316px;max-height:316px;overflow:clip;flex:none;padding:0 12px 0 8px;margin-left:-8px;width:120px;box-sizing:content-box}
+.books-home-thumbnail-track{display:flex;flex-direction:column;gap:8px}
+.books-home-thumbnail-track button{flex:none}
+@media(max-width:600px){.books-home-thumbnails{width:280px;height:88px;max-height:88px;max-width:100%;padding:0 8px;margin:0;box-sizing:content-box}.books-home-thumbnail-track{flex-direction:row}}
+/* Figma 189:3712 — four-column library, white surfaces and hinged covers. */
+.books-library{max-width:1360px;margin:0 auto;padding:80px 0;display:flex;flex-direction:column;gap:20px;box-sizing:border-box}
+.books-library-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+.books-library-heading>div:first-child{display:flex;flex-direction:column;gap:10px}
+.books-library-heading>div>span{font:400 12px/16px Figtree,"PingFang SC",sans-serif;color:#909399}
+.books-library h2{margin:0;font:700 32px/40px Figtree,"PingFang SC",sans-serif;color:#131921}
+.books-library-filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.books-library-filters button{padding:8px 16px;border:0;border-radius:100px;background:#fff;box-shadow:0 2px 3px #0000001a;color:#131921;font:700 14px/20px Figtree,"PingFang SC",sans-serif;cursor:pointer}
+.books-library-filters button[aria-pressed=true]{background:#131921;color:#fff;box-shadow:none}
+.books-library-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start}
+.books-library-card{display:flex;flex-direction:column;min-width:0;padding:20px;box-sizing:border-box;border-radius:20px;background:#fff;box-shadow:0 6px 18px #0206170a;overflow:clip;text-decoration:none;color:#020617}
+.books-library-cover-area{aspect-ratio:1;width:100%;padding:40px 0;box-sizing:border-box;display:flex;align-items:center;justify-content:center}
+.books-library-volume{position:relative;display:block;height:100%;perspective:900px;flex:none}
+.books-library-paper{position:absolute;inset:3px 0 3px 3px;border-radius:2px;background:repeating-linear-gradient(90deg,#fff 0 1px,#e4e2dc 1px 2px);border:1px solid #e4e2dc;box-shadow:2px 3px 8px #1319210d}
+.books-library-cover{position:relative;display:block;z-index:1;width:auto;height:100%;object-fit:contain;border-radius:4px;box-shadow:0 8px 16px #21212112;transform-origin:0 50%;transform:rotateY(0deg);backface-visibility:hidden;transition:transform 450ms cubic-bezier(.2,.8,.2,1),box-shadow 450ms cubic-bezier(.2,.8,.2,1)}
+.books-library-info h3{margin:0;color:#020617;font:600 24px/32px Figtree,"PingFang SC",sans-serif;overflow-wrap:anywhere}
+.books-library-info p{margin:0;color:#71717a;font:400 12px/23px Figtree,"PingFang SC",sans-serif}
+.books-library-card footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:10px;width:100%;border-top:1px solid #e5e8e4;color:#71717a;font:400 12px/20px Figtree,"PingFang SC",sans-serif}
+.books-library-arrow{display:grid;place-items:center;width:32px;height:32px;padding:4px;box-sizing:border-box}
+.books-library-arrow img{display:block}
+#view-books .books-library-card:is(:hover,:focus-visible){color:#020617;text-decoration:none}
+@media(hover:hover) and (pointer:fine){.books-library-card:hover .books-library-cover{transform:rotateY(-18deg);box-shadow:8px 8px 16px #2121211a}}
+.books-library-card:focus-visible .books-library-cover{transform:rotateY(-18deg)}
+.books-library :is(a,button):focus-visible{outline:2px solid #131921;outline-offset:4px}
+.books-library-empty{margin:20px 0;color:#909399;font-size:14px}
+@media(max-width:1000px){.books-library-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.books-library-heading{align-items:flex-start;flex-direction:column}.books-library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.books-library{padding-block:60px}.books-library-cover-area{padding-block:24px}.books-library-info h3{font-size:20px;line-height:28px}}
+@media(max-width:420px){.books-library-card{padding:14px}.books-library-grid{gap:14px}.books-library-cover-area{padding-block:16px}.books-library-info h3{font-size:18px;line-height:26px}}
+@media(prefers-reduced-motion:reduce){.books-library-cover{transition:none}.books-library-card:is(:hover,:focus-visible) .books-library-cover{transform:none}}
+.books-library-cover-area{position:relative}
+.books-library-volume{position:absolute;top:40px;left:50%;height:calc(100% - 80px);width:max-content;transform:translateX(-50%)}
+@media(max-width:760px){.books-library-volume{top:24px;height:calc(100% - 48px)}}
+@media(max-width:420px){.books-library-volume{top:16px;height:calc(100% - 32px)}}
+
+/* Keep book categories to the right, with a reserved 120px gap. */
+.books-library-heading{flex-direction:row;align-items:flex-end;gap:120px}
+.books-library-heading>div:first-child{flex:none}
+.books-library-filters{flex:0 1 auto;min-width:0;max-width:100%;flex-wrap:nowrap;overflow:hidden;padding-block:8px;margin-block:-8px}
+.books-library-filters button{flex:none;white-space:nowrap}

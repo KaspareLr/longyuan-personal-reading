@@ -1,0 +1,40 @@
+/* Figma 545:4665 / 545:4853: one continuous capsule with a nested settings group. */
+@media(min-width:761px){
+ html body .portal-reader-content>.portal-reader-tools.reader-tools-collapsible{display:flex;flex-direction:column;align-items:center;gap:16px;width:58px!important;padding:4px!important;border:1px solid #fffc;border-radius:100px;background:#fff3;box-shadow:0 7px 30px #252a3508,inset 0 1px #fff9;backdrop-filter:blur(100px)}
+ html body .portal-reader-tools.reader-tools-collapsible button{width:40px;height:40px;min-width:40px;min-height:40px;padding:7px;border:1px solid #ffffffc9;border-radius:100px;background:#ffffffb3;box-shadow:0 7px 30px #252a3508,inset 0 1px #fff9;color:#131921}
+ html body .portal-reader-tools.reader-tools-collapsible>.reader-tool-group{display:flex;flex-direction:column;gap:8px;padding:4px;background:#00000008;border-radius:100px;box-shadow:0 7px 30px #252a3508,inset 0 1px #fff9}
+}
+html body .reader-tools-settings{display:flex;flex-direction:column;align-items:center;padding:4px;border-radius:100px;background:#00000008;box-shadow:0 7px 30px #252a3508,inset 0 1px #fff9}
+html body .reader-tools-settings>.reader-tools-toggle{display:grid!important;flex:none}
+html body .reader-tools-settings>.reader-tools-toggle .iconfont{display:inline-flex!important;font-size:24px;line-height:24px}
+html body .reader-tools-settings>.reader-tools-panel{position:static;display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;max-height:0;overflow:hidden;padding:0;border:0;background:transparent;box-shadow:none;opacity:0;visibility:hidden;pointer-events:none;transition:max-height 240ms ease,opacity 180ms ease,visibility 240ms}
+html body .reader-tools-open>.reader-tools-settings>.reader-tools-panel{max-height:144px;opacity:1;visibility:visible;pointer-events:auto}
+html body .reader-tools-panel .reader-tool-section{display:flex;flex-direction:column;gap:8px;padding-bottom:8px}
+html body .portal-reader.night .reader-tools-settings{background:#ffffff08}
+html body .portal-reader.night .portal-reader-content>.portal-reader-tools.reader-tools-collapsible{background:#292f36cc}
+html body .portal-reader.night .portal-reader-tools.reader-tools-collapsible button{background:#343c46;color:#eceff2}
+@media(max-width:760px){
+ html body .portal-reader-content>.portal-reader-tools.reader-tools-collapsible{position:fixed!important;inset:auto 20px calc(20px + env(safe-area-inset-bottom)) auto!important;transform:none!important;float:none;display:flex;align-items:center;gap:0;width:auto!important;height:auto;max-width:calc(100vw - 32px);margin:0!important;padding:4px!important;border:1px solid #fffc;border-radius:100px;background:#fff3;box-shadow:0 6px 24px #13192114;backdrop-filter:blur(16px);z-index:90}
+ html body .reader-tools-settings{flex-direction:row;padding:0;background:transparent;box-shadow:none;max-width:100%}
+ html body .portal-reader-tools.reader-tools-collapsible button{width:40px;height:40px;min-width:40px;min-height:40px;padding:7px}
+ html body .reader-tools-settings>.reader-tools-panel{flex-direction:row;justify-content:flex-start;flex-shrink:1;width:max-content;max-width:0;max-height:none;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;transition:max-width 240ms ease,opacity 180ms ease,visibility 240ms}
+ html body .reader-tools-settings>.reader-tools-panel::-webkit-scrollbar{display:none}
+ html body .reader-tools-open>.reader-tools-settings>.reader-tools-panel{max-width:calc(100vw - 90px);max-height:none}
+ html body .reader-tools-panel :is(.reader-tool-section,.reader-tool-group){display:flex;flex-direction:row;flex:none;gap:8px;padding:4px;background:#00000008;border-radius:100px;box-shadow:inset 0 1px #fff9;backdrop-filter:none}
+ html body .reader-tools-open>.reader-tools-settings>.reader-tools-toggle{margin-left:8px}
+}
+@media(prefers-reduced-motion:reduce){html body .reader-tools-settings>.reader-tools-panel{transition:none}}
+
+@media(max-width:760px){
+ html body .portal-reader-content>.portal-reader-tools.reader-tools-open{right:50%!important;transform:translateX(50%)!important}
+ html body .portal-reader-tools .reader-tool-group .reader-arrow-up{transform:rotate(-90deg)}
+ html body .portal-reader-tools .reader-tool-group .reader-arrow-down{transform:rotate(90deg)}
+ html body .reader-tools-panel>.reader-directory-trigger{flex:none}
+ html body .portal-reader-tools.reader-tools-collapsible button{border:1px solid #ffffffc9;background:#ffffffb3;box-shadow:0 7px 30px #252a3508,inset 0 1px #fff9}
+ html body .portal-reader-tools.reader-tools-collapsible button:after{content:"";position:absolute;inset:-2px;border-radius:inherit}
+ html body .portal-reader.night .portal-reader-tools.reader-tools-collapsible button{background:#343c46;color:#eceff2}
+}
+
+/* One bounded blur surface; avoid nested 100px filters repainting while scrolling. */
+html body .portal-reader-content>.portal-reader-tools.reader-tools-collapsible{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+html body .portal-reader-tools.reader-tools-collapsible :is(button,.reader-tool-group,.reader-tool-section,.reader-tools-settings,.reader-tools-panel){backdrop-filter:none!important;-webkit-backdrop-filter:none!important}

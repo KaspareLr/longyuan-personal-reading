@@ -1,0 +1,10 @@
+/* Keep the launcher anchored; expand only its invitation pill. */
+body .pe-chat-reopen.guide-nudge-ready{display:none;box-sizing:border-box;align-items:center;gap:10px;width:44px!important;height:44px!important;overflow:hidden!important;white-space:nowrap;padding:0!important;transition:width 420ms cubic-bezier(.22,1,.36,1),height 420ms cubic-bezier(.22,1,.36,1),padding 420ms cubic-bezier(.22,1,.36,1),background-color 250ms,box-shadow 250ms}
+body .pe-chat-reopen.guide-nudge-ready>img{display:block;flex:none;width:44px;height:44px;max-width:none;object-fit:cover;border-radius:24px;box-shadow:0 4px 10px #0003}
+.guide-nudge-copy{display:flex;flex-direction:column;align-items:flex-start;gap:2px;flex:none;font-family:Figtree,"PingFang SC","Microsoft YaHei",sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#131921;text-align:left;opacity:0;transform:translateX(8px);transition:opacity 180ms ease,transform 300ms cubic-bezier(.22,1,.36,1);pointer-events:none}
+.guide-nudge-copy>span:last-child{color:#909399}
+body .pe-chat-reopen.guide-nudge-visible{width:246px!important;height:52px!important;padding:4px 20px 4px 4px!important;background:#fff!important;border-radius:100px!important;box-shadow:0 7px 30px #252a3508!important}
+.guide-nudge-visible .guide-nudge-copy{opacity:1;transform:translateX(0);transition-delay:140ms}
+.guide-nudge-ready .pe-tooltip{display:none!important}
+@media(max-width:600px){body .pe-chat-reopen.guide-nudge-visible{max-width:calc(100vw - 40px)}}
+@media(prefers-reduced-motion:reduce){body .pe-chat-reopen.guide-nudge-ready,.guide-nudge-copy{transition:none}}

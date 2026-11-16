@@ -1,0 +1,57 @@
+/* One local font source for functional icons across all entry points. */
+html body .iconfont{font-family:"font_family"!important;font-style:normal;font-weight:400;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;color:inherit;font-size:24px;-webkit-font-smoothing:antialiased}
+html body .club-local-icon{width:24px;height:24px;min-width:24px;min-height:24px;font-size:24px!important;vertical-align:middle;object-fit:initial}
+html body .club-local-icon::before{font-size:inherit!important}
+html body :is(.club-mobile-nav-icon,.club-mobile-level-back) .iconfont{font-size:24px!important;width:24px;height:24px}
+html body :is(.book-sidebar-social,.pe-identity-actions) .iconfont{display:inline-flex}
+.book-capability>.club-local-icon{width:40px!important;height:40px!important;border-radius:50%;background:#f1f3f5;box-shadow:none}
+.reader-chapter-tool>.club-local-icon{font-size:20px!important;width:24px;height:24px}
+.v3-audio [data-v3-podcast]>.icon-Play{font-size:24px!important}
+.v3-audio [data-v3-podcast][aria-pressed=true]>.icon-Play{display:none}
+@media(max-width:760px){
+ html body.book-reader-open .book-reader-dock{height:64px;min-height:64px;gap:8px;padding:6px 8px;border-radius:20px;background:rgba(249,250,251,.96);border:1px solid #fff;box-shadow:0 3px 16px #1319210a}
+ html body.book-reader-open .book-reader-tabs{flex:1;display:flex;align-items:center;gap:2px;min-height:0;justify-content:space-between}
+ html body.book-reader-open .book-reader-tabs>button,html body.book-reader-open .book-reader-tabs>button[aria-selected=true]{flex:1;min-width:0;width:auto;height:50px;display:flex;flex-direction:column;gap:3px;padding:4px 0;border-radius:12px;border:0;background:transparent;color:#606266;overflow:visible}
+ html body.book-reader-open .book-reader-tabs>button[aria-selected=true]{background:#e6e9ed;color:#131921}
+ html body.book-reader-open .book-reader-tabs>button>span{display:block;max-width:none;opacity:1;font-size:10px;line-height:14px;font-weight:600;white-space:nowrap}
+ html body.book-reader-open .book-reader-tabs .iconfont{width:24px;height:24px;font-size:24px!important}
+ html body.book-reader-open .book-reader-dock-actions{gap:6px;padding-left:8px;border-left:1px solid #dfe2e6}
+ html body.book-reader-open .book-reader-dock-actions>:is(button,a){width:40px;height:44px;min-width:40px;display:flex;align-items:center;justify-content:center;border:1px solid #dfe2e6;background:#fff;border-radius:12px;box-shadow:0 1px 2px #13192108;color:#131921}
+ html body.book-reader-open .book-reader-dock-actions .iconfont{font-size:22px!important;width:24px;height:24px}
+ html body.book-reader-open [data-reader-note-count]{right:1px;top:1px;font-size:9px;line-height:12px;min-width:12px;background:#edf0f3}
+ html body.book-reader-open .portal-reader{padding-top:80px}
+ html body .reader-directory-dialog{inset:0;margin:0;width:100%;max-width:100%;height:100dvh;max-height:100dvh;border:0;border-radius:0;display:flex;flex-direction:column;z-index:1000}
+ html body .reader-directory-dialog:not([open]){display:none}
+ html body .reader-directory-heading{flex:none;padding-top:calc(12px + env(safe-area-inset-top))}
+ html body .reader-directory-heading button{display:grid;place-items:center;width:44px;height:44px;padding:0}
+ html body .reader-directory-body{height:auto;flex:1;min-height:0}
+ body.club-demo-context:has(#view-books.active) #app{background:linear-gradient(to bottom,#efefef 0 var(--mobile-header-offset,88px),transparent var(--mobile-header-offset,88px))}
+ body.club-demo-context:has(#view-books.active)>.topbar{background:#efefef}
+}
+
+html body .portal-reader-tools .club-local-icon{display:inline-flex!important}
+html body .reader-tool-group .reader-arrow-down{transform:rotate(180deg)}
+html body .reader-tool-group .reader-arrow-up{transform:none}
+html body .book-tool-art.club-local-icon{display:inline-flex;width:40px;height:40px;background:#f1f3f5;border-radius:50%;box-shadow:none}
+html body .oc-profile-action-icon.club-local-icon{display:inline-flex}
+html body .club-local-icon.pe-refined-icon{display:inline-flex}
+html body .v3-book-arrow>.club-local-icon,html body .v3-arrow .club-local-icon,html body .books-library-arrow>.club-local-icon{display:inline-flex}
+html body.home-v3 .v3-audio button>.v3-pause-icon{display:none;width:24px;height:24px;border:0;font-size:24px!important;color:inherit}
+html body.home-v3 .v3-audio button.is-playing>.v3-pause-icon{display:inline-flex}
+html body.home-v3 .v3-audio button.is-playing>.icon-Play{display:none!important}
+html body :is(.portal-back,.club-page-back,.club-mobile-level-back)>.iconfont{transform:rotate(180deg)}
+
+/* Reading agents retain their original illustrated assets; notes use iconfont. */
+@media(max-width:760px){
+ html body.book-reader-open .book-reader-tabs>button>img{display:block;width:28px;height:28px;min-width:28px;object-fit:contain;border:0;border-radius:50%;box-shadow:none}
+ html body.book-reader-open .book-reader-tabs>button,html body.book-reader-open .book-reader-tabs>button[aria-selected=true]{gap:1px;padding-block:3px}
+ html body.book-reader-open .book-reader-map-toggle>img{display:block;width:28px;height:28px;object-fit:contain;border-radius:50%;box-shadow:none}
+}
+
+html body #wm-card-prev>.icon-Arrow_Forward-2{transform:rotate(180deg)}
+
+:root{--orange-6:#fa8c16}
+html body .iconfont.icon-Share::before,html body .iconfont.icon-Share1::before,html body .iconfont.icon-Share-2::before{content:"\e6e0"}
+html body .iconfont.icon-StarFill{color:var(--orange-6)!important}
+html body .iconfont.icon-mark_Fill{color:#131921!important}
+html body .book-sidebar-social .portal-bookmark>.iconfont,html body .pe-identity-refined .pe-icon-button>.iconfont{display:inline-flex!important}
