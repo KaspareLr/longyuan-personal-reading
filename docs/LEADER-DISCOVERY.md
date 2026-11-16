@@ -48,3 +48,7 @@ python3 scripts/serve-discovery.py --host 0.0.0.0 --port 8898
 直接使用既有 `mobile-navigation.css` 的 `.club-mobile-nav-shell`、`.club-mobile-nav-item` 和 `.club-mobile-nav-icon`，不另写胶囊材质和选中样式。图标24px，文字10/12px字重400，上图下文；内边距10px，圆角100px，白色80%透明玻璃、32px模糊，选中背景rgba(0,0,0,.08)，左右10px，底部20px加安全区。四项图标复用项目字体 Home / All / Read / user_s。桌面导航、初始化结束进入信息流、二级详情返回保持既有逻辑。
 
 320/390/440px计算样式对照通过，四图标与文字均可见；390px完整初始化、详情返回、四Tab切换通过。截图仅保存在本机 `/tmp/discovery-v3-navigation-390.png`。
+
+## 移动端顶部入口简化 · 2026-11-16
+
+新首页、信息流和读书会的移动端顶部只保留居中问候语；删除左侧切换入口与右侧头像/登录入口的DOM及事件。底部v3四Tab继续承担主导航。我的页面标题和返回按钮、二级页面返回、桌面导航保留。更新仅作用于探索版及其独立在线预览。
