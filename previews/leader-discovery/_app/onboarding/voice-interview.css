@@ -1,0 +1,32 @@
+/* Extend the confirmed voice page without introducing another visual language. */
+.voice-interview-step .interview-voice-control .voice-reply-row,.voice-interview-step .interview-voice-control .voice-continue{display:none!important}
+.voice-interview-step #work-area [hidden]{display:none!important}
+.voice-interview-step.interview-ongoing .voice-ai-portrait{width:80px;height:80px;filter:blur(1px)}
+.initialize-conversation.voice-interview-step.interview-ongoing #question{margin-top:28px}
+.initialize-conversation.voice-interview-step #setup-main.ai-thread{padding-bottom:160px}
+.voice-interview-step .interview-last-answer{box-sizing:border-box;max-width:600px;margin:0 0 24px auto;border-radius:24px 24px 4px 24px;padding:16px 20px;background:#f5f7fa;color:#131921;text-align:left}
+.interview-last-answer>span{font-size:12px;line-height:20px;color:#909399}.interview-last-answer p{font-size:16px;line-height:28px;margin:6px 0 0;overflow-wrap:break-word}
+.voice-interview-step .interview-content{width:100%;max-width:640px;margin:0 auto}.voice-interview-step .interview-actions{display:flex;flex-direction:column;gap:12px;width:100%;max-width:440px;margin:24px auto 0}.interview-actions button{font-family:inherit;font-size:16px;line-height:24px;font-weight:500;min-height:52px;padding:14px 24px;border-radius:100px;cursor:pointer}.interview-primary{border:0;background:#131921;color:#fff;box-shadow:0 2px 6px #0000001a}.interview-secondary{border:1px solid #e4e7ed;background:#fff;color:#606266}.interview-primary:disabled{opacity:.4;cursor:default}
+.interview-summary-label{display:block;font-size:14px;line-height:24px;color:#606266;margin:0 0 8px}.voice-interview-step #interview-summary{box-sizing:border-box;display:block;width:100%;min-height:300px;margin:0;padding:20px;border:1px solid #e4e7ed;border-radius:24px;background:#f5f7fa;color:#131921;font-family:inherit;font-size:16px;line-height:28px;resize:vertical;overflow-wrap:break-word}.interview-note{font-size:12px;line-height:20px;color:#909399;margin:12px 0 0}
+.interview-content details{margin-top:28px;border-top:1px solid #e4e7ed;padding-top:20px;color:#606266}.interview-content details summary{font-size:14px;line-height:24px;cursor:pointer}.interview-content details h3{font-size:16px;font-weight:500;line-height:28px;color:#131921;margin:24px 0 8px}.interview-content details p{font-size:14px;line-height:24px;margin:0 0 16px}.interview-content :is(button,textarea,summary):focus-visible{outline:2px solid #131921;outline-offset:4px}
+.interview-question-enter{animation:interview-question-fade 400ms ease-out both}@keyframes interview-question-fade{from{opacity:0}to{opacity:1}}
+@media(max-width:760px){.voice-interview-step .interview-last-answer{padding:16px}.interview-last-answer p{font-size:15px;line-height:26px}.voice-interview-step .interview-actions{margin-top:20px}.voice-interview-step #interview-summary{padding:16px;min-height:340px}}
+@media(prefers-reduced-motion:reduce){.interview-question-enter{animation:none}}
+/* The conversation stays in chronological order; messages enter from below. */
+.voice-interview-step.interview-conversing #question,.voice-interview-step.interview-conversing #description{position:absolute!important;width:1px!important;height:1px!important;margin:0!important;padding:0!important;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.voice-interview-step .interview-thread{display:flex;flex-direction:column;gap:28px;width:100%;max-width:640px;margin:0 auto 24px;padding:0;text-align:left}
+.interview-message{box-sizing:border-box;max-width:100%;width:100%;margin:0;color:#131921}.interview-message>span{display:block;font-size:12px;line-height:20px;color:#909399;margin-bottom:8px}.interview-message h2{font-size:24px;font-weight:400;line-height:34px;text-wrap:pretty;margin:0;overflow-wrap:break-word}.interview-message p{font-size:16px;line-height:28px;margin:0;overflow-wrap:break-word}.interview-ai>p{margin-top:10px;color:#606266}.interview-user{max-width:92%;align-self:flex-end;background:#f5f7fa;border-radius:24px 24px 4px 24px;padding:16px 20px}
+.interview-message-enter{animation:interview-rise 400ms ease-out both}.voice-ai-loading .interview-thread{opacity:0}.voice-ai-entering .interview-initial-question{animation:interview-rise 400ms 1200ms ease-out both}
+.voice-interview-step .interview-stop{border:1px solid #e4e7ed;border-radius:100px;background:#fff;color:#606266;padding:10px 24px;min-height:44px;font-family:inherit;font-size:14px;line-height:24px;cursor:pointer}.voice-interview-step .interview-stop:focus-visible{outline:2px solid #131921;outline-offset:3px}.initialize-conversation.voice-interview-step #setup-main.ai-thread{padding-bottom:230px}
+@keyframes interview-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.voice-interview-step .interview-thread{gap:24px}.interview-message h2{font-size:22px;line-height:32px}.interview-user{padding:16px}.interview-message p{font-size:15px;line-height:26px}}
+@media(prefers-reduced-motion:reduce){.interview-message-enter,.voice-ai-entering .interview-initial-question{animation:none;transform:none;opacity:1}}
+.interview-message{scroll-margin-top:100px;scroll-margin-bottom:230px}
+.voice-interview-step .interview-thread .interview-message h2{color:#131921;font-weight:400}.voice-interview-step .interview-thread .interview-user p{color:#131921}
+/* Keep decision actions within reach, using the established bottom control area. */
+.voice-interview-step .interview-content .interview-actions{position:fixed;left:50%;bottom:env(safe-area-inset-bottom,0px);transform:translateX(-50%);z-index:30;display:flex;flex-direction:row;align-items:center;gap:12px;box-sizing:border-box;width:100%;max-width:760px;margin:0;padding:16px 16px 20px;background:#ffffffeb;backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px)}
+.voice-interview-step .interview-actions button{flex:1;min-width:0;white-space:nowrap}
+.voice-interview-step .interview-actions .interview-secondary{order:-1}
+/* Give the primary decision more width than the optional continuation. */
+.voice-interview-step .interview-actions .interview-secondary{flex:0 0 34%;padding-inline:12px}
+.voice-interview-step .interview-actions .interview-primary{flex:1}
