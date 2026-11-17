@@ -1,0 +1,15 @@
+/* Understanding card: the same surface and disclosure as the personal page. */
+.reading-understanding-card{box-sizing:border-box;padding:20px;border:1px solid #ffffffc9;border-radius:24px;background:#ffffffb3;box-shadow:0 7px 30px #252a3508,inset 0 1px 0 #ffffff99;text-align:left}
+.reading-understanding-card .me-understanding-heading{display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:1px solid #e4e7ed80}
+.reading-understanding-card .me-summary-illustration{display:block;flex:none;width:48px;height:48px;object-fit:cover;border-radius:16px}
+.reading-understanding-card .me-summary-heading-copy{display:flex;flex:1;flex-direction:column;gap:2px;min-width:0}
+.reading-understanding-card h2{margin:0!important;padding:0!important;color:#131921!important;font-size:16px!important;font-weight:600!important;line-height:28px!important;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.reading-understanding-card .me-summary-updated{margin:0!important;color:#909399!important;font-size:12px!important;line-height:16px!important}
+.reading-understanding-card .me-summary-body{box-sizing:border-box;max-height:224px;padding-top:16px;overflow:hidden;mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%)}
+.reading-understanding-card .me-summary-body.is-expanded{max-height:none;mask-image:none;-webkit-mask-image:none}
+.reading-understanding-card .me-summary-body p{margin:0 0 16px!important;color:#606266!important;font-size:14px!important;font-weight:400!important;line-height:26px!important;overflow-wrap:anywhere}
+.reading-understanding-card .me-summary-body p:last-child{margin-bottom:0!important}
+.reading-understanding-card .me-summary-more,.reading-understanding-card .interview-edit-summary{display:inline-flex;align-items:center;min-height:48px;margin:0;padding:12px 0;border:0;background:none;color:#131921;font-family:inherit;font-size:14px;font-weight:500;line-height:24px;cursor:pointer}
+.reading-understanding-card .interview-card-tools{display:flex;justify-content:space-between;gap:20px}
+.reading-understanding-card .interview-summary-editor[hidden]{display:none!important}
+.reading-understanding-card .interview-summary-editor{margin-top:16px}

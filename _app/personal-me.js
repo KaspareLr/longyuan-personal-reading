@@ -6,11 +6,12 @@
  document.querySelector('.profile-summary img').src=clubSession.profile.avatar||'onboarding/assets/default-avatars/call_T4m9NoHP7lo2kGRubhxu5kva.png';
  document.querySelector('#preferences-title').textContent=readingCopy.t('profile.title',{name});
  const clean=values=>[...new Set((values||[]).map(v=>String(v).trim()).filter(v=>v&&v!=='还没想好'))],join=values=>values.join('、'),paragraphs=[readingCopy.t('profile.intro')];
+ if(p.voiceInterview?.confirmed&&p.voiceInterview.summary)paragraphs.push(p.voiceInterview.summary);
  if(p.avatarMeaning?.source==='self-expression'&&p.avatarMeaning.confirmed===true)paragraphs.push(readingCopy.t('profile.avatarMeaning',{label:p.avatarMeaning.label,tags:join(clean(p.avatarMeaning.tags))}));
  const categories=clean(p.categories),topics=clean([...(p.topics||[]),...(state.domains||[])]),people=clean(p.people),ops=state.ops||{};
  if(p.organization||p.profession)paragraphs.push('你'+(p.organization?'在'+p.organization:'')+(p.profession?(p.organization?'，从事':'从事')+p.profession+'相关工作':'')+'。');
  if(categories.length||topics.length||p.topicsOther)paragraphs.push((categories.length?readingCopy.t('profile.categories',{topics:join(categories)}):'')+(topics.length?readingCopy.t('profile.topics',{topics:join(topics)}):'')+(p.topicsOther?readingCopy.t('profile.other',{text:p.topicsOther}):''));
- else paragraphs.push(readingCopy.t('profile.empty'));
+ else if(!p.voiceInterview?.confirmed)paragraphs.push(readingCopy.t('profile.empty'));
  if(people.length||p.peopleOther)paragraphs.push(readingCopy.t('profile.people',{people:join([...people,...(p.peopleOther?[p.peopleOther]:[])])}));
  if(state.clubName)paragraphs.push(readingCopy.t('profile.clubName',{name:state.clubName})+(state.clubNotes?readingCopy.t('profile.clubNotes',{text:state.clubNotes}):''));
  else if(state.clubNotes)paragraphs.push(readingCopy.t('profile.clubNotes',{text:state.clubNotes}));
