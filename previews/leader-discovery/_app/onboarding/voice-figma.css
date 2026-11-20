@@ -31,12 +31,8 @@
 .initialize-conversation.voice-answer-step #question{margin-top:56px;color:#000;font-size:24px;font-weight:400;line-height:32px;text-align:center;white-space:normal;word-break:normal;overflow-wrap:break-word;text-wrap:pretty}
 .initialize-conversation.voice-answer-step #description{padding:0;margin-top:10px;max-width:none;line-height:24px;text-align:center;text-wrap:pretty}
 .voice-answer-step .voice-status{font-size:14px}
-.voice-ai-loading .voice-ai-portrait,.voice-ai-loading #question,.voice-ai-loading #description,.voice-ai-loading .voice-controls{opacity:0}
 .voice-ai-entering .voice-ai-portrait{animation:voice-ai-fade 400ms ease-out both}
-.voice-ai-entering #question,.voice-ai-entering #description{animation:voice-ai-fade 400ms 1200ms ease-out both}
-.voice-ai-entering .voice-controls{animation:voice-ai-fade 240ms 1640ms ease-out both}
 @keyframes voice-ai-fade{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){
- .voice-ai-entering .voice-ai-portrait,.voice-ai-entering #question,.voice-ai-entering #description,.voice-ai-entering .voice-controls{animation:none;opacity:1}
- .voice-ai-loading .voice-ai-portrait,.voice-ai-loading #question,.voice-ai-loading #description,.voice-ai-loading .voice-controls{opacity:1}
+ .voice-ai-entering .voice-ai-portrait{animation:none}
 }
